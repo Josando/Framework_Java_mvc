@@ -15,7 +15,6 @@ import App.modules.main_menu.views.Menu;
 public class Main_menu {
     
      //objeto singleton que contendrá la ventana activa
-    public static String singleton_vtna="";
     
      public static void main(String args[]) {
         
