@@ -21,7 +21,11 @@ import App.modules.users.Admin.views.Create_Admin;
 import static App.modules.users.Admin.views.interfaz_Admin.TABLA;
 import static App.modules.users.Admin.views.interfaz_Admin.jLabel3;
 import App.modules.main_menu.model.Language.Language;
+import App.modules.users.Admin.Model.Classes.order.order_age;
 import App.modules.users.Admin.Model.Classes.order.order_nom;
+import App.modules.users.Admin.Model.Files.File_utils.utils.txt;
+import App.modules.users.Admin.Model.Files.File_utils.utils.xml;
+import App.modules.users.User.User;
 import App.utils.Singleton_App;
 import App.utils.Validate;
 import java.awt.Color;
@@ -29,8 +33,10 @@ import java.awt.HeadlessException;
 import java.awt.Image;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -76,6 +82,22 @@ public class Admin_BLL {
 		return -1;
 	}
                   
+        
+        public static void imprime(ArrayList<? extends User>l)// Imprimir cada uno de los empleados del array
+	{
+		
+		Iterator<? extends User> it = l.iterator();
+		
+		while(it.hasNext()){
+			
+			User f = it.next();
+			JOptionPane.showMessageDialog(null, f.toString(), "Impresion", JOptionPane.INFORMATION_MESSAGE);
+		}
+	}
+        
+        
+        
+        
            
       public static void requests_name() {
           
@@ -443,65 +465,31 @@ public static void Delete_Admin (){
             }
         
 }
-public static void order_admin(String head ) {
 
-			
-			
-			if (!Singleton.ad.isEmpty()) {
 
-							
-				
-				switch (head) {
 
-				case "First_name":
+    public static void save_json() {
+        if (!Singleton.ad.isEmpty()) {
+            json.save_admin_json();
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay datos que guardar");
+        }
+    }
 
-					//Collections.sort(Singleton.ad);
-                                        Collections.sort(Singleton.ad, new order_nom());
-                                    
-                                    
-                                    
-					break;
-/*
-				case '2':
-
-					Collections.sort(Singleton.ad, new order_age());
-
-					break;
-
-				case '3':
-
-					Collections.sort(Singleton.ad, new order_nom());
-
-					break;
-
-				case '4':
-
-					Collections.sort(Singleton.ad, new order_birth_date());
-
-					break;
-
-				case '5':
-
-					Collections.sort(Singleton.ad, new order_benefits());
-
-					break;
-
-					default:
-						
-						break;
-				*/	
-					
-				}
-
-			} else {
-
-				JOptionPane.showMessageDialog(null, Language.getinstance().getProperty("empty"), Language.getinstance().getProperty("admin"),
-						JOptionPane.ERROR_MESSAGE);
-
-			}
-
-		}
-
+    public static void save_txt() {
+        if (!Singleton.ad.isEmpty()) {
+            txt.save_admin_txt();
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay datos que guardar");
+        }
+    }
+    public static void save_xml() {
+        if (!Singleton.ad.isEmpty()) {
+            xml.save_admin_xml();
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay datos que guardar");
+        }
+    }
 
 
 

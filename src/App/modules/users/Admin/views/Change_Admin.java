@@ -345,6 +345,7 @@ public class Change_Admin extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(153, 255, 153));
         jLabel1.setFont(new java.awt.Font("Lucida Sans Unicode", 3, 18)); // NOI18N
+        jLabel1.setBorder(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -425,7 +426,7 @@ public class Change_Admin extends javax.swing.JFrame {
             
              jLabel1.setOpaque(true);
              jLabel1.setBackground(Color.green);
-             jLabel1.setText("Admin creado correctamente");
+             jLabel1.setText("Admin modificado correctamente");
              
              
        //this.dispose();

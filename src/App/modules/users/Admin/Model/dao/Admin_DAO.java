@@ -61,14 +61,14 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Create_Admin.AdSurnametext.getText().isEmpty()) {
-            Create_Admin.surname_label.setText("Mal");
+            Create_Admin.surname_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidFormatNom_cognom(Create_Admin.AdSurnametext.getText())) {
-            Create_Admin.surname_label.setText("Mal");
+            Create_Admin.surname_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Create_Admin.surname_label.setText("Ok");
+            Create_Admin.surname_label.setIcon(Singleton_App.ok);
             b = true;
 
         }
@@ -80,13 +80,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Create_Admin.AdMobiltext.getText().isEmpty()) {
-            Create_Admin.mobil_label.setText("Mal");
+            Create_Admin.mobil_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isvalidmobil(Create_Admin.AdMobiltext.getText())) {
-            Create_Admin.mobil_label.setText("Mal");
+            Create_Admin.mobil_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Create_Admin.mobil_label.setText("Ok");
+            Create_Admin.mobil_label.setIcon(Singleton_App.ok);
             b = true;
         }
 
@@ -99,13 +99,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Create_Admin.ADEmailtext.getText().isEmpty()) {
-            Create_Admin.email_label.setText("Mal");
+            Create_Admin.email_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidFormatEmailAddress(Create_Admin.ADEmailtext.getText())) {
-            Create_Admin.email_label.setText("Mal");
+            Create_Admin.email_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Create_Admin.email_label.setText("Ok");
+            Create_Admin.email_label.setIcon(Singleton_App.ok);
 
             b = true;
         }
@@ -119,13 +119,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Create_Admin.AdUsernametext.getText().isEmpty()) {
-            Create_Admin.user_name_label.setText("Mal");
+            Create_Admin.user_name_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidnick(Create_Admin.AdUsernametext.getText())) {
-            Create_Admin.user_name_label.setText("Mal");
+            Create_Admin.user_name_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Create_Admin.user_name_label.setText("Ok");
+            Create_Admin.user_name_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -135,13 +135,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Create_Admin.AdPasstext.getText().isEmpty()) {
-            Create_Admin.pass_label.setText("Mal");
+            Create_Admin.pass_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isvalidpassword(Create_Admin.AdPasstext.getText())) {
-            Create_Admin.pass_label.setText("Mal");
+            Create_Admin.pass_label.setIcon(Singleton_App.cancel);
         } else {
 
-            Create_Admin.pass_label.setText("Ok");
+            Create_Admin.pass_label.setIcon(Singleton_App.ok);
             b = true;
 
         }
@@ -152,13 +152,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Create_Admin.AdActivitytext.getText().isEmpty()) {
-            Create_Admin.activity_label.setText("Mal");
+            Create_Admin.activity_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidactivity(Create_Admin.AdActivitytext.getText())) {
-            Create_Admin.activity_label.setText("Mal");
+            Create_Admin.activity_label.setIcon(Singleton_App.cancel);
         } else {
 
-            Create_Admin.activity_label.setText("Ok");
+            Create_Admin.activity_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -168,14 +168,14 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Create_Admin.AdIDtext.getText().isEmpty()) {
-            Create_Admin.id_label.setText("Mal");
+            Create_Admin.id_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidFormatDNI(Create_Admin.AdIDtext.getText())) {
-            Create_Admin.id_label.setText("Mal");
+            Create_Admin.id_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Create_Admin.id_label.setText("Ok");
+            Create_Admin.id_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -210,7 +210,7 @@ public class Admin_DAO {
 
             if (control == letter) {
 
-                Create_Admin.id_label.setText("Ok");
+                Create_Admin.id_label.setIcon(Singleton_App.ok);
                 b = true;
 
                 Singleton.DNI = dni;
@@ -221,13 +221,13 @@ public class Admin_DAO {
 
                     JOptionPane.showMessageDialog(null, Language.getinstance().getProperty("exists"), Language.getinstance().getProperty("admin"),
                             JOptionPane.ERROR_MESSAGE);
-                    Create_Admin.id_label.setText("mal");
+                    Create_Admin.id_label.setIcon(Singleton_App.cancel);
                     b = false;
                 }
 
             } else {
 
-                Create_Admin.id_label.setText("Mal");
+                Create_Admin.id_label.setIcon(Singleton_App.cancel);
                 b = false;
             }
 
@@ -256,7 +256,7 @@ public class Admin_DAO {
 
                 if (!Validate.isValid_date(date_birthday)) {
 
-                    Create_Admin.date_label.setText("Mal");
+                    Create_Admin.date_label.setIcon(Singleton_App.cancel);
 
                 } else {
 
@@ -266,7 +266,7 @@ public class Admin_DAO {
 
                     if (ok == false) {
 
-                        Create_Admin.date_label.setText("Mal");
+                        Create_Admin.date_label.setIcon(Singleton_App.cancel);
 
                     } else {
 
@@ -276,7 +276,7 @@ public class Admin_DAO {
 
                             JOptionPane.showMessageDialog(null, "The date can't exceed the current ", "Error",
                                     JOptionPane.WARNING_MESSAGE, null);
-                            Create_Admin.date_label.setText("Mal");
+                            Create_Admin.date_label.setIcon(Singleton_App.cancel);
 
                         } else {
 
@@ -289,7 +289,7 @@ public class Admin_DAO {
 
                             } else {
 
-                                Create_Admin.date_label.setText("ok");
+                                Create_Admin.date_label.setIcon(Singleton_App.ok);
                                 b = true;
                             }
 
@@ -325,7 +325,7 @@ public class Admin_DAO {
 
                 if (!Validate.isValid_date(hire_date)) {
 
-                    Create_Admin.hiredate_label.setText("Mal");
+                    Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
 
                 } else {
 
@@ -335,7 +335,7 @@ public class Admin_DAO {
 
                     if (ok == false) {
 
-                        Create_Admin.hiredate_label.setText("Mal");
+                        Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
 
                     } else {
 
@@ -345,7 +345,7 @@ public class Admin_DAO {
 
                             JOptionPane.showMessageDialog(null, "The date can't exceed the current ", "Error",
                                     JOptionPane.WARNING_MESSAGE, null);
-                            Create_Admin.hiredate_label.setText("Mal");
+                            Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
 
                         } else {
 
@@ -355,7 +355,7 @@ public class Admin_DAO {
 
                                 JOptionPane.showMessageDialog(null, "The date must be after the date birthday",
                                         "ERROR", JOptionPane.WARNING_MESSAGE);
-                                Create_Admin.hiredate_label.setText("Mal");
+                                Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
 
                             } else {
 
@@ -366,11 +366,11 @@ public class Admin_DAO {
                                     JOptionPane.showMessageDialog(null, "The future employee must be between 16 and 65 years",
                                             "ERROR", JOptionPane.WARNING_MESSAGE);
 
-                                    Create_Admin.hiredate_label.setText("Mal");
+                                    Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
 
                                 } else {
 
-                                    Create_Admin.hiredate_label.setText("ok");
+                                    Create_Admin.hiredate_label.setIcon(Singleton_App.ok);
                                     b = true;
 
                                 }
@@ -413,14 +413,14 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Change_Admin.AdSurnametext.getText().isEmpty()) {
-            Change_Admin.Ad_surname_label.setText("Mal");
+            Change_Admin.Ad_surname_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidFormatNom_cognom(Change_Admin.AdSurnametext.getText())) {
-            Change_Admin.Ad_surname_label.setText("Mal");
+            Change_Admin.Ad_surname_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Change_Admin.Ad_surname_label.setText("Ok");
+            Change_Admin.Ad_surname_label.setIcon(Singleton_App.ok);
             b = true;
 
         }
@@ -432,13 +432,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Change_Admin.AdMobiltext.getText().isEmpty()) {
-            Change_Admin.Ad_mobil_label.setText("Mal");
+            Change_Admin.Ad_mobil_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isvalidmobil(Change_Admin.AdMobiltext.getText())) {
-            Change_Admin.Ad_mobil_label.setText("Mal");
+            Change_Admin.Ad_mobil_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Change_Admin.Ad_mobil_label.setText("Ok");
+            Change_Admin.Ad_mobil_label.setIcon(Singleton_App.ok);
             b = true;
         }
 
@@ -451,13 +451,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Change_Admin.ADEmailtext.getText().isEmpty()) {
-            Change_Admin.Ad_email_label.setText("Mal");
+            Change_Admin.Ad_email_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidFormatEmailAddress(Change_Admin.ADEmailtext.getText())) {
-            Change_Admin.Ad_email_label.setText("Mal");
+            Change_Admin.Ad_email_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Change_Admin.Ad_email_label.setText("Ok");
+            Change_Admin.Ad_email_label.setIcon(Singleton_App.ok);
 
             b = true;
         }
@@ -471,13 +471,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Change_Admin.AdUsernametext.getText().isEmpty()) {
-            Change_Admin.Ad_user_name_label.setText("Mal");
+            Change_Admin.Ad_user_name_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidnick(Change_Admin.AdUsernametext.getText())) {
-            Change_Admin.Ad_user_name_label.setText("Mal");
+            Change_Admin.Ad_user_name_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Change_Admin.Ad_user_name_label.setText("Ok");
+            Change_Admin.Ad_user_name_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -487,13 +487,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Change_Admin.AdPasstext.getText().isEmpty()) {
-            Change_Admin.Ad_pass_label.setText("Mal");
+            Change_Admin.Ad_pass_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isvalidpassword(Change_Admin.AdPasstext.getText())) {
-            Change_Admin.Ad_pass_label.setText("Mal");
+            Change_Admin.Ad_pass_label.setIcon(Singleton_App.cancel);
         } else {
 
-            Change_Admin.Ad_pass_label.setText("Ok");
+            Change_Admin.Ad_pass_label.setIcon(Singleton_App.ok);
             b = true;
 
         }
@@ -504,13 +504,13 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Change_Admin.AdActivitytext.getText().isEmpty()) {
-            Change_Admin.Ad_activity_label.setText("Mal");
+            Change_Admin.Ad_activity_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidactivity(Change_Admin.AdActivitytext.getText())) {
-            Change_Admin.Ad_activity_label.setText("Mal");
+            Change_Admin.Ad_activity_label.setIcon(Singleton_App.cancel);
         } else {
 
-            Change_Admin.Ad_activity_label.setText("Ok");
+            Change_Admin.Ad_activity_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -520,14 +520,14 @@ public class Admin_DAO {
         boolean b = false;
 
         if (Change_Admin.AdIDtext.getText().isEmpty()) {
-            Change_Admin.Ad_ID_label.setText("Mal");
+            Change_Admin.Ad_ID_label.setIcon(Singleton_App.cancel);
 
         } else if (!Validate.isValidFormatDNI(Change_Admin.AdIDtext.getText())) {
-            Change_Admin.Ad_ID_label.setText("Mal");
+            Change_Admin.Ad_ID_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Change_Admin.Ad_ID_label.setText("Ok");
+            Change_Admin.Ad_ID_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -562,7 +562,7 @@ public class Admin_DAO {
 
             if (control == letter) {
 
-                Change_Admin.Ad_ID_label.setText("Ok");
+                Change_Admin.Ad_ID_label.setIcon(Singleton_App.ok);
                 b = true;
 
                 Singleton.DNI = dni;
@@ -573,13 +573,13 @@ public class Admin_DAO {
 
                     JOptionPane.showMessageDialog(null, Language.getinstance().getProperty("exists"), Language.getinstance().getProperty("admin"),
                             JOptionPane.ERROR_MESSAGE);
-                    Change_Admin.Ad_ID_label.setText("mal");
+                    Change_Admin.Ad_ID_label.setIcon(Singleton_App.cancel);
                     b = false;
                 }
 
             } else {
 
-                Change_Admin.Ad_ID_label.setText("Mal");
+                Change_Admin.Ad_ID_label.setIcon(Singleton_App.cancel);
                 b = false;
             }
 
@@ -608,7 +608,7 @@ public class Admin_DAO {
 
                 if (!Validate.isValid_date(date_birthday)) {
 
-                    Change_Admin.Ad_date_birthday_label.setText("Mal");
+                    Change_Admin.Ad_date_birthday_label.setIcon(Singleton_App.cancel);
 
                 } else {
 
@@ -618,7 +618,7 @@ public class Admin_DAO {
 
                     if (ok == false) {
 
-                        Change_Admin.Ad_date_birthday_label.setText("Mal");
+                        Change_Admin.Ad_date_birthday_label.setIcon(Singleton_App.cancel);
 
                     } else {
 
@@ -628,7 +628,7 @@ public class Admin_DAO {
 
                             JOptionPane.showMessageDialog(null, "The date can't exceed the current ", "Error",
                                     JOptionPane.WARNING_MESSAGE, null);
-                            Change_Admin.Ad_date_birthday_label.setText("Mal");
+                            Change_Admin.Ad_date_birthday_label.setIcon(Singleton_App.cancel);
 
                         } else {
 
@@ -641,7 +641,7 @@ public class Admin_DAO {
 
                             } else {
 
-                                Change_Admin.Ad_date_birthday_label.setText("ok");
+                                Change_Admin.Ad_date_birthday_label.setIcon(Singleton_App.ok);
                                 b = true;
                             }
 
@@ -677,7 +677,7 @@ public class Admin_DAO {
 
                 if (!Validate.isValid_date(hire_date)) {
 
-                    Change_Admin.Ad_hire_date.setText("Mal");
+                    Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                 } else {
 
@@ -687,7 +687,7 @@ public class Admin_DAO {
 
                     if (ok == false) {
 
-                        Change_Admin.Ad_hire_date.setText("Mal");
+                        Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                     } else {
 
@@ -697,7 +697,7 @@ public class Admin_DAO {
 
                             JOptionPane.showMessageDialog(null, "The date can't exceed the current ", "Error",
                                     JOptionPane.WARNING_MESSAGE, null);
-                            Change_Admin.Ad_hire_date.setText("Mal");
+                            Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                         } else {
 
@@ -707,7 +707,7 @@ public class Admin_DAO {
 
                                 JOptionPane.showMessageDialog(null, "The date must be after the date birthday",
                                         "ERROR", JOptionPane.WARNING_MESSAGE);
-                                Change_Admin.Ad_hire_date.setText("Mal");
+                                Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                             } else {
 
@@ -718,11 +718,11 @@ public class Admin_DAO {
                                     JOptionPane.showMessageDialog(null, "The future employee must be between 16 and 65 years",
                                             "ERROR", JOptionPane.WARNING_MESSAGE);
 
-                                    Change_Admin.Ad_hire_date.setText("Mal");
+                                    Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                                 } else {
 
-                                    Change_Admin.Ad_hire_date.setText("ok");
+                                    Change_Admin.Ad_hire_date.setIcon(Singleton_App.ok);
                                     b = true;
 
                                 }
@@ -800,7 +800,7 @@ public class Admin_DAO {
             // Singleton.ad.add(a);
         } else {
 
-            JOptionPane.showMessageDialog(null, "No esta bien");
+            JOptionPane.showMessageDialog(null, "Revisar los parametros");
             a = null;
         }
 
@@ -861,7 +861,7 @@ public class Admin_DAO {
            
         } else {
 
-            JOptionPane.showMessageDialog(null, "No esta bien");
+            JOptionPane.showMessageDialog(null, "Revisa los parametros");
             a = null;
         }
 

@@ -13,8 +13,8 @@ import javax.swing.ImageIcon;
  */
 public class Singleton_App {
     
-    public static ImageIcon ok = new ImageIcon("src/App/modules/user/views/img/Ok.png");
-    public static ImageIcon cancel = new ImageIcon("src/App/modules/user/views/img/Cancel.png");
+    public static ImageIcon ok = new ImageIcon("src/App/utils/img_app/img/Ok.png");
+    public static ImageIcon cancel = new ImageIcon("src/App/utils/img_app/img/Cancel.png");
     public static String ruta_imagen;
     
     

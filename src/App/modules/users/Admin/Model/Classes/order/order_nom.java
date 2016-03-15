@@ -9,14 +9,11 @@ public class order_nom implements Comparator <User> {
 	public int compare (User u1, User u2) {
 		
 		if(u1.getNom().compareTo(u2.getNom())>0)
-			
 			return 1;
-		
-		if(u1.getNom().compareTo(u2.getNom())<0)
-			
-			return -1;
-		
-		return 0;
+                
+                if(u1.getNom().compareTo(u2.getNom())<0)
+			return -1;                          
+		return 0;                
 	}
 	
 	
