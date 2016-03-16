@@ -621,7 +621,7 @@ public class First_menu extends javax.swing.JFrame {
     private void btn_ConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ConfigActionPerformed
         // TODO add your handling code here:
 
-       charge_config();
+       First_menu_config_bll.Charge_config();
         
         Dialog_config.setSize(550, 350);//ancho x alto
 
@@ -646,14 +646,7 @@ public class First_menu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnAplicarActionPerformed
 
-    public static void charge_config() {
-
-
-       First_menu_config_bll.Charge_config();
-        
-        
-
-    }
+   
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

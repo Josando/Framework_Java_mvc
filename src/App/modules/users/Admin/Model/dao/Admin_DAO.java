@@ -796,7 +796,7 @@ public class Admin_DAO {
                     avatar, user, pass, status, actividad,
                     fecha_cont);
 
-            JOptionPane.showMessageDialog(null, a.toString());
+           
             // Singleton.ad.add(a);
         } else {
 

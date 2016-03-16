@@ -12,6 +12,14 @@ import  App.modules.users.Admin.views.interfaz_Admin;
 import static App.modules.users.Admin.views.interfaz_Admin.combo;
 import App.utils.Format;
 import App.utils.Funciones;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static javax.print.attribute.Size2DSyntax.MM;
+import javax.swing.JOptionPane;
 //import pager.modules.actores.interfaz_actor;
 //import static App.modules.user.views.interfaz_actor.combo;
 //import static pager.modules.actores.singleton.AL_actores;
@@ -47,8 +55,7 @@ public class miniSimpleTableModel_Admin extends AbstractTableModel {
        
         Object dev = null;
         Admin fila = (Admin) datos.get(row);
-        
-        
+                       
         switch (col) {
             case 0:
                 dev = fila.getDni();
@@ -66,8 +73,9 @@ public class miniSimpleTableModel_Admin extends AbstractTableModel {
                 dev = fila.getEmail();
                 break;
                 
-            case 4:
-                dev = fila.getFecha_cont().toString();
+            case 4:                             
+                dev = fila.getFecha_cont();
+                             
                 break;
                 
             case 5:

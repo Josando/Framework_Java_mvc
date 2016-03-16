@@ -230,6 +230,11 @@ public class Create_Admin extends javax.swing.JFrame {
         });
 
         AdPasstext.setText("jPasswordField1");
+        AdPasstext.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                AdPasstextFocusGained(evt);
+            }
+        });
         AdPasstext.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 AdPasstextKeyReleased(evt);
@@ -657,6 +662,14 @@ public class Create_Admin extends javax.swing.JFrame {
         Admin_BLL.charge_avatar();
         
     }//GEN-LAST:event_AdCargarAvatarActionPerformed
+
+    private void AdPasstextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AdPasstextFocusGained
+        // TODO add your handling code here:
+        
+        AdPasstext.setText("");
+        
+        
+    }//GEN-LAST:event_AdPasstextFocusGained
 
       
     // Variables declaration - do not modify//GEN-BEGIN:variables

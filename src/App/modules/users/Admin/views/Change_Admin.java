@@ -186,6 +186,11 @@ public class Change_Admin extends javax.swing.JFrame {
         AdIDtext.setEnabled(false);
 
         AdPasstext.setText("jPasswordField1");
+        AdPasstext.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                AdPasstextFocusGained(evt);
+            }
+        });
         AdPasstext.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 AdPasstextKeyReleased(evt);
@@ -306,9 +311,9 @@ public class Change_Admin extends javax.swing.JFrame {
                     .addComponent(Ad_mobil_label, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ADEmailtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(AdEmail)
-                        .addComponent(ADEmailtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3))
                     .addComponent(Ad_email_label, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -533,6 +538,13 @@ public class Change_Admin extends javax.swing.JFrame {
       Admin_BLL.Change_Change_Avatar();
         
     }//GEN-LAST:event_AdChange_AvatarActionPerformed
+
+    private void AdPasstextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AdPasstextFocusGained
+        // TODO add your handling code here:
+        
+        AdPasstext.setText("");
+        
+    }//GEN-LAST:event_AdPasstextFocusGained
 
    
    

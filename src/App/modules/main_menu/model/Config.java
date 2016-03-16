@@ -1,7 +1,8 @@
 package App.modules.main_menu.model;
 
+import App.modules.main_menu.model.bll.First_menu_config_bll;
 import App.modules.main_menu.views.First_menu;
-import static App.modules.main_menu.views.First_menu.charge_config;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -48,7 +49,7 @@ public class Config implements Serializable{
 			instance= new Config();	
 			
 			json.open_config_json();	
-			charge_config();
+			First_menu_config_bll.Charge_config();
 			Singleton.cli = new ArrayList <Client>();
 			Singleton.us = new ArrayList <User_reg>();
 			Singleton.ad = new ArrayList <Admin>();	
