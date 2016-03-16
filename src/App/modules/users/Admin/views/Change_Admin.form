@@ -37,7 +37,7 @@
                   <Component id="AdAvartaimg" alignment="0" pref="98" max="32767" attributes="0"/>
                   <Component id="AdChange_Avatar" pref="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -94,41 +94,59 @@
                               <Component id="AdAvatar" pref="60" max="32767" attributes="0"/>
                               <Component id="AdEmail" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="67" pref="67" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="Status_combo" min="-2" pref="158" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ADEmailtext" min="-2" pref="158" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="Ad_email_label" min="-2" pref="34" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="Ad_email_label" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="AdDate_birthday" alignment="0" pref="77" max="32767" attributes="0"/>
-                                  <Component id="AdId" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="AdName" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="ADEmailtext" min="-2" pref="158" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="AdSurname" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
-                              <Component id="Admobil" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="AdActivity" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
-                              <Component id="AdHiredate" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
-                              <Component id="AdPass" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="AdUsname" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="AdUsernametext" max="32767" attributes="0"/>
-                              <Component id="AdActivitytext" max="32767" attributes="0"/>
-                              <Component id="AdMobiltext" max="32767" attributes="0"/>
-                              <Component id="AdSurnametext" max="32767" attributes="0"/>
-                              <Component id="AdNametext" max="32767" attributes="0"/>
-                              <Component id="Addatebirthdaytext" alignment="0" pref="158" max="32767" attributes="0"/>
-                              <Component id="Adhiredatetext" alignment="0" max="32767" attributes="0"/>
-                              <Component id="AdIDtext" alignment="0" max="32767" attributes="0"/>
-                              <Component id="AdPasstext" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="AdPass" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="AdActivity" min="-2" pref="84" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="AdDate_birthday" alignment="0" pref="77" max="32767" attributes="0"/>
+                                                  <Component id="AdId" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="AdName" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="AdSurname" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                              <Component id="AdHiredate" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                                              <Component id="AdUsname" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                                              <Component id="Admobil" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="Status_combo" min="-2" pref="158" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="AdUsernametext" max="32767" attributes="0"/>
+                                          <Component id="AdActivitytext" max="32767" attributes="0"/>
+                                          <Component id="AdMobiltext" max="32767" attributes="0"/>
+                                          <Component id="AdSurnametext" max="32767" attributes="0"/>
+                                          <Component id="AdNametext" max="32767" attributes="0"/>
+                                          <Component id="Addatebirthdaytext" alignment="0" pref="158" max="32767" attributes="0"/>
+                                          <Component id="Adhiredatetext" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="AdIDtext" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="AdPasstext" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -189,16 +207,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="AdEmail" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ADEmailtext" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ADEmailtext" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="Ad_email_label" min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AdAvatar" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Status_combo" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="AdAvatar" linkSize="4" min="-2" max="-2" attributes="0"/>
+                      <Component id="Status_combo" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="AdUsname" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="AdUsernametext" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -209,6 +228,7 @@
                       <Component id="AdPass" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="AdPasstext" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Ad_pass_label" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -222,6 +242,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="AdActivity" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="AdActivitytext" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -436,6 +457,30 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/App/utils/img_app/img/1458019522_gtk-about.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Ej: xxxx@gmail.com"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/App/utils/img_app/img/1458019522_gtk-about.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="No mas de tres cifras"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/App/utils/img_app/img/1458019522_gtk-about.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="8 caracteres como minimo, una mayuscula o simbolo."/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

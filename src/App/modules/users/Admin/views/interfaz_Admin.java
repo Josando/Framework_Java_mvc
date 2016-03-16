@@ -8,7 +8,9 @@ import App.modules.users.Admin.Model.Classes.Admin;
 import App.modules.users.Admin.Model.Classes.Singleton;
 import App.modules.users.Admin.Model.Classes.miniSimpleTableModel_Admin;
 import App.modules.users.Admin.Model.Utils.Pager.pagina;
+import java.awt.Image;
 import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -19,6 +21,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -34,15 +37,17 @@ public class interfaz_Admin extends javax.swing.JFrame {
     
     
     public interfaz_Admin() {
-        try{
-           Config.getinstance().getTheme(); // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        }catch(Exception e){}
+      //  try{
+          //Config.getinstance().getTheme(); // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+      //  }catch(Exception e){}
         
         initComponents();    
         
         this.setLocationRelativeTo(null);
         this.setTitle("Gestión Actores");
         this.setResizable(false);
+        Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
+	this.setIconImage(image);   
         
         //ppal.singleton_vtna="interfaz_actor";
         
@@ -50,7 +55,7 @@ public class interfaz_Admin extends javax.swing.JFrame {
         ((miniSimpleTableModel_Admin)TABLA.getModel()).cargar();
         TABLA.setFillsViewportHeight(true);
         
-        JTableHeader header = TABLA.getTableHeader();
+       // JTableHeader header = TABLA.getTableHeader();
         TABLA.setRowSorter(sorter);
         pagina.inicializa();
         pagina.initLinkBox();
@@ -85,33 +90,6 @@ public class interfaz_Admin extends javax.swing.JFrame {
             }
         });
          
-         //Metodo con el cual podria ordenar el arraylist junto con la vista de la tabla ya que la tabla solo ordena pagina que esta seleccionada.
-        /* 
-         header.addMouseListener(new MouseAdapter() {
-             
-             @Override
-             public void mouseClicked(MouseEvent evt){
-               // JTableHeader header = TABLA.getTableHeader();
-                 Point point = evt.getPoint();
-                 int col = TABLA.columnAtPoint(point);
-                 
-               //  TABLA.getTableHeader().getFocusListeners();
-               //  header.addMouseListener(this);
-               String head =  TABLA.getColumnName(col);
-               
-               Admin_BLL.order_admin(head);
-               ((miniSimpleTableModel_Admin)TABLA.getModel()).cargar();
-                pagina.initLinkBox();
-                JOptionPane.showMessageDialog(null, head  );
-                 //header.getName();
-             }
-           
-});
-         */
-         
-         
-         
-         
          
     }
     public static void comboActionPerformed(java.awt.event.ActionEvent evt) {                                            
@@ -122,7 +100,7 @@ public class interfaz_Admin extends javax.swing.JFrame {
       
 
 
-// combo.requestFocus();
+    combo.requestFocus();
     } 
         
         

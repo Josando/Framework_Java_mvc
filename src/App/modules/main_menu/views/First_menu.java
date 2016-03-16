@@ -6,6 +6,8 @@
 package App.modules.main_menu.views;
 
 import App.modules.main_menu.model.Config;
+import App.modules.main_menu.model.bll.First_menu_config_bll;
+import App.modules.main_menu.model.dao.First_menu_config_dao;
 import App.modules.users.Admin.Model.Files.File_utils.utils.json;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -25,7 +27,7 @@ public class First_menu extends javax.swing.JFrame {
     public First_menu() {
         initComponents();
 
-        Config.getinstance().getTheme();
+        //Config.getinstance().getTheme();
         
 
         this.setTitle("Main menu");
@@ -639,96 +641,7 @@ public class First_menu extends javax.swing.JFrame {
     private void btnAplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAplicarActionPerformed
         // TODO add your handling code here:
 
-        if (Dolar.isSelected()) {
-
-            Config.getinstance().setCurrency("$");
-
-        } else if (Libra.isSelected()) {
-
-            Config.getinstance().setCurrency("£");
-
-        } else if (Eurobtn.isSelected()) {
-
-            Config.getinstance().setCurrency("€");
-
-        }
-        
-        
-        if (English.isSelected()) {
-
-            Config.getinstance().setLanguage("English");
-
-        } else if (Español.isSelected()) {
-
-            Config.getinstance().setLanguage("Español");
-
-        } else if (Valencia.isSelected()) {
-
-            Config.getinstance().setLanguage("Valencia");
-            
-        } 
-        
-        
-        if (formato_1.isSelected()) {
-
-            Config.getinstance().setDate_format("dd/MM/yyyy");
-           
-             
-        } else if (formato_2.isSelected()) {
-
-            Config.getinstance().setDate_format("dd-MM-yyyy");
-            
-        } else if (formato_3.isSelected()) {
-
-            Config.getinstance().setDate_format("yyyy-MM-dd");
-            
-           
-            
-        } else if (formato_4.isSelected()) {
-
-            Config.getinstance().setDate_format("yyyy/MM/dd");
-            
-         
-            
-        } 
-        
-        
-        if (metal.isSelected()) {
-
-            Config.getinstance().setTheme("Metal");
-            
-        } else if (gtk_windows.isSelected()) {
-
-            Config.getinstance().setTheme("GTK-Windows");
-
-        } else if (motif.isSelected()) {
-
-            Config.getinstance().setTheme("Motif");
-
-        } else if (ninbus.isSelected()) {
-
-            Config.getinstance().setTheme("Ninbus");            
-
-        } 
-                
-                
-                
-                 if (Json.isSelected()) {
-
-            Config.getinstance().setFile("json");
-
-        } else if (Xml.isSelected()) {
-
-            Config.getinstance().setFile("xml");
-
-        } else if (Txt_.isSelected()) {
-
-            Config.getinstance().setFile("txt");
-        }
-
-        json.save_config_json();
-        
-        Dialog_config.setVisible(false);
+        First_menu_config_bll.Charge_Config_to_class_config();
 
 
     }//GEN-LAST:event_btnAplicarActionPerformed
@@ -736,117 +649,7 @@ public class First_menu extends javax.swing.JFrame {
     public static void charge_config() {
 
 
-        switch (Config.getinstance().getLanguage()) {
-
-            case "English":
-
-                First_menu.English.setSelected(true);
-
-                break;
-
-            case "Español":
-
-                First_menu.Español.setSelected(true);
-
-                break;
-                
-            case "Valencia":
-
-                First_menu.Valencia.setSelected(true);
-                break;
-        }
-
-        switch (Config.getinstance().getCurrency()) {
-
-            case "€":
-
-                First_menu.Eurobtn.setSelected(true);
-
-                break;
-
-            case "£":
-
-                First_menu.Libra.setSelected(true);
-                break;
-
-            case "$":
-
-                First_menu.Dolar.setSelected(true);
-                break;
-        }
-
-        switch (Config.getinstance().getDate_format()) {
-
-            case "dd/MM/yyyy":
-
-                First_menu.formato_1.setSelected(true);
-                
-                break;
-                
-            case "dd-MM-yyyy":
-
-                First_menu.formato_2.setSelected(true);
-                
-                break;
-
-            case "yyyy-MM-dd":
-
-                First_menu.formato_3.setSelected(true);
-                
-                break;
-                
-            case "yyyy/MM/dd":
-
-                First_menu.formato_3.setSelected(true);
-
-                break;
-
-        }
-        
-        switch (Config.getinstance().getFile()) {
-
-            case "json":
-
-                First_menu.Json.setSelected(true);
-                break;
-            case "xml":
-
-                First_menu.Xml.setSelected(true);
-                break;
-
-            case "txt":
-
-                First_menu.Txt_.setSelected(true);
-                break;
-        }
-        
-         
-        switch (Config.getinstance().getTheme()) {
-
-            case "Metal":
-
-                First_menu.metal.setSelected(true);
-                break;
-                
-            case "GTK-Windows":
-
-                First_menu.gtk_windows.setSelected(true);
-                break;
-
-            case "Ninbus":
-
-                First_menu.ninbus.setSelected(true);
-                
-                break;
-                
-              case "Motif":
-
-                First_menu.motif.setSelected(true);
-                
-                break;   
-                
-                
-        }
+       First_menu_config_bll.Charge_config();
         
         
 
@@ -854,7 +657,7 @@ public class First_menu extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDialog Dialog_config;
+    public static javax.swing.JDialog Dialog_config;
     public static javax.swing.JRadioButton Dolar;
     public static javax.swing.JRadioButton English;
     public static javax.swing.JRadioButton Español;

@@ -7,11 +7,14 @@ package App.modules.main_menu.views;
 
 import App.modules.main_menu.model.Config;
 import App.modules.main_menu.views.First_menu;
+import App.modules.users.Admin.Model.Classes.Singleton;
+import App.modules.users.Admin.Model.bll.Admin_BLL;
 import App.modules.users.Admin.views.interfaz_Admin;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Collections;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
@@ -33,7 +36,7 @@ public class Menu extends javax.swing.JFrame {
 	this.setSize(720,500);//ancho x alto
         this.setLocationRelativeTo(null);
 	this.setResizable(false);
-	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/main_menu/img/Menu_image.JPG");
+	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/main_menu/views/img/Menu_image.JPG");
 	this.setIconImage(image);  
         Trasparenciabotones();
         
