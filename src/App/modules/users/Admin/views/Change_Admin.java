@@ -455,7 +455,11 @@ public class Change_Admin extends javax.swing.JFrame {
              
              timer.setRepeats(false);
              timer.start();
-            
+             
+             AdSavebtn.setEnabled(false);
+             AdCancelbtn.setEnabled(false);
+             AdReturnbtn.setEnabled(false);
+             AdChange_Avatar.setEnabled(false);
              jLabel1.setOpaque(true);
              jLabel1.setBackground(Color.green);
              jLabel1.setText("Admin modificado correctamente");
