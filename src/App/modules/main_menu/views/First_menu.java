@@ -27,8 +27,8 @@ public class First_menu extends javax.swing.JFrame {
     public First_menu() {
         initComponents();
 
-        //Config.getinstance().getTheme();
-        
+      
+        /*
 
         this.setTitle("Main menu");
         this.setLocationRelativeTo(null);
@@ -50,8 +50,10 @@ public class First_menu extends javax.swing.JFrame {
             }
         });
 
+        */
+        
     }
-
+/*
     public void Trasparenciabotones() {
 
         btn_Config.setOpaque(false);
@@ -62,7 +64,7 @@ public class First_menu extends javax.swing.JFrame {
         btn_employees.setBorderPainted(false);
 
     }
-
+*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -590,11 +592,11 @@ public class First_menu extends javax.swing.JFrame {
 
     private void btn_employeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_employeesActionPerformed
         // TODO add your handling code here:
-
+/*
         this.setVisible(false);
 
         new Menu().setVisible(true);
-
+*/
 
     }//GEN-LAST:event_btn_employeesActionPerformed
 
@@ -620,7 +622,7 @@ public class First_menu extends javax.swing.JFrame {
 
     private void btn_ConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ConfigActionPerformed
         // TODO add your handling code here:
-
+/*
        First_menu_config_bll.Charge_config();
         
         Dialog_config.setSize(550, 350);//ancho x alto
@@ -628,21 +630,24 @@ public class First_menu extends javax.swing.JFrame {
         Dialog_config.setLocationRelativeTo(null);
 
         Dialog_config.setVisible(true);
-
+*/
         
         
     }//GEN-LAST:event_btn_ConfigActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
+        
+        /*
         Dialog_config.dispose();
+*/
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAplicarActionPerformed
         // TODO add your handling code here:
-
+/*
         First_menu_config_bll.Charge_Config_to_class_config();
-
+*/
 
     }//GEN-LAST:event_btnAplicarActionPerformed
 

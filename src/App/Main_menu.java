@@ -5,6 +5,7 @@
  */
 package App;
 
+import App.modules.main_menu.Controler.Controler_main_menu;
 import App.modules.main_menu.views.First_menu;
 import App.modules.main_menu.views.Menu;
 
@@ -18,9 +19,10 @@ public class Main_menu {
     
      public static void main(String args[]) {
         
-         First_menu first = new First_menu();
-         first.setLocationRelativeTo(null);
-         first.setVisible(true);
+         //First_menu first = new First_menu();
+         new Controler_main_menu(new First_menu(), 0).Start(0);
+        // first.setLocationRelativeTo(null);
+        // first.setVisible(true);
          
         
     }

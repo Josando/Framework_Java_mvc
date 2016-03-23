@@ -30,7 +30,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
-        
+        /*
         Config.getinstance().getTheme();
         this.setTitle("Menu");
 	this.setSize(720,500);//ancho x alto
@@ -50,10 +50,10 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         
-                
+       */         
                 
     }
-
+/*
    
     public void Trasparenciabotones(){
         
@@ -65,7 +65,7 @@ public class Menu extends javax.swing.JFrame {
         
     }
     
-    
+    */
     
     
     
@@ -161,15 +161,11 @@ public class Menu extends javax.swing.JFrame {
     private void btnrAdministratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrAdministratorActionPerformed
         // TODO add your handling code here:
         
-        /*
-        this.setVisible(false);
-      
-      new Admin_Table().setVisible(true);
-       */
+     /*
           this.setVisible(false);
       
       new interfaz_Admin().setVisible(true);
-        
+       */ 
     }//GEN-LAST:event_btnrAdministratorActionPerformed
 
     private void bntclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntclientActionPerformed
@@ -178,21 +174,21 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnreturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreturnActionPerformed
         // TODO add your handling code here:
-        
+       /* 
         this.dispose();
         new First_menu().setVisible(true);
-        
+       */ 
     }//GEN-LAST:event_btnreturnActionPerformed
 
    
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bntclient;
-    private javax.swing.JButton btnrAdministrator;
-    private javax.swing.JButton btnreturn;
-    private javax.swing.JButton btnuser_reg;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
+    public static javax.swing.JButton bntclient;
+    public static javax.swing.JButton btnrAdministrator;
+    public static javax.swing.JButton btnreturn;
+    public static javax.swing.JButton btnuser_reg;
+    public static javax.swing.JLabel jLabel2;
+    public static javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
