@@ -59,7 +59,7 @@ public class pagina {
     }
     public static void initLinkBox() {
        
-                    App.modules.users.Admin.views.interfaz_Admin.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
+                    App.modules.users.Admin.controler.Controlador_Admin.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
                         @Override 
                         public boolean include(RowFilter.Entry<? extends TableModel, ? extends Integer> entry) {
                             int ti = currentPageIndex - 1;

@@ -32,10 +32,11 @@ import javax.swing.table.TableRowSorter;
 
 
 public class interfaz_Admin extends javax.swing.JFrame {
+    /*
     public static TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(new miniSimpleTableModel_Admin());
     public static AutocompleteJComboBox combo = null;
     
-    
+    */
     public interfaz_Admin() {
       //  try{
           //Config.getinstance().getTheme(); // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -43,6 +44,7 @@ public class interfaz_Admin extends javax.swing.JFrame {
         
         initComponents();    
         
+        /*
         this.setLocationRelativeTo(null);
         this.setTitle("Gestión Actores");
         this.setResizable(false);
@@ -90,8 +92,10 @@ public class interfaz_Admin extends javax.swing.JFrame {
             }
         });
          
-         
+        */ 
     }
+    
+    /*
     public static void comboActionPerformed(java.awt.event.ActionEvent evt) {                                            
                     
         System.out.println("word selected: " + ((JComboBox)combo).getSelectedItem());
@@ -103,7 +107,7 @@ public class interfaz_Admin extends javax.swing.JFrame {
     combo.requestFocus();
     } 
         
-        
+       */ 
         
         
         
@@ -446,47 +450,47 @@ public class interfaz_Admin extends javax.swing.JFrame {
 
     
     private void SIGUIENTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIGUIENTEActionPerformed
-     
+     /*
         pagina.currentPageIndex += 1;
         pagina.initLinkBox();
-        
+        */
     }//GEN-LAST:event_SIGUIENTEActionPerformed
 
     private void ANTERIORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ANTERIORActionPerformed
-      
+      /*
         pagina.currentPageIndex -= 1;
         pagina.initLinkBox();
-        
+        */
     }//GEN-LAST:event_ANTERIORActionPerformed
 
     private void primeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_primeroActionPerformed
-       
+       /*
         pagina.currentPageIndex = 1;
         pagina.initLinkBox();
-
+*/
     }//GEN-LAST:event_primeroActionPerformed
 
     private void ultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultimoActionPerformed
-       
+       /*
         pagina.currentPageIndex = pagina.maxPageIndex;
         pagina.initLinkBox();
-
+*/
     }//GEN-LAST:event_ultimoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        /*
         this.dispose();
         new Menu().setVisible(true);
-
+*/
     }//GEN-LAST:event_jButton1ActionPerformed
     
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
        
-        
+        /*
         pagina.itemsPerPage=Integer.parseInt(jComboBox1.getSelectedItem().toString());
         pagina.currentPageIndex = 1;
         pagina.initLinkBox();
-
+*/
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void SIGUIENTEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SIGUIENTEKeyReleased
@@ -496,7 +500,7 @@ public class interfaz_Admin extends javax.swing.JFrame {
     private void AdeditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdeditActionPerformed
         // TODO add your handling code here:
         
-        
+        /*
          if (Admin_BLL.Charge_Change_Admin()==true){
         
            this.setVisible(false);
@@ -505,48 +509,51 @@ public class interfaz_Admin extends javax.swing.JFrame {
             
            
          }  
-        
+        */
         
     }//GEN-LAST:event_AdeditActionPerformed
 
     private void AdcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdcreateActionPerformed
         // TODO add your handling code here:
-
+/*
         this.setVisible(false);
 
         new Create_Admin().setVisible(true);
-
+*/
     }//GEN-LAST:event_AdcreateActionPerformed
 
     private void AdreturnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdreturnbtnActionPerformed
         // TODO add your handling code here:
+        
+        /*
         this.dispose();
 
         new Menu().setVisible(true);
+*/
     }//GEN-LAST:event_AdreturnbtnActionPerformed
 
     private void Delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_btnActionPerformed
         // TODO add your handling code here:
        
-       Admin_BLL.Delete_Admin();
+       //Admin_BLL.Delete_Admin();
        
         
     }//GEN-LAST:event_Delete_btnActionPerformed
 
     private void JsonbntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JsonbntActionPerformed
         // TODO add your handling code here:
-        Admin_BLL.save_json();
+       // Admin_BLL.save_json();
         
     }//GEN-LAST:event_JsonbntActionPerformed
 
     private void XmlbntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XmlbntActionPerformed
         // TODO add your handling code here:
-        Admin_BLL.save_xml();
+       // Admin_BLL.save_xml();
     }//GEN-LAST:event_XmlbntActionPerformed
 
     private void TxtbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtbtnActionPerformed
         // TODO add your handling code here:
-        Admin_BLL.save_txt();
+        //Admin_BLL.save_txt();
     }//GEN-LAST:event_TxtbtnActionPerformed
 
     
@@ -555,29 +562,29 @@ public class interfaz_Admin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton ANTERIOR;
-    private javax.swing.JButton Adcreate;
-    private javax.swing.JButton Adedit;
-    private javax.swing.JButton Adreturnbtn;
+    public static javax.swing.JButton Adcreate;
+    public static javax.swing.JButton Adedit;
+    public static javax.swing.JButton Adreturnbtn;
     public static javax.swing.JTextField CAJA;
-    private javax.swing.JButton Delete_btn;
-    private javax.swing.JButton Jsonbnt;
+    public static javax.swing.JButton Delete_btn;
+    public static javax.swing.JButton Jsonbnt;
     public static javax.swing.JButton SIGUIENTE;
     public static javax.swing.JTable TABLA;
-    private javax.swing.JButton Txtbtn;
-    private javax.swing.JButton Xmlbnt;
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton Txtbtn;
+    public static javax.swing.JButton Xmlbnt;
+    public static javax.swing.JButton jButton1;
     public static javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public static javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel2;
     public static javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    public static javax.swing.JLabel jLabel4;
+    public static javax.swing.JPanel jPanel1;
+    public static javax.swing.JPanel jPanel2;
     public static javax.swing.JPanel jPanel3;
     public static javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JPanel jPanel5;
+    public static javax.swing.JPanel jPanel6;
+    public static javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JButton primero;
     public static javax.swing.JButton ultimo;
     // End of variables declaration//GEN-END:variables
