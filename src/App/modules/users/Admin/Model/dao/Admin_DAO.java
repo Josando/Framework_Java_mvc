@@ -915,7 +915,7 @@ public class Admin_DAO {
                 File dest = new File("src\\App\\utils\\img_app\\Users_Avatar_images\\"+source.getName());
 
                 Singleton_App.ruta_imagen = dest.toString();
-                JOptionPane.showMessageDialog(null, Singleton_App.ruta_imagen );
+                //JOptionPane.showMessageDialog(null, Singleton_App.ruta_imagen );
                 
                 Funciones.copyFileUsingJava7Files(source, dest);
                                
@@ -974,7 +974,7 @@ public class Admin_DAO {
                 File dest = new File("src\\App\\utils\\img_app\\Users_Avatar_images\\"+source.getName());
 
                 Singleton_App.ruta_imagen = dest.toString();
-                JOptionPane.showMessageDialog(null, Singleton_App.ruta_imagen );
+                //JOptionPane.showMessageDialog(null, Singleton_App.ruta_imagen );
                 
                 Funciones.copyFileUsingJava7Files(source, dest);
                                

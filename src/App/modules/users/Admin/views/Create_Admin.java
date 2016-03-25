@@ -36,6 +36,7 @@ public class Create_Admin extends javax.swing.JFrame {
     public Create_Admin() {
         initComponents();
         
+        /*
         Config.getinstance().getTheme();
         this.setTitle("Admin_Table");
 	this.setSize(520,550);//ancho x alto
@@ -59,7 +60,7 @@ public class Create_Admin extends javax.swing.JFrame {
             }
         });
         
-        
+        */
         
         
         
@@ -170,8 +171,6 @@ public class Create_Admin extends javax.swing.JFrame {
 
         Admobil.setText("Mobil:");
 
-        AdNametext.setForeground(new java.awt.Color(204, 204, 204));
-        AdNametext.setText("Name");
         AdNametext.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 AdNametextFocusGained(evt);
@@ -492,95 +491,104 @@ public class Create_Admin extends javax.swing.JFrame {
 
     private void AdMobiltextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdMobiltextActionPerformed
         // TODO add your handling code here:
-        
+        /*
         Admin_BLL.ask_mobil();
-        
+        */
     }//GEN-LAST:event_AdMobiltextActionPerformed
 
     private void AdNametextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdNametextActionPerformed
         // TODO add your handling code here:
-        
+        /*
         Admin_BLL.requests_name();
-        
+        */
     }//GEN-LAST:event_AdNametextActionPerformed
 
     private void AdNametextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdNametextKeyPressed
         // TODO add your handling code here:
-         Admin_BLL.requests_name();
+        /*
         
+         Admin_BLL.requests_name();
+        */
     }//GEN-LAST:event_AdNametextKeyPressed
 
     private void AdSurnametextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdSurnametextKeyReleased
         // TODO add your handling code here:
-        
+        /*
          Admin_BLL.requests_surname();
+        */
     }//GEN-LAST:event_AdSurnametextKeyReleased
 
     private void AdNametextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AdNametextFocusGained
         // TODO add your handling code here:
-        
+        /*
         AdNametext.setText("");
         AdNametext.setForeground(Color.black);
+        */
     }//GEN-LAST:event_AdNametextFocusGained
 
     private void AdMobiltextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdMobiltextKeyPressed
         // TODO add your handling code here:
-        
+        /*
         Admin_BLL.ask_mobil();
+        */
+        
     }//GEN-LAST:event_AdMobiltextKeyPressed
 
     private void AdMobiltextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdMobiltextKeyReleased
         // TODO add your handling code here:
-        
+        /*
         Admin_BLL.ask_mobil();
-        
+        */
     }//GEN-LAST:event_AdMobiltextKeyReleased
 
     private void ADEmailtextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADEmailtextKeyReleased
         // TODO add your handling code here:
-        
+        /*
         Admin_BLL.ask_email();
-        
+        */
     }//GEN-LAST:event_ADEmailtextKeyReleased
 
     private void ADEmailtextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADEmailtextKeyPressed
         // TODO add your handling code here:
-        
+        /*
          Admin_BLL.ask_email();
-                
+          */      
     }//GEN-LAST:event_ADEmailtextKeyPressed
 
     private void AdUsernametextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdUsernametextKeyReleased
         // TODO add your handling code here:
-      
+      /*
         Admin_BLL.ask_username();
-        
+        */
     }//GEN-LAST:event_AdUsernametextKeyReleased
 
     private void AdPasstextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdPasstextKeyReleased
         // TODO add your handling code here:
-        
+        /*
        Admin_BLL.ask_pass();
-        
+        */
     }//GEN-LAST:event_AdPasstextKeyReleased
 
     private void AdActivitytextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdActivitytextKeyReleased
         // TODO add your handling code here:
-     
+     /*
          Admin_BLL.ask_Activity();
+         */
+         
     }//GEN-LAST:event_AdActivitytextKeyReleased
 
     private void AdIDtextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdIDtextKeyReleased
         // TODO add your handling code here:
-        
+        /*
         Admin_BLL.ask_ID();
-        
+        */
     }//GEN-LAST:event_AdIDtextKeyReleased
 
     private void AdIDtextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdIDtextKeyPressed
         // TODO add your handling code here:
-        
+        /*
         Admin_BLL.ask_ID();
+        */
     }//GEN-LAST:event_AdIDtextKeyPressed
 
     private void AdIDtextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AdIDtextFocusLost
@@ -592,13 +600,14 @@ public class Create_Admin extends javax.swing.JFrame {
 
     private void AdNametextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdNametextKeyReleased
         // TODO add your handling code here:
-        
+        /*
         Admin_BLL.requests_name();
+        */
     }//GEN-LAST:event_AdNametextKeyReleased
 
     private void AdSavebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdSavebtnActionPerformed
         // TODO add your handling code here:
-               
+        /*       
        if( Admin_BLL.save_admin()==true){
              
            Timer timer =new Timer(3000,new ActionListener(){
@@ -631,7 +640,7 @@ public class Create_Admin extends javax.swing.JFrame {
            
        } 
            
-            
+          */  
         
     }//GEN-LAST:event_AdSavebtnActionPerformed
 
@@ -653,55 +662,56 @@ public class Create_Admin extends javax.swing.JFrame {
 
     private void AdReturnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdReturnbtnActionPerformed
         // TODO add your handling code here:
+        /*
         this.dispose();
         new interfaz_Admin().setVisible(true);
-        
+        */
         
     }//GEN-LAST:event_AdReturnbtnActionPerformed
 
     private void AdCargarAvatarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdCargarAvatarActionPerformed
         // TODO add your handling code here:
-        
+        /*
         Admin_BLL.charge_avatar();
-        
+        */
     }//GEN-LAST:event_AdCargarAvatarActionPerformed
 
     private void AdPasstextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_AdPasstextFocusGained
         // TODO add your handling code here:
-        
+        /*
         AdPasstext.setText("");
-        
+        */
         
     }//GEN-LAST:event_AdPasstextFocusGained
 
       
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField ADEmailtext;
-    private javax.swing.JLabel AdActivity;
+    public static javax.swing.JLabel AdActivity;
     public static javax.swing.JTextField AdActivitytext;
     public static javax.swing.JLabel AdAvartaimg;
-    private javax.swing.JLabel AdAvatar;
-    private javax.swing.JButton AdCancelbtn;
+    public static javax.swing.JLabel AdAvatar;
+    public static javax.swing.JButton AdCancelbtn;
     public static javax.swing.JButton AdCargarAvatar;
-    private javax.swing.JLabel AdDate_birthday;
-    private javax.swing.JLabel AdEmail;
-    private javax.swing.JLabel AdHiredate;
+    public static javax.swing.JLabel AdDate_birthday;
+    public static javax.swing.JLabel AdEmail;
+    public static javax.swing.JLabel AdHiredate;
     public static javax.swing.JFormattedTextField AdIDtext;
-    private javax.swing.JLabel AdId;
+    public static javax.swing.JLabel AdId;
     public static javax.swing.JTextField AdMobiltext;
-    private javax.swing.JLabel AdName;
+    public static javax.swing.JLabel AdName;
     public static javax.swing.JTextField AdNametext;
-    private javax.swing.JLabel AdPass;
+    public static javax.swing.JLabel AdPass;
     public static javax.swing.JPasswordField AdPasstext;
-    private javax.swing.JButton AdReturnbtn;
-    private javax.swing.JButton AdSavebtn;
-    private javax.swing.JLabel AdSurname;
+    public static javax.swing.JButton AdReturnbtn;
+    public static javax.swing.JButton AdSavebtn;
+    public static javax.swing.JLabel AdSurname;
     public static javax.swing.JTextField AdSurnametext;
     public static javax.swing.JTextField AdUsernametext;
-    private javax.swing.JLabel AdUsname;
+    public static javax.swing.JLabel AdUsname;
     public static com.toedter.calendar.JDateChooser Addatebirthdaytext;
     public static com.toedter.calendar.JDateChooser Adhiredatetext;
-    private javax.swing.JLabel Admobil;
+    public static javax.swing.JLabel Admobil;
     public static javax.swing.JComboBox<String> Status_combo;
     public static javax.swing.JLabel activity_label;
     public static javax.swing.JLabel avatar_label;
@@ -709,13 +719,13 @@ public class Create_Admin extends javax.swing.JFrame {
     public static javax.swing.JLabel email_label;
     public static javax.swing.JLabel hiredate_label;
     public static javax.swing.JLabel id_label;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    public static javax.swing.JButton jButton1;
+    public static javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel11;
+    public static javax.swing.JLabel jLabel2;
+    public static javax.swing.JLabel jLabel7;
+    public static javax.swing.JLabel jLabel9;
+    public static javax.swing.JPanel jPanel1;
     public static javax.swing.JLabel mobil_label;
     public static javax.swing.JLabel name_label;
     public static javax.swing.JLabel pass_label;
