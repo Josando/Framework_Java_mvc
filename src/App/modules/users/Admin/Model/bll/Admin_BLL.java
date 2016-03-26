@@ -23,6 +23,7 @@ import static App.modules.users.Admin.views.interfaz_Admin.jLabel3;
 import App.modules.main_menu.model.Language.Language;
 import App.modules.users.Admin.Model.Files.File_utils.utils.txt;
 import App.modules.users.Admin.Model.Files.File_utils.utils.xml;
+import App.modules.users.Admin.controler.Controlador_Admin;
 import App.modules.users.User.User;
 import App.utils.Singleton_App;
 import App.utils.Validate;
@@ -202,7 +203,9 @@ public class Admin_BLL {
 
             } else {
 
-                new Change_Admin().setVisible(true);
+                 new Controlador_Admin(new Change_Admin(), 2).Start(2);
+                
+               // new Change_Admin().setVisible(true);
 
                 //DefaultTableModel modelotabla = (DefaultTableModel) TABLA.getModel();
                 String Id = (String) TABLA.getValueAt(filaseleccionada, 0);

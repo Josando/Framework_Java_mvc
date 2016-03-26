@@ -330,7 +330,93 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
          
           if (i == 2) {
               
-              
+        Change.setVisible(true);        
+        Change.setTitle("Admin_Table");
+	Change.setSize(520,550);//ancho x alto
+        Change.setLocationRelativeTo(null);
+	Change.setResizable(false);
+	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
+	Change.setIconImage(image);   
+        Change.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
+        Change.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
+       // AdAvatar.setSize(90,90);
+        ////Cerrar ventana
+       
+         this.Change.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		Change.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+               
+                Change.dispose();
+                 //new interfaz_Admin().setVisible(true);  
+                 new Controlador_Admin(new interfaz_Admin(), 0).Start(0);                       
+            }
+        });   
+                                  
+            Change.ADEmailtext.setActionCommand(" Change_ADEmailtext");
+            Change.ADEmailtext.setName("Change_ADEmailtext");
+            Change.ADEmailtext.addKeyListener(this);
+            Change.ADEmailtext.addActionListener(this);
+            
+            Change.AdActivitytext.setActionCommand("Change_AdActivitytext");
+            Change.AdActivitytext.setName("Change_AdActivitytext");
+            Change.AdActivitytext.addKeyListener(this);
+            Change.AdActivitytext.addActionListener(this);
+                
+            Change.AdCancelbtn.setActionCommand("Change_AdCancelbtn");
+            Change.AdCancelbtn.setName("Change_AdCancelbtn");            
+            Change.AdCancelbtn.addActionListener(this);    
+                
+            Change.AdChange_Avatar.setActionCommand("Change_AdChange_Avatar");
+            Change.AdChange_Avatar.setName("Change_AdChange_Avatar");
+            Change.AdChange_Avatar.addKeyListener(this);
+            Change.AdChange_Avatar.addActionListener(this);    
+            
+            Change.AdIDtext.setActionCommand("Change_AdIDtext");
+            Change.AdIDtext.setName("Change_AdIDtext");
+            Change.AdIDtext.addKeyListener(this);
+            Change.AdIDtext.addActionListener(this);
+            
+            Change.AdMobiltext.setActionCommand("Change_AdMobiltext");
+            Change.AdMobiltext.setName("Change_AdMobiltext");
+            Change.AdMobiltext.addKeyListener(this);
+            Change.AdMobiltext.addActionListener(this);
+            
+            Change.AdNametext.setActionCommand("Change_AdNametext");
+            Change.AdNametext.setName("Change_AdNametext");
+            Change.AdNametext.addKeyListener(this);
+            Change.AdNametext.addActionListener(this);    
+            
+            Change.AdPasstext.setActionCommand("Change_AdPasstext");
+            Create.AdPasstext.setName("Change_AdPasstext");
+            
+            Change.AdPasstext.addKeyListener(this);
+            Change.AdPasstext.addActionListener(this); 
+            Change.AdPasstext.addFocusListener(this);
+            
+            Change.AdReturnbtn.setActionCommand("Change_AdReturnbtn");
+            Change.AdReturnbtn.setName("Change_AdReturnbtn");            
+            Change.AdReturnbtn.addActionListener(this);
+            
+            Change.AdSavebtn.setActionCommand("Change_AdSavebtn");
+            Change.AdSavebtn.setName("Change_AdSavebtn");            
+            Change.AdSavebtn.addActionListener(this);
+            
+            Change.AdSurnametext.setActionCommand("Change_AdSurnametext");
+            Change.AdSurnametext.setName("Change_AdSurnametext");
+            Change.AdSurnametext.addKeyListener(this);
+            Change.AdSurnametext.addActionListener(this); 
+            
+            Change.AdUsernametext.setActionCommand("Change_AdUsernametext");
+            Change.AdUsernametext.setName("Change_AdUsernametext");
+            Change.AdUsernametext.addKeyListener(this);
+            Change.AdUsernametext.addActionListener(this);
+                       
+            Change.Addatebirthdaytext.setName("Change_Addatebirthdaytext");
+            Change.Addatebirthdaytext.addKeyListener(this);
+           
+            Change.Adhiredatetext.setName("Change_Adhiredatetext");
+            Change.Adhiredatetext.addKeyListener(this);           
               
           }//Fi del if Change_Admin
          
@@ -485,6 +571,52 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                  
                  break;
                
+             case Change_AdSavebtn:
+                 
+               if( Admin_BLL.change_Admin()==true){
+                    
+             Timer timer =new Timer(3000,new ActionListener(){
+               
+               @Override
+               public void actionPerformed(ActionEvent e){
+                   Change.dispose();
+                   
+                       new Controlador_Admin(new interfaz_Admin(), 0).Start(0);                
+                                     
+               }
+           });
+             
+             //jLabel1.setText("Admin creado con gracia");
+             
+             timer.setRepeats(false);
+             timer.start();
+             
+             Change.AdSavebtn.setEnabled(false);
+             Change.AdCancelbtn.setEnabled(false);
+             Change.AdReturnbtn.setEnabled(false);
+             Change.AdChange_Avatar.setEnabled(false);
+             Change.jLabel1.setOpaque(true);
+             Change.jLabel1.setBackground(Color.green);
+             Change.jLabel1.setText("Admin modificado correctamente");                         
+       
+         }  
+              
+               break;
+               
+             case Change_AdReturnbtn:
+                 
+                  Change.dispose();
+        
+                  new Controlador_Admin(new interfaz_Admin(), 0).Start(0);                    
+                                
+                 break;
+             
+             case Change_AdChange_Avatar:
+                 
+                  Admin_BLL.Change_Change_Avatar();
+                 
+                 break; 
+                                  
                
          }
         
@@ -502,6 +634,13 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
               Create.AdPasstext.setText("");
               
               break;
+              
+          case Change_AdPasstext:
+              
+               Create.AdPasstext.setText("");
+              
+              break;
+              
           
           
     }
@@ -591,7 +730,50 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                 
             break;
             
-            
+            case Change_AdNametext:
+                
+             Admin_BLL.Change_requests_name(); 
+                
+                break;
+                
+            case Change_AdSurnametext:
+                
+               Admin_BLL.Change_requests_surname(); 
+                
+                break;
+                
+            case Change_AdMobiltext:
+                
+                Admin_BLL.Change_ask_mobil();
+                
+                break;
+                
+            case Change_ADEmailtext:
+                
+                 Admin_BLL.Change_ask_email();
+                
+                break;
+                
+            case Change_AdUsernametext:
+                
+                Admin_BLL.Change_ask_username();
+                
+                break;
+                
+                
+            case Change_AdPasstext:
+                
+                Admin_BLL.Change_ask_pass();
+                
+                break;
+                
+            case Change_AdActivitytext:
+                
+                Admin_BLL.Change_ask_Activity();
+                
+                break;
+                
+                  
             
            }
        
