@@ -1,13 +1,11 @@
-package App.modules.users.Admin.Model.Files.File_utils.utils;
+package App.modules.users.Client.Model.Files.File_utils.utils;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collection;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -18,14 +16,17 @@ import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
+
 import App.modules.main_menu.model.Config;
-import App.modules.users.Admin.Model.Classes.Admin;
-import App.modules.users.Admin.Model.Classes.Singleton;
+
+import App.modules.users.Client.Model.Classes.Client;
+import App.modules.users.Client.Model.Classes.Singleton_cli;
 
 
-public class json {
+public class json_client {
 
-	public static void save_admin_json() {
+	
+   public static void save_client_json() {
 		
         String PATH = null;
         
@@ -35,7 +36,7 @@ public class json {
 	          
 	          xstreamjson.setMode(XStream.NO_REFERENCES);
 	          
-	          xstreamjson.alias("Admin", Admin.class);
+	          xstreamjson.alias("Client", Client.class);
 	          
 	          JFileChooser fileChooser = new JFileChooser();
 	          
@@ -54,7 +55,7 @@ public class json {
 	                	                
 	                Gson gson = new Gson();
 	                
-		            String json = gson.toJson(Singleton.ad);
+		            String json = gson.toJson(Singleton_cli.cli);
 		            
 		            FileWriter fileXml = new FileWriter(PATH);
 		            
@@ -69,12 +70,16 @@ public class json {
         	JOptionPane.showMessageDialog(null, "Error al grabar el JSON", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+                   
     
-    public static ArrayList<Admin> open_admin_json() {
+    /////////////////////////////////////////////
+	
+     
+    public static ArrayList<Client> open_client_json() {
     	
     	String PATH = null;
     	
-    	Admin e1 = new Admin("");
+    	Client e1 = new Client("");
     	
         try {
         	
@@ -82,7 +87,7 @@ public class json {
         	  
 	          xstream.setMode(XStream.NO_REFERENCES);
 	          
-			  xstream.alias("Admin", Admin.class);
+			  xstream.alias("Client", Client.class);
 			  
 			  JFileChooser fileChooser = new JFileChooser();
 			  
@@ -97,7 +102,7 @@ public class json {
 	                
 	                PATH = JFC.getAbsolutePath();
 	               
-	                Singleton.ad.clear();
+	                Singleton_cli.cli.clear();
 	               
 	              
 	                JsonReader lector = new JsonReader(new FileReader(PATH));
@@ -112,141 +117,147 @@ public class json {
 	            	
 	            	for (JsonElement elemento : lista) {
 	            		
-	            		e1 = json.fromJson(elemento, Admin.class);
+	            		e1 = json.fromJson(elemento, Client.class);
 	            		
-	            		Singleton.ad.add(e1);
+	            		Singleton_cli.cli.add(e1);
 	            	}
-	            	
-	            JOptionPane.showMessageDialog(null, "Cargado", "Archivo cargado con exito", JOptionPane.INFORMATION_MESSAGE );
 	          } 
-	          
         } catch (Exception e) {
         	JOptionPane.showMessageDialog(null, "Error al leer el JSON", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        return Singleton.ad;
+        return Singleton_cli.cli;
     }
-
-    /////////////////////////////////////////////
-    
-    
-   ///////////////////////////////////////////////
-   
 
     //////////////////////////////////////////////           
    
     
 
     
-    public static void auto_save_Admin_json() {
+    public static void auto_save_Client_json() {
 	   
 	   
 	   String PATH = null;
 	   
-	   /////////Save admin//////////
-	   
-	   try {
-		   
-           PATH = new java.io.File(".").getCanonicalPath()
-           		
-                   + "/src/App/Modules/users/Admin/model/files/admin_files/admin.json";
-           
-       } catch (IOException e) {
-       	
-           e.printStackTrace();
-       }
-	          
+	   	   
+	   /////////////////Save Cli///////////////////////
+	      
+	      
 	      try {
-	    	  
-	          XStream xstreamjson = new XStream(new JettisonMappedXmlDriver());
-	          
-	          xstreamjson.setMode(XStream.NO_REFERENCES);
-	          
-	          xstreamjson.alias("Admin", Admin.class);
-	          
-	          /**
-	          JFileChooser fileChooser = new JFileChooser();
-	          	          
-	          int seleccion = fileChooser.showSaveDialog(null);
-	          
-	          if (seleccion == JFileChooser.APPROVE_OPTION) {
-	        	  
-	                File JFC = fileChooser.getSelectedFile();
-	                
-	                PATH = JFC.getAbsolutePath();
-	                
-	                PATH=PATH+ ".json";
-	                	                
-	                */
-	                	                
-	                Gson gson = new Gson();
-	                
-		            String json = gson.toJson(Singleton.ad);
-		            
-		            FileWriter fileXml = new FileWriter(PATH);
-		            
-	                fileXml.write(json.toString());
-	                
-	                fileXml.close(); 
-	                
-	               // JOptionPane.showMessageDialog(null, "Archivo JSON guardado con exito", "Archivo JSON", JOptionPane.INFORMATION_MESSAGE);
-	        //  }
-     } catch (Exception e) {
-     	
-     	JOptionPane.showMessageDialog(null, "Error al grabar el JSON.ADMIN", "Error", JOptionPane.ERROR_MESSAGE);
-     }
+			   
+	           PATH = new java.io.File(".").getCanonicalPath()
+	           		
+	                   + "/src/App/Modules/users/Client/Model/Files/client_files/client.json";
+	           
+	       } catch (IOException e) {
+	       	
+	           e.printStackTrace();
+	       }
+		          
+		      try {
+		    	  
+		          XStream xstreamjson = new XStream(new JettisonMappedXmlDriver());
+		          
+		          xstreamjson.setMode(XStream.NO_REFERENCES);
+		          
+		          xstreamjson.alias("Client", Client.class);
+		          
+		          /**
+		          JFileChooser fileChooser = new JFileChooser();
+		          	          
+		          int seleccion = fileChooser.showSaveDialog(null);
+		          
+		          if (seleccion == JFileChooser.APPROVE_OPTION) {
+		        	  
+		                File JFC = fileChooser.getSelectedFile();
+		                
+		                PATH = JFC.getAbsolutePath();
+		                
+		                PATH=PATH+ ".json";
+		                	                
+		                */
+		                	                
+		                Gson gson = new Gson();
+		                
+			            String json = gson.toJson(Singleton_cli.cli);
+			            
+			            FileWriter fileXml = new FileWriter(PATH);
+			            
+		                fileXml.write(json.toString());
+		                
+		                fileXml.close(); 
+		                
+		              //  JOptionPane.showMessageDialog(null, "Archivo JSON guardado con exito", "Archivo JSON", JOptionPane.INFORMATION_MESSAGE);
+		        //  }
+	     } catch (Exception e) {
+	     	
+	     	JOptionPane.showMessageDialog(null, "Error al grabar el JSON.CLIENT", "Error", JOptionPane.ERROR_MESSAGE);
+	     }
 	   
 	  
+		      
+		      
+		      
 		      
 	   
    }
 
-    public static void auto_open_admin_json(){
+    public static void auto_open_client_json(){
 	   
 	   
 	   String PATH = null;
    	
-   	Admin e1 = new Admin("");
+   	
+   	Client c1 = new Client();
    	
    	
+   	
+     
+       
+     ////////////////////////////open client
+       
+       
        try {
-       	    	   
-       	  XStream xstream = new XStream(new JettisonMappedXmlDriver());
-       	  
-	          xstream.setMode(XStream.NO_REFERENCES);
-	          
-			  xstream.alias("Admin", Admin.class);
-			  
-			  
-			  PATH = new java.io.File(".").getCanonicalPath()
-	                   + "/src/App/Modules/users/Admin/model/files/admin_files/admin.json";
-	    	   	               
-	                Singleton.ad.clear();
-	             	              
-	                JsonReader lector = new JsonReader(new FileReader(PATH));
-	                
-	                JsonParser parseador = new JsonParser();
-	                
-	                JsonElement raiz = parseador.parse(lector);
-	            		  
-	            	Gson json = new Gson();
-	            	
-	            	JsonArray lista = raiz.getAsJsonArray();
-	            	
-	            	for (JsonElement elemento : lista) {
-	            		
-	            		e1 = json.fromJson(elemento, Admin.class);
-	            		
-	            		Singleton.ad.add(e1);
-	            			            		
-	            			            			            		
-	            	}
-	       //   } 
-       } catch (Exception e) {
-    	   
-       	JOptionPane.showMessageDialog(null, "Error al leer el JSON.ADMIN", "Error", JOptionPane.ERROR_MESSAGE);
-       	
-       } 
+	    	   
+        	  XStream xstream = new XStream(new JettisonMappedXmlDriver());
+        	  
+ 	          xstream.setMode(XStream.NO_REFERENCES);
+ 	          
+ 			  xstream.alias("Client", Client.class);
+ 			  
+ 			  
+ 			  PATH = new java.io.File(".").getCanonicalPath()
+ 	                   + "/src/App/Modules/users/Client/Model/Files/client_files/client.json";
+ 	    	   	               
+ 	                Singleton_cli.cli.clear();
+ 	             	              
+ 	                JsonReader lector = new JsonReader(new FileReader(PATH));
+ 	                
+ 	                JsonParser parseador = new JsonParser();
+ 	                
+ 	                JsonElement raiz = parseador.parse(lector);
+ 	            		  
+ 	            	Gson json = new Gson();
+ 	            	
+ 	            	JsonArray lista = raiz.getAsJsonArray();
+ 	            	
+ 	            	for (JsonElement elemento : lista) {
+ 	            		
+ 	            		c1 = json.fromJson(elemento, Client.class);
+ 	            		
+ 	            		Singleton_cli.cli.add(c1);
+ 	            			            		
+ 	            			            			            		
+ 	            	}
+ 	       //   } 
+        } catch (Exception e) {
+     	   
+        	JOptionPane.showMessageDialog(null, "Error al leer el JSON.CLIENT", "Error", JOptionPane.ERROR_MESSAGE);
+        	
+        }
+	   	   
+	   ////////////////////open user_reg//////////////////////////////
+       
+                            
        
    }
    

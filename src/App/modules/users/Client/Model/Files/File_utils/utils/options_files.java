@@ -1,36 +1,38 @@
-package App.modules.users.Admin.Model.Files.File_utils.utils;
+package App.modules.users.Client.Model.Files.File_utils.utils;
 
 import javax.swing.JOptionPane;
 
 import App.modules.main_menu.model.Config;
-import App.modules.users.Admin.Model.Classes.Singleton;
+import App.modules.users.Client.Model.Classes.Singleton_cli;
+
 import App.utils.Menus;
 
 public class options_files {
-
-	
-	public static void option_saves_admin() {
 		
-		if(Singleton.ad.size()!=0){
+	/////////////////////////////////////////////
+	
+	public static void option_saves_client() {
+		
+		if(Singleton_cli.cli.size()!=0){
 		
 		
 		switch (Config.getinstance().getFile()) {
 		
 		case "json":
 			
-			json.save_admin_json();
+			json_client.save_client_json();
 			
 			break;
 
 		case "txt":
 			
-			txt.save_admin_txt();
+			txt_client.save_client_txt();
 			
 			break;	
 			
 		case "xml":
 		
-			xml.save_admin_xml();
+			xml_client.save_client_xml();
 		
 			break;
 		}
@@ -40,19 +42,19 @@ public class options_files {
 			JOptionPane.showMessageDialog(null, "admin vacio", "Error", JOptionPane.ERROR_MESSAGE);
 	}
 	
-	public static void option_open_admin() {
+	public static void option_open_client() {
 		
 		boolean s = false;
 		
-		if(Singleton.ad.size()!=0){
+		if(!Singleton_cli.cli.isEmpty()){
 		
-		s = Menus.yes_no("Guardar", "�Quieres guardar antes de abrir un nuevo fichero?");
+		s = Menus.yes_no("Guardar", "¿Quieres guardar antes de abrir un nuevo fichero?");
 		
 		}
 		
 		if(s==true){
 			
-			options_files.option_saves_admin();
+			options_files.option_saves_client();
 			
 		}else{
 			
@@ -61,40 +63,26 @@ public class options_files {
 		
 		case "json":
 			
-			json.open_admin_json();
-			
-			
+			json_client.open_client_json();
 			
 			break;
 
 		case "txt":
 			
-			txt.open_admin_txt();
-			
-			
+			txt_client.open_client_txt();
 			
 			break;	
 			
 		case "xml":
 		
-			xml.open_admin_xml();
-			
+			xml_client.open_client_xml();
+		
 			break;
-			
-			
 		}
 		
 		
-		
-		
 	}
 	
-	}
-		
-	/////////////////////////////////////////////
-	
-	/////////////////////////////////////////////	
-	
-	
+        }
 	
 }

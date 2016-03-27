@@ -13,11 +13,15 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import App.modules.users.Admin.Model.Classes.Admin;
 import App.modules.users.Client.Model.Classes.Client;
 import App.modules.users.Admin.Model.Classes.Singleton;
+import App.modules.users.Client.Model.Classes.Singleton_cli;
 import App.modules.users.User_reg.Model.Classes.User_reg;
 import App.modules.users.Admin.Model.Files.File_utils.utils.Dummies;
 import App.modules.users.Admin.Model.Files.File_utils.utils.json;
 import App.modules.users.Admin.Model.Files.File_utils.utils.txt;
 import App.modules.users.Admin.Model.Files.File_utils.utils.xml;
+import App.modules.users.Client.Model.Files.File_utils.utils.Dummies_client;
+import App.modules.users.Client.Model.Files.File_utils.utils.json_client;
+import static App.modules.users.Client.Model.Files.File_utils.utils.json_client.auto_save_Client_json;
 import App.utils.Format;
 import App.utils.Funciones;
 import App.utils.Menus;
@@ -50,14 +54,15 @@ public class Config implements Serializable{
 			
 			json.open_config_json();	
 			First_menu_config_bll.Charge_config();
-			Singleton.cli = new ArrayList <Client>();
-			Singleton.us = new ArrayList <User_reg>();
+			Singleton_cli.cli = new ArrayList <Client>();
+			//Singleton.us = new ArrayList <User_reg>();
 			Singleton.ad = new ArrayList <Admin>();	
 			
 			themes.Choicethemes();
 			//Dummies.Load_Dummies();
-			json.auto_open_admin_json();
-			
+			Dummies_client.Load_Dummies();
+			//json_client.auto_open_client_json();
+                        json.auto_open_admin_json();
 		}
 		
 		return instance;

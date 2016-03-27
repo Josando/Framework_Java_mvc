@@ -1,5 +1,5 @@
-package App.modules.users.Admin.Model.Utils.Pager;
-import App.modules.users.Admin.Model.Classes.miniSimpleTableModel_Admin;
+package App.modules.users.Client.Model.Utils.Pager;
+import App.modules.users.Client.Model.Utils.Pager.LinkViewRadioButtonUI;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -11,7 +11,8 @@ import javax.swing.ButtonModel;
 import javax.swing.JRadioButton;
 import javax.swing.RowFilter;
 import javax.swing.table.TableModel;
-import  App.modules.users.Admin.views.interfaz_Admin;
+import App.modules.users.Client.Model.Classes.miniSimpleTableModel_Client;
+import App.modules.users.Client.views.interfaz_Client;
 
 
 public class pagina {
@@ -27,7 +28,7 @@ public class pagina {
         int rowCount = 0;
        // switch (ppal.singleton_vtna){
        //     case "interfaz_actor":
-                    rowCount = ((miniSimpleTableModel_Admin)App.modules.users.Admin.views.interfaz_Admin.TABLA.getModel()).getRowCount();
+                    rowCount = ((miniSimpleTableModel_Client)App.modules.users.Client.views.interfaz_Client.TABLA.getModel()).getRowCount();
              //       break;
            // case "interfaz_peli": 
                    // rowCount = ((miniSimpleTableModel_peli)pager.modules.pelis.interfaz_peli.TABLA.getModel()).getRowCount();
@@ -43,8 +44,8 @@ public class pagina {
         box.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
        // switch (ppal.singleton_vtna){
          //   case "interfaz_actor":
-                    interfaz_Admin.jPanel4.setLayout(new BorderLayout());
-                    interfaz_Admin.jPanel4.add(pagina.box);
+                    interfaz_Client.jPanel4.setLayout(new BorderLayout());
+                    interfaz_Client.jPanel4.add(pagina.box);
            //         break;
            // case "interfaz_peli": 
              //       interfaz_peli.jPanel4.setLayout(new BorderLayout());
@@ -58,7 +59,7 @@ public class pagina {
     }
     public static void initLinkBox() {
        
-                    App.modules.users.Admin.controler.Controlador_Admin.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
+                    App.modules.users.Client.controler.Controlador_Client.sorter.setRowFilter(new RowFilter<TableModel, Integer>() {
                         @Override 
                         public boolean include(RowFilter.Entry<? extends TableModel, ? extends Integer> entry) {
                             int ti = currentPageIndex - 1;
@@ -77,7 +78,7 @@ public class pagina {
         int rowCount = 0;
        
            
-        rowCount = ((miniSimpleTableModel_Admin)App.modules.users.Admin.views.interfaz_Admin.TABLA.getModel()).getRowCount();
+        rowCount = ((miniSimpleTableModel_Client)App.modules.users.Client.views.interfaz_Client.TABLA.getModel()).getRowCount();
               
         int v = rowCount%itemsPerPage==0 ? 0 : 1;
         maxPageIndex = rowCount/itemsPerPage + v;
@@ -90,11 +91,11 @@ public class pagina {
         if(  (rowCount<=itemsPerPage) && (rowCount>0)  ){ //caben todos los datos en la misma página
            
                 //actualizar botones y caja: desactivarlos
-                App.modules.users.Admin.views.interfaz_Admin.primero.setEnabled(false);
-                App.modules.users.Admin.views.interfaz_Admin.ANTERIOR.setEnabled(false);
-                App.modules.users.Admin.views.interfaz_Admin.SIGUIENTE.setEnabled(false);
-                App.modules.users.Admin.views.interfaz_Admin.ultimo.setEnabled(false);
-                App.modules.users.Admin.views.interfaz_Admin.CAJA.setText("");
+                App.modules.users.Client.views.interfaz_Client.primero.setEnabled(false);
+                App.modules.users.Client.views.interfaz_Client.ANTERIOR.setEnabled(false);
+                App.modules.users.Client.views.interfaz_Client.SIGUIENTE.setEnabled(false);
+                App.modules.users.Client.views.interfaz_Client.ultimo.setEnabled(false);
+                App.modules.users.Client.views.interfaz_Client.CAJA.setText("");
              
                
             //actualizar enlaces: sólo 1 enlace
@@ -110,11 +111,11 @@ public class pagina {
         }else if(rowCount==0) { //no hay rdos
            
                 //actualizar botones y caja: desactivarlos
-                App.modules.users.Admin.views.interfaz_Admin.primero.setEnabled(false);
-                App.modules.users.Admin.views.interfaz_Admin.ANTERIOR.setEnabled(false);
-                App.modules.users.Admin.views.interfaz_Admin.SIGUIENTE.setEnabled(false);
-                App.modules.users.Admin.views.interfaz_Admin.ultimo.setEnabled(false);
-                App.modules.users.Admin.views.interfaz_Admin.CAJA.setText("");
+                App.modules.users.Client.views.interfaz_Client.primero.setEnabled(false);
+                App.modules.users.Client.views.interfaz_Client.ANTERIOR.setEnabled(false);
+                App.modules.users.Client.views.interfaz_Client.SIGUIENTE.setEnabled(false);
+                App.modules.users.Client.views.interfaz_Client.ultimo.setEnabled(false);
+                App.modules.users.Client.views.interfaz_Client.CAJA.setText("");
                
             //actualizar enlaces: no hay enlaces
             ButtonGroup bg = new ButtonGroup();
@@ -128,11 +129,11 @@ public class pagina {
             
         }else if(rowCount>itemsPerPage) {
            
-                    App.modules.users.Admin.views.interfaz_Admin.primero.setEnabled(currentPageIndex>1);
-                    App.modules.users.Admin.views.interfaz_Admin.ANTERIOR.setEnabled(currentPageIndex>1);
-                    App.modules.users.Admin.views.interfaz_Admin.SIGUIENTE.setEnabled(currentPageIndex<maxPageIndex);
-                    App.modules.users.Admin.views.interfaz_Admin.ultimo.setEnabled(currentPageIndex<maxPageIndex);
-                    App.modules.users.Admin.views.interfaz_Admin.CAJA.setText(Integer.toString(currentPageIndex) + String.format(" / %d", maxPageIndex));
+                    App.modules.users.Client.views.interfaz_Client.primero.setEnabled(currentPageIndex>1);
+                    App.modules.users.Client.views.interfaz_Client.ANTERIOR.setEnabled(currentPageIndex>1);
+                    App.modules.users.Client.views.interfaz_Client.SIGUIENTE.setEnabled(currentPageIndex<maxPageIndex);
+                    App.modules.users.Client.views.interfaz_Client.ultimo.setEnabled(currentPageIndex<maxPageIndex);
+                    App.modules.users.Client.views.interfaz_Client.CAJA.setText(Integer.toString(currentPageIndex) + String.format(" / %d", maxPageIndex));
                                                  
 
             ButtonGroup bg = new ButtonGroup();

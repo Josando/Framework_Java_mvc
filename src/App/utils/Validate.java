@@ -66,6 +66,15 @@ public class Validate {
 		return Activity.matches(nickPattern);
             
         }
+        
+          public static boolean isValidshopping (String Shopping){
+            
+            String nickPattern = "[0-9]+[\\.|\\,]*[0-9]*";
+
+		return Shopping.matches(nickPattern);
+            
+        }
+        
 
 	public static boolean isValid_date(String date) {
 

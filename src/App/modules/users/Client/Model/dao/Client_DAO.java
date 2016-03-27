@@ -3,72 +3,87 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package App.modules.users.Admin.Model.dao;
+package App.modules.users.Client.Model.dao;
 
 import App.classes.date_class;
-import App.modules.users.Admin.Model.bll.Admin_BLL;
-import App.modules.users.Admin.Model.Classes.Admin;
-import App.utils.Singleton_App;
-import App.modules.users.Admin.views.Change_Admin;
-import App.modules.users.Admin.views.Create_Admin;
 import App.modules.main_menu.model.Language.Language;
+import App.modules.users.Client.Model.Classes.Client;
+import App.modules.users.Client.Model.Classes.Singleton_cli;
+import App.modules.users.Client.Model.bll.Client_BLL;
+import App.modules.users.Client.views.Change_Client;
+import App.modules.users.Client.views.Create_Client;
+import App.utils.Funciones;
+import App.utils.Singleton_App;
 import App.utils.Validate;
 import java.awt.HeadlessException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import sun.java2d.pipe.SpanShapeRenderer;
-import App.modules.users.Admin.Model.Classes.Singleton;
-import App.utils.Funciones;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import javax.swing.Icon;
+import java.text.SimpleDateFormat;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author Jorge
  */
-public class Admin_DAO {
+public class Client_DAO {
 
     /////Validacion para ventana create Admin/////
     
     public static boolean Create_requests_name() {
         boolean b = false;
 
-        if (Create_Admin.AdNametext.getText().isEmpty()) {
-            Create_Admin.name_label.setIcon(Singleton_App.cancel);
+        if (Create_Client.AdNametext.getText().isEmpty()) {
+            Create_Client.name_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidFormatNom_cognom(Create_Admin.AdNametext.getText())) {
-            Create_Admin.name_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidFormatNom_cognom(Create_Client.AdNametext.getText())) {
+            Create_Client.name_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Create_Admin.name_label.setIcon(Singleton_App.ok);
+            Create_Client.name_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
     }
 
-    public static boolean Create_requests_surname() {
+     public static boolean Create_requests_client_type() {
         boolean b = false;
 
-        if (Create_Admin.AdSurnametext.getText().isEmpty()) {
-            Create_Admin.surname_label.setIcon(Singleton_App.cancel);
+        if (Create_Client.Client_type_text.getText().isEmpty()) {
+            Create_Client.Client_type_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidFormatNom_cognom(Create_Admin.AdSurnametext.getText())) {
-            Create_Admin.surname_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidFormatNom_cognom(Create_Client.Client_type_text.getText())) {
+            Create_Client.Client_type_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Create_Admin.surname_label.setIcon(Singleton_App.ok);
+            Create_Client.Client_type_label.setIcon(Singleton_App.ok);
+            b = true;
+        }
+        return b;
+    }
+    
+    
+     
+    
+    
+    
+    public static boolean Create_requests_surname() {
+        boolean b = false;
+
+        if (Create_Client.AdSurnametext.getText().isEmpty()) {
+            Create_Client.surname_label.setIcon(Singleton_App.cancel);
+
+        } else if (!Validate.isValidFormatNom_cognom(Create_Client.AdSurnametext.getText())) {
+            Create_Client.surname_label.setIcon(Singleton_App.cancel);
+
+        } else {
+
+            Create_Client.surname_label.setIcon(Singleton_App.ok);
             b = true;
 
         }
@@ -79,14 +94,14 @@ public class Admin_DAO {
 
         boolean b = false;
 
-        if (Create_Admin.AdMobiltext.getText().isEmpty()) {
-            Create_Admin.mobil_label.setIcon(Singleton_App.cancel);
+        if (Create_Client.AdMobiltext.getText().isEmpty()) {
+            Create_Client.mobil_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isvalidmobil(Create_Admin.AdMobiltext.getText())) {
-            Create_Admin.mobil_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isvalidmobil(Create_Client.AdMobiltext.getText())) {
+            Create_Client.mobil_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Create_Admin.mobil_label.setIcon(Singleton_App.ok);
+            Create_Client.mobil_label.setIcon(Singleton_App.ok);
             b = true;
         }
 
@@ -98,14 +113,14 @@ public class Admin_DAO {
 
         boolean b = false;
 
-        if (Create_Admin.ADEmailtext.getText().isEmpty()) {
-            Create_Admin.email_label.setIcon(Singleton_App.cancel);
+        if (Create_Client.ADEmailtext.getText().isEmpty()) {
+            Create_Client.email_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidFormatEmailAddress(Create_Admin.ADEmailtext.getText())) {
-            Create_Admin.email_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidFormatEmailAddress(Create_Client.ADEmailtext.getText())) {
+            Create_Client.email_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Create_Admin.email_label.setIcon(Singleton_App.ok);
+            Create_Client.email_label.setIcon(Singleton_App.ok);
 
             b = true;
         }
@@ -118,14 +133,14 @@ public class Admin_DAO {
 
         boolean b = false;
 
-        if (Create_Admin.AdUsernametext.getText().isEmpty()) {
-            Create_Admin.user_name_label.setIcon(Singleton_App.cancel);
+        if (Create_Client.AdUsernametext.getText().isEmpty()) {
+            Create_Client.user_name_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidnick(Create_Admin.AdUsernametext.getText())) {
-            Create_Admin.user_name_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidnick(Create_Client.AdUsernametext.getText())) {
+            Create_Client.user_name_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Create_Admin.user_name_label.setIcon(Singleton_App.ok);
+            Create_Client.user_name_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -134,31 +149,31 @@ public class Admin_DAO {
     public static boolean create_ask_pass() {
         boolean b = false;
 
-        if (Create_Admin.AdPasstext.getText().isEmpty()) {
-            Create_Admin.pass_label.setIcon(Singleton_App.cancel);
+        if (Create_Client.AdPasstext.getText().isEmpty()) {
+            Create_Client.pass_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isvalidpassword(Create_Admin.AdPasstext.getText())) {
-            Create_Admin.pass_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isvalidpassword(Create_Client.AdPasstext.getText())) {
+            Create_Client.pass_label.setIcon(Singleton_App.cancel);
         } else {
 
-            Create_Admin.pass_label.setIcon(Singleton_App.ok);
+            Create_Client.pass_label.setIcon(Singleton_App.ok);
             b = true;
 
         }
         return b;
     }
 
-    public static boolean create_ask_Activity() {
+    public static boolean create_ask_shopping() {
         boolean b = false;
 
-        if (Create_Admin.AdActivitytext.getText().isEmpty()) {
-            Create_Admin.activity_label.setIcon(Singleton_App.cancel);
+        if (Create_Client.AdActivitytext.getText().isEmpty()) {
+            Create_Client.activity_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidactivity(Create_Admin.AdActivitytext.getText())) {
-            Create_Admin.activity_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidshopping(Create_Client.AdActivitytext.getText())) {
+            Create_Client.activity_label.setIcon(Singleton_App.cancel);
         } else {
 
-            Create_Admin.activity_label.setIcon(Singleton_App.ok);
+            Create_Client.activity_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -167,15 +182,15 @@ public class Admin_DAO {
     public static boolean create_ask_ID() {
         boolean b = false;
 
-        if (Create_Admin.AdIDtext.getText().isEmpty()) {
-            Create_Admin.id_label.setIcon(Singleton_App.cancel);
+        if (Create_Client.AdIDtext.getText().isEmpty()) {
+            Create_Client.id_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidFormatDNI(Create_Admin.AdIDtext.getText())) {
-            Create_Admin.id_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidFormatDNI(Create_Client.AdIDtext.getText())) {
+            Create_Client.id_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Create_Admin.id_label.setIcon(Singleton_App.ok);
+            Create_Client.id_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -192,7 +207,7 @@ public class Admin_DAO {
 
         try {
 
-            dni = Create_Admin.AdIDtext.getText();
+            dni = Create_Client.AdIDtext.getText();
             dni = dni.toUpperCase();
 
             for (int i = 0; i < 8; i++) {
@@ -210,24 +225,24 @@ public class Admin_DAO {
 
             if (control == letter) {
 
-                Create_Admin.id_label.setIcon(Singleton_App.ok);
+                Create_Client.id_label.setIcon(Singleton_App.ok);
                 b = true;
 
-                Singleton.DNI = dni;
+                Singleton_cli.DNI = dni;
 
-                Admin a = new Admin(Singleton.DNI);
+                Client c = new Client(Singleton_cli.DNI);
 
-                if (Admin_BLL.search_ad(a) != -1) {
+                if (Client_BLL.search_Cli(c)!= -1) {
 
                     JOptionPane.showMessageDialog(null, Language.getinstance().getProperty("exists"), Language.getinstance().getProperty("admin"),
                             JOptionPane.ERROR_MESSAGE);
-                    Create_Admin.id_label.setIcon(Singleton_App.cancel);
+                    Create_Client.id_label.setIcon(Singleton_App.cancel);
                     b = false;
                 }
 
             } else {
 
-                Create_Admin.id_label.setIcon(Singleton_App.cancel);
+                Create_Client.id_label.setIcon(Singleton_App.cancel);
                 b = false;
             }
 
@@ -248,15 +263,15 @@ public class Admin_DAO {
 
         try {
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat(Create_Admin.Addatebirthdaytext.getDateFormatString());
+            SimpleDateFormat dateFormat = new SimpleDateFormat(Create_Client.Addatebirthdaytext.getDateFormatString());
 
-            date_birthday = dateFormat.format(Create_Admin.Addatebirthdaytext.getDate());
+            date_birthday = dateFormat.format(Create_Client.Addatebirthdaytext.getDate());
 
             if (date_birthday != null) {
 
                 if (!Validate.isValid_date(date_birthday)) {
 
-                    Create_Admin.date_label.setIcon(Singleton_App.cancel);
+                    Create_Client.date_label.setIcon(Singleton_App.cancel);
 
                 } else {
 
@@ -266,7 +281,7 @@ public class Admin_DAO {
 
                     if (ok == false) {
 
-                        Create_Admin.date_label.setIcon(Singleton_App.cancel);
+                        Create_Client.date_label.setIcon(Singleton_App.cancel);
 
                     } else {
 
@@ -276,20 +291,20 @@ public class Admin_DAO {
 
                             JOptionPane.showMessageDialog(null, "The date can't exceed the current ", "Error",
                                     JOptionPane.WARNING_MESSAGE, null);
-                            Create_Admin.date_label.setIcon(Singleton_App.cancel);
+                            Create_Client.date_label.setIcon(Singleton_App.cancel);
 
                         } else {
 
                             age = date.subtractdates();
 
-                            if ((age < 16) || (age > 65)) {
+                            if ((age < 16)) {
 
-                                JOptionPane.showMessageDialog(null, "You are not allowed to continue,\n you haven't age work", "Error",
+                                JOptionPane.showMessageDialog(null, "You are not allowed to continue,\n you haven't 16 years", "Error",
                                         JOptionPane.WARNING_MESSAGE, null);
 
                             } else {
 
-                                Create_Admin.date_label.setIcon(Singleton_App.ok);
+                                Create_Client.date_label.setIcon(Singleton_App.ok);
                                 b = true;
                             }
 
@@ -315,17 +330,17 @@ public class Admin_DAO {
 
         try {
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat(Create_Admin.Addatebirthdaytext.getDateFormatString());
+            SimpleDateFormat dateFormat = new SimpleDateFormat(Create_Client.Addatebirthdaytext.getDateFormatString());
 
-            hire_date = dateFormat.format(Create_Admin.Adhiredatetext.getDate());
-            date_birthday = dateFormat.format(Create_Admin.Addatebirthdaytext.getDate());
+            hire_date = dateFormat.format(Create_Client.Adhiredatetext.getDate());
+            date_birthday = dateFormat.format(Create_Client.Addatebirthdaytext.getDate());
             date1 = new date_class(date_birthday);
 
             if (hire_date != null) {
 
                 if (!Validate.isValid_date(hire_date)) {
 
-                    Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
+                    Create_Client.hiredate_label.setIcon(Singleton_App.cancel);
 
                 } else {
 
@@ -335,7 +350,7 @@ public class Admin_DAO {
 
                     if (ok == false) {
 
-                        Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
+                        Create_Client.hiredate_label.setIcon(Singleton_App.cancel);
 
                     } else {
 
@@ -345,7 +360,7 @@ public class Admin_DAO {
 
                             JOptionPane.showMessageDialog(null, "The date can't exceed the current ", "Error",
                                     JOptionPane.WARNING_MESSAGE, null);
-                            Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
+                            Create_Client.hiredate_label.setIcon(Singleton_App.cancel);
 
                         } else {
 
@@ -355,22 +370,22 @@ public class Admin_DAO {
 
                                 JOptionPane.showMessageDialog(null, "The date must be after the date birthday",
                                         "ERROR", JOptionPane.WARNING_MESSAGE);
-                                Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
+                                Create_Client.hiredate_label.setIcon(Singleton_App.cancel);
 
                             } else {
 
                                 year1 = date1.subtract_in_dates(date);
 
-                                if ((year1 < 16) || (year1 > 65)) {
+                                if ((year1 < 16)) {
 
-                                    JOptionPane.showMessageDialog(null, "The future employee must be between 16 and 65 years",
+                                    JOptionPane.showMessageDialog(null, "The future Client must be 16 years",
                                             "ERROR", JOptionPane.WARNING_MESSAGE);
 
-                                    Create_Admin.hiredate_label.setIcon(Singleton_App.cancel);
+                                    Create_Client.hiredate_label.setIcon(Singleton_App.cancel);
 
                                 } else {
 
-                                    Create_Admin.hiredate_label.setIcon(Singleton_App.ok);
+                                    Create_Client.hiredate_label.setIcon(Singleton_App.ok);
                                     b = true;
 
                                 }
@@ -390,37 +405,56 @@ public class Admin_DAO {
     }
 
     
-    //////Validacion para ventana change Admin//////
+    //////Validacion para ventana Change Admin//////
     
     public static boolean Change_requests_name() {
         boolean b = false;
 
-        if (Change_Admin.AdNametext.getText().isEmpty()) {
-            Change_Admin.Ad_name_label.setIcon(Singleton_App.cancel);
+        if (Change_Client.AdNametext.getText().isEmpty()) {
+            Change_Client.Ad_name_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidFormatNom_cognom(Change_Admin.AdNametext.getText())) {
-            Change_Admin.Ad_name_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidFormatNom_cognom(Change_Client.AdNametext.getText())) {
+            Change_Client.Ad_name_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Change_Admin.Ad_name_label.setIcon(Singleton_App.ok);
+            Change_Client.Ad_name_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
     }
 
-    public static boolean Change_requests_surname() {
+     public static boolean Change_requests_client_type() {
         boolean b = false;
 
-        if (Change_Admin.AdSurnametext.getText().isEmpty()) {
-            Change_Admin.Ad_surname_label.setIcon(Singleton_App.cancel);
+        if (Change_Client.Client_type_text.getText().isEmpty()) {
+            Change_Client.Client_type_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidFormatNom_cognom(Change_Admin.AdSurnametext.getText())) {
-            Change_Admin.Ad_surname_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidFormatNom_cognom(Change_Client.Client_type_text.getText())) {
+            Change_Client.Client_type_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Change_Admin.Ad_surname_label.setIcon(Singleton_App.ok);
+            Change_Client.Client_type_label.setIcon(Singleton_App.ok);
+            b = true;
+        }
+        return b;
+    }
+    
+               
+    
+    public static boolean Change_requests_surname() {
+        boolean b = false;
+
+        if (Change_Client.AdSurnametext.getText().isEmpty()) {
+            Change_Client.Ad_surname_label.setIcon(Singleton_App.cancel);
+
+        } else if (!Validate.isValidFormatNom_cognom(Change_Client.AdSurnametext.getText())) {
+            Change_Client.Ad_surname_label.setIcon(Singleton_App.cancel);
+
+        } else {
+
+            Change_Client.Ad_surname_label.setIcon(Singleton_App.ok);
             b = true;
 
         }
@@ -431,14 +465,14 @@ public class Admin_DAO {
 
         boolean b = false;
 
-        if (Change_Admin.AdMobiltext.getText().isEmpty()) {
-            Change_Admin.Ad_mobil_label.setIcon(Singleton_App.cancel);
+        if (Change_Client.AdMobiltext.getText().isEmpty()) {
+            Change_Client.Ad_mobil_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isvalidmobil(Change_Admin.AdMobiltext.getText())) {
-            Change_Admin.Ad_mobil_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isvalidmobil(Change_Client.AdMobiltext.getText())) {
+            Change_Client.Ad_mobil_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Change_Admin.Ad_mobil_label.setIcon(Singleton_App.ok);
+            Change_Client.Ad_mobil_label.setIcon(Singleton_App.ok);
             b = true;
         }
 
@@ -450,14 +484,14 @@ public class Admin_DAO {
 
         boolean b = false;
 
-        if (Change_Admin.ADEmailtext.getText().isEmpty()) {
-            Change_Admin.Ad_email_label.setIcon(Singleton_App.cancel);
+        if (Change_Client.ADEmailtext.getText().isEmpty()) {
+            Change_Client.Ad_email_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidFormatEmailAddress(Change_Admin.ADEmailtext.getText())) {
-            Change_Admin.Ad_email_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidFormatEmailAddress(Change_Client.ADEmailtext.getText())) {
+            Change_Client.Ad_email_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Change_Admin.Ad_email_label.setIcon(Singleton_App.ok);
+            Change_Client.Ad_email_label.setIcon(Singleton_App.ok);
 
             b = true;
         }
@@ -470,14 +504,14 @@ public class Admin_DAO {
 
         boolean b = false;
 
-        if (Change_Admin.AdUsernametext.getText().isEmpty()) {
-            Change_Admin.Ad_user_name_label.setIcon(Singleton_App.cancel);
+        if (Change_Client.AdUsernametext.getText().isEmpty()) {
+            Change_Client.Ad_user_name_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidnick(Change_Admin.AdUsernametext.getText())) {
-            Change_Admin.Ad_user_name_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidnick(Change_Client.AdUsernametext.getText())) {
+            Change_Client.Ad_user_name_label.setIcon(Singleton_App.cancel);
 
         } else {
-            Change_Admin.Ad_user_name_label.setIcon(Singleton_App.ok);
+            Change_Client.Ad_user_name_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -486,31 +520,31 @@ public class Admin_DAO {
     public static boolean change_ask_pass() {
         boolean b = false;
 
-        if (Change_Admin.AdPasstext.getText().isEmpty()) {
-            Change_Admin.Ad_pass_label.setIcon(Singleton_App.cancel);
+        if (Change_Client.AdPasstext.getText().isEmpty()) {
+            Change_Client.Ad_pass_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isvalidpassword(Change_Admin.AdPasstext.getText())) {
-            Change_Admin.Ad_pass_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isvalidpassword(Change_Client.AdPasstext.getText())) {
+            Change_Client.Ad_pass_label.setIcon(Singleton_App.cancel);
         } else {
 
-            Change_Admin.Ad_pass_label.setIcon(Singleton_App.ok);
+            Change_Client.Ad_pass_label.setIcon(Singleton_App.ok);
             b = true;
 
         }
         return b;
     }
 
-    public static boolean change_ask_Activity() {
+    public static boolean change_ask_shopping() {
         boolean b = false;
 
-        if (Change_Admin.AdActivitytext.getText().isEmpty()) {
-            Change_Admin.Ad_activity_label.setIcon(Singleton_App.cancel);
+        if (Change_Client.AdActivitytext.getText().isEmpty()) {
+            Change_Client.Ad_activity_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidactivity(Change_Admin.AdActivitytext.getText())) {
-            Change_Admin.Ad_activity_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidshopping(Change_Client.AdActivitytext.getText())) {
+            Change_Client.Ad_activity_label.setIcon(Singleton_App.cancel);
         } else {
 
-            Change_Admin.Ad_activity_label.setIcon(Singleton_App.ok);
+            Change_Client.Ad_activity_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -519,15 +553,15 @@ public class Admin_DAO {
     public static boolean change_ask_ID() {
         boolean b = false;
 
-        if (Change_Admin.AdIDtext.getText().isEmpty()) {
-            Change_Admin.Ad_ID_label.setIcon(Singleton_App.cancel);
+        if (Change_Client.AdIDtext.getText().isEmpty()) {
+            Change_Client.Ad_ID_label.setIcon(Singleton_App.cancel);
 
-        } else if (!Validate.isValidFormatDNI(Change_Admin.AdIDtext.getText())) {
-            Change_Admin.Ad_ID_label.setIcon(Singleton_App.cancel);
+        } else if (!Validate.isValidFormatDNI(Change_Client.AdIDtext.getText())) {
+            Change_Client.Ad_ID_label.setIcon(Singleton_App.cancel);
 
         } else {
 
-            Change_Admin.Ad_ID_label.setIcon(Singleton_App.ok);
+            Change_Client.Ad_ID_label.setIcon(Singleton_App.ok);
             b = true;
         }
         return b;
@@ -544,7 +578,7 @@ public class Admin_DAO {
 
         try {
 
-            dni = Change_Admin.AdIDtext.getText();
+            dni = Change_Client.AdIDtext.getText();
             dni = dni.toUpperCase();
 
             for (int i = 0; i < 8; i++) {
@@ -562,24 +596,24 @@ public class Admin_DAO {
 
             if (control == letter) {
 
-                Change_Admin.Ad_ID_label.setIcon(Singleton_App.ok);
+                Change_Client.Ad_ID_label.setIcon(Singleton_App.ok);
                 b = true;
 
-                Singleton.DNI = dni;
+                Singleton_cli.DNI = dni;
 
-                Admin a = new Admin(Singleton.DNI);
+                Client c = new Client(Singleton_cli.DNI);
 
-                if (Admin_BLL.search_ad(a) != -1) {
+                if (Client_BLL.search_Cli(c) != -1) {
 
                     JOptionPane.showMessageDialog(null, Language.getinstance().getProperty("exists"), Language.getinstance().getProperty("admin"),
                             JOptionPane.ERROR_MESSAGE);
-                    Change_Admin.Ad_ID_label.setIcon(Singleton_App.cancel);
+                    Change_Client.Ad_ID_label.setIcon(Singleton_App.cancel);
                     b = false;
                 }
 
             } else {
 
-                Change_Admin.Ad_ID_label.setIcon(Singleton_App.cancel);
+                Change_Client.Ad_ID_label.setIcon(Singleton_App.cancel);
                 b = false;
             }
 
@@ -600,15 +634,15 @@ public class Admin_DAO {
 
         try {
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat(Change_Admin.Addatebirthdaytext.getDateFormatString());
+            SimpleDateFormat dateFormat = new SimpleDateFormat(Change_Client.Addatebirthdaytext.getDateFormatString());
 
-            date_birthday = dateFormat.format(Change_Admin.Addatebirthdaytext.getDate());
+            date_birthday = dateFormat.format(Change_Client.Addatebirthdaytext.getDate());
 
             if (date_birthday != null) {
 
                 if (!Validate.isValid_date(date_birthday)) {
 
-                    Change_Admin.Ad_date_birthday_label.setIcon(Singleton_App.cancel);
+                    Change_Client.Ad_date_birthday_label.setIcon(Singleton_App.cancel);
 
                 } else {
 
@@ -618,7 +652,7 @@ public class Admin_DAO {
 
                     if (ok == false) {
 
-                        Change_Admin.Ad_date_birthday_label.setIcon(Singleton_App.cancel);
+                        Change_Client.Ad_date_birthday_label.setIcon(Singleton_App.cancel);
 
                     } else {
 
@@ -628,20 +662,20 @@ public class Admin_DAO {
 
                             JOptionPane.showMessageDialog(null, "The date can't exceed the current ", "Error",
                                     JOptionPane.WARNING_MESSAGE, null);
-                            Change_Admin.Ad_date_birthday_label.setIcon(Singleton_App.cancel);
+                            Change_Client.Ad_date_birthday_label.setIcon(Singleton_App.cancel);
 
                         } else {
 
                             age = date.subtractdates();
 
-                            if ((age < 16) || (age > 65)) {
+                            if ((age < 18)) {
 
-                                JOptionPane.showMessageDialog(null, "You are not allowed to continue,\n you haven't age work", "Error",
+                                JOptionPane.showMessageDialog(null, "You are not allowed to continue,\n you haven't 18 years", "Error",
                                         JOptionPane.WARNING_MESSAGE, null);
 
                             } else {
 
-                                Change_Admin.Ad_date_birthday_label.setIcon(Singleton_App.ok);
+                                Change_Client.Ad_date_birthday_label.setIcon(Singleton_App.ok);
                                 b = true;
                             }
 
@@ -667,17 +701,17 @@ public class Admin_DAO {
 
         try {
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat(Change_Admin.Addatebirthdaytext.getDateFormatString());
+            SimpleDateFormat dateFormat = new SimpleDateFormat(Change_Client.Addatebirthdaytext.getDateFormatString());
 
-            hire_date = dateFormat.format(Change_Admin.Adhiredatetext.getDate());
-            date_birthday = dateFormat.format(Change_Admin.Addatebirthdaytext.getDate());
+            hire_date = dateFormat.format(Change_Client.Adhiredatetext.getDate());
+            date_birthday = dateFormat.format(Change_Client.Addatebirthdaytext.getDate());
             date1 = new date_class(date_birthday);
 
             if (hire_date != null) {
 
                 if (!Validate.isValid_date(hire_date)) {
 
-                    Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
+                    Change_Client.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                 } else {
 
@@ -687,7 +721,7 @@ public class Admin_DAO {
 
                     if (ok == false) {
 
-                        Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
+                        Change_Client.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                     } else {
 
@@ -697,7 +731,7 @@ public class Admin_DAO {
 
                             JOptionPane.showMessageDialog(null, "The date can't exceed the current ", "Error",
                                     JOptionPane.WARNING_MESSAGE, null);
-                            Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
+                            Change_Client.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                         } else {
 
@@ -707,22 +741,22 @@ public class Admin_DAO {
 
                                 JOptionPane.showMessageDialog(null, "The date must be after the date birthday",
                                         "ERROR", JOptionPane.WARNING_MESSAGE);
-                                Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
+                                Change_Client.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                             } else {
 
                                 year1 = date1.subtract_in_dates(date);
 
-                                if ((year1 < 16) || (year1 > 65)) {
+                                if ((year1 < 16)) {
 
-                                    JOptionPane.showMessageDialog(null, "The future employee must be between 16 and 65 years",
+                                    JOptionPane.showMessageDialog(null, "The future client must be 16 years",
                                             "ERROR", JOptionPane.WARNING_MESSAGE);
 
-                                    Change_Admin.Ad_hire_date.setIcon(Singleton_App.cancel);
+                                    Change_Client.Ad_hire_date.setIcon(Singleton_App.cancel);
 
                                 } else {
 
-                                    Change_Admin.Ad_hire_date.setIcon(Singleton_App.ok);
+                                    Change_Client.Ad_hire_date.setIcon(Singleton_App.ok);
                                     b = true;
 
                                 }
@@ -747,15 +781,16 @@ public class Admin_DAO {
     
     ///////////////////////////////////////////////
     
-    public static Admin Create_Check_and_save() {
+    public static Client Create_Check_and_save() {
 
-        Admin a = null;
+        Client c = null;
         String dni = " ", nom = " ", cognom = " ", mobil = " ", email = " ", avatar = Singleton_App.ruta_imagen,
-                user = " ", pass = " ", status = (String) Create_Admin.Status_combo.getSelectedItem();
-        date_class fecha_cont = null;
+                user = " ", pass = " ", status = (String) Create_Client.Status_combo.getSelectedItem(), client_type = " ";
+        date_class f_alta = null;
         date_class date_birthday = null;
         String birthday = "", hire = "";
-        int actividad = 0;
+        float dtos$ = 0.0f, compra$ = 0.0f;
+        boolean premium = true;
 
         boolean Id = create_control_ID(),
                 name = Create_requests_name(),
@@ -765,58 +800,65 @@ public class Admin_DAO {
                 Email = create_ask_email(),
                 user_name = create_ask_username(),
                 password = create_ask_pass(),
-                hire_date = create_validate_hire_date(),
-                activity = create_ask_Activity();
+                discarge_date = create_validate_hire_date(),
+                compras = create_ask_shopping(),
+                client_type_ = Create_requests_client_type();
 
         try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat(Create_Admin.Addatebirthdaytext.getDateFormatString());
+            SimpleDateFormat dateFormat = new SimpleDateFormat(Create_Client.Addatebirthdaytext.getDateFormatString());
 
-            hire = dateFormat.format(Create_Admin.Adhiredatetext.getDate());
-            birthday = dateFormat.format(Create_Admin.Addatebirthdaytext.getDate());
+            hire = dateFormat.format(Create_Client.Adhiredatetext.getDate());
+            birthday = dateFormat.format(Create_Client.Addatebirthdaytext.getDate());
             
         } catch (Exception e) {
 
         }
 
-        if ((Id == true) && (name == true) && (surname == true) && (date_birtday_ == true) && (movil == true) && (Email == true) && (user_name == true) && (password == true) && (hire_date == true) && (activity == true)) {
+        if ((Id == true) && (name == true) && (surname == true) && (date_birtday_ == true) && (movil == true) && (Email == true) && (user_name == true) && (password == true) && (discarge_date == true) && (compras == true) && (client_type_ == true) ) {
 
-            fecha_cont = new date_class(hire);
+            
+            f_alta = new date_class(hire);
             date_birthday = new date_class(birthday);
-            nom = Create_Admin.AdNametext.getText();
-            cognom = Create_Admin.AdSurnametext.getText();
-            mobil = Create_Admin.AdMobiltext.getText();
-            email = Create_Admin.ADEmailtext.getText();
+            nom = Create_Client.AdNametext.getText();
+            cognom = Create_Client.AdSurnametext.getText();
+            mobil = Create_Client.AdMobiltext.getText();
+            email = Create_Client.ADEmailtext.getText();
             //avatar= Create_Admin.ad.getText();
-            user = Create_Admin.AdUsernametext.getText();
-            pass = Create_Admin.AdPasstext.getText();
+            user = Create_Client.AdUsernametext.getText();
+            pass = Create_Client.AdPasstext.getText();
             //status=
-            actividad = Integer.parseInt(Create_Admin.AdActivitytext.getText());
-
-            a = new Admin(Singleton.DNI, nom, cognom, date_birthday, mobil, email,
-                    avatar, user, pass, status, actividad,
-                    fecha_cont);
+            compra$ = Integer.parseInt(Create_Client.AdActivitytext.getText());
+           // premium = (boolean) Create_Client.jComboBox2.getSelectedItem();
+            client_type = Create_Client.Client_type_text.getText();
+            
+            
+            c = new Client(Singleton_cli.DNI, nom, cognom, date_birthday, mobil, email,
+				avatar, user, pass, status, f_alta, dtos$,
+				compra$, premium, client_type);
 
            
-            // Singleton.ad.add(a);
+        //  JOptionPane.showMessageDialog(null, c.toString());
+            
         } else {
 
             JOptionPane.showMessageDialog(null, "Revisar los parametros");
-            a = null;
+            c = null;
         }
 
-        return a;
+        return c;
     }
 
-   public static Admin Change_Check_and_save() {
+   public static Client Change_Check_and_save() {
 
-        Admin a = null;
-        String dni = " ", nom = " ", cognom = " ", mobil = " ", email = " ", avatar = "",
-                user = " ", pass = " ", status = (String) Change_Admin.Status_combo.getSelectedItem();
-        date_class fecha_cont = null;
+      Client c = null;
+        String dni = " ", nom = " ", cognom = " ", mobil = " ", email = " ", avatar = Singleton_App.ruta_imagen,
+                user = " ", pass = " ", status = (String) Create_Client.Status_combo.getSelectedItem(), client_type = " ";
+        date_class f_alta = null;
         date_class date_birthday = null;
         String birthday = "", hire = "";
-        int actividad = 0;
-
+        float dtos$ = 0.0f, compra$ = 0.0f;
+        boolean premium = true;
+        
         boolean //Id = create_control_ID(),
                 name = Change_requests_name(),
                 surname = Change_requests_surname(),
@@ -826,46 +868,49 @@ public class Admin_DAO {
                 user_name = change_ask_username(),
                 password = change_ask_pass(),
                 hire_date = change_validate_hire_date(),
-                activity = change_ask_Activity();
+                compras = change_ask_shopping(),
+                 client_type_ = Change_requests_client_type();
 
         try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat(Change_Admin.Addatebirthdaytext.getDateFormatString());
+            SimpleDateFormat dateFormat = new SimpleDateFormat(Change_Client.Addatebirthdaytext.getDateFormatString());
 
-            hire = dateFormat.format(Change_Admin.Adhiredatetext.getDate());
-            birthday = dateFormat.format(Change_Admin.Addatebirthdaytext.getDate());
+            hire = dateFormat.format(Change_Client.Adhiredatetext.getDate());
+            birthday = dateFormat.format(Change_Client.Addatebirthdaytext.getDate());
             
         } catch (Exception e) {
 
         }
 
-        if ((name == true) && (surname == true) && (date_birtday_ == true) && (movil == true) && (Email == true) && (user_name == true)  && (hire_date == true) && (activity == true)) {
+        if ((name == true) && (surname == true) && (date_birtday_ == true) && (movil == true) && (Email == true) && (user_name == true)  && (hire_date == true) && (compras == true) && (client_type_ == true)) {
 
-            dni = Change_Admin.AdIDtext.getText();
-            fecha_cont = new date_class(hire);
+            dni = Change_Client.AdIDtext.getText();
+            f_alta = new date_class(hire);
             date_birthday = new date_class(birthday);
-            nom = Change_Admin.AdNametext.getText();
-            cognom = Change_Admin.AdSurnametext.getText();
-            mobil = Change_Admin.AdMobiltext.getText();
-            email = Change_Admin.ADEmailtext.getText();
+            nom = Change_Client.AdNametext.getText();
+            cognom = Change_Client.AdSurnametext.getText();
+            mobil = Change_Client.AdMobiltext.getText();
+            email = Change_Client.ADEmailtext.getText();
             avatar= Singleton_App.ruta_imagen;           
-            user = Change_Admin.AdUsernametext.getText();
-            pass = Change_Admin.AdPasstext.getText();
-            //status=
-            actividad = Integer.parseInt(Change_Admin.AdActivitytext.getText());
+            user = Change_Client.AdUsernametext.getText();
+            pass = Change_Client.AdPasstext.getText();
+            compra$ =  Float.parseFloat(Change_Client.AdActivitytext.getText());
+            client_type = Change_Client.Client_type_text.getText();
+            
+            
+            c = new Client(dni, nom, cognom, date_birthday, mobil, email,
+				avatar, user, pass, status, f_alta, dtos$,
+				compra$, premium, client_type);
 
-            a = new Admin(dni, nom, cognom, date_birthday, mobil, email,
-                    avatar, user, pass, status, actividad,
-                    fecha_cont);
 
-           // JOptionPane.showMessageDialog(null, a.toString());
+            JOptionPane.showMessageDialog(null, c.toString());
            
         } else {
 
             JOptionPane.showMessageDialog(null, "Revisa los parametros");
-            a = null;
+            c = null;
         }
 
-        return a;
+        return c;
     }
 
     public static void Create_Charge_Avatar() {
@@ -889,7 +934,7 @@ public class Admin_DAO {
                 //direcccion donde se guarda la imagen
                 String file = dlg.getSelectedFile().toString();                                         
                                
-                Create_Admin.AdAvartaimg.setIcon(new ImageIcon(fil));
+                Create_Client.AdAvartaimg.setIcon(new ImageIcon(fil));
                 //
                 //
                                 
@@ -903,9 +948,9 @@ public class Admin_DAO {
                 ImageIcon newIcon = new ImageIcon(newimg);
                 
                 
-                Create_Admin.AdAvartaimg.setIcon(newIcon);
-                Create_Admin.AdAvartaimg.setText("");
-                Create_Admin.AdAvartaimg.setSize(97,97);
+                Create_Client.AdAvartaimg.setIcon(newIcon);
+                Create_Client.AdAvartaimg.setText("");
+                Create_Client.AdAvartaimg.setSize(97,97);
                 
               
                 
@@ -950,7 +995,7 @@ public class Admin_DAO {
                 //direcccion donde se guarda la imagen
                 String file = dlg.getSelectedFile().toString();                                         
                                
-                Change_Admin.AdAvartaimg.setIcon(new ImageIcon(fil));
+                Change_Client.AdAvartaimg.setIcon(new ImageIcon(fil));
                 //
                 //
                                 
@@ -964,9 +1009,9 @@ public class Admin_DAO {
                 ImageIcon newIcon = new ImageIcon(newimg);
                 
                 
-                Change_Admin.AdAvartaimg.setIcon(newIcon);
-                Change_Admin.AdAvartaimg.setText("");
-                Change_Admin.AdAvartaimg.setSize(97,97);
+                Change_Client.AdAvartaimg.setIcon(newIcon);
+                Change_Client.AdAvartaimg.setText("");
+                Change_Client.AdAvartaimg.setSize(97,97);
                 
                 try {
                     

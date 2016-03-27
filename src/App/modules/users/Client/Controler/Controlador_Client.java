@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package App.modules.users.Admin.controler;
+package App.modules.users.Client.controler;
 
 import App.modules.main_menu.Controler.Controler_main_menu;
 import App.modules.main_menu.model.Config;
 import App.modules.main_menu.views.Menu;
-import App.modules.users.Admin.Model.Classes.Singleton;
-import App.modules.users.Admin.Model.Classes.miniSimpleTableModel_Admin;
-import App.modules.users.Admin.Model.Utils.Pager.pagina;
-import App.modules.users.Admin.Model.Utils.autocomplete.AutocompleteJComboBox;
-import App.modules.users.Admin.Model.Utils.autocomplete.StringSearchable;
-import App.modules.users.Admin.Model.bll.Admin_BLL;
-import App.modules.users.Admin.views.Change_Admin;
-import App.modules.users.Admin.views.Create_Admin;
-import App.modules.users.Admin.views.interfaz_Admin;
-import static App.modules.users.Admin.views.interfaz_Admin.TABLA;
-import static App.modules.users.Admin.views.interfaz_Admin.jComboBox1;
+import App.modules.users.Client.Model.Classes.Singleton_cli;
+import App.modules.users.Client.Model.Classes.miniSimpleTableModel_Client;
+import App.modules.users.Client.Model.Utils.Pager.pagina;
+import App.modules.users.Client.Model.Utils.autocomplete.AutocompleteJComboBox;
+import App.modules.users.Client.Model.Utils.autocomplete.StringSearchable;
+import App.modules.users.Client.Model.bll.Client_BLL;
+import App.modules.users.Client.views.Change_Client;
+import App.modules.users.Client.views.Create_Client;
+import App.modules.users.Client.views.interfaz_Client;
+import static App.modules.users.Client.views.interfaz_Client.TABLA;
+import static App.modules.users.Client.views.interfaz_Client.jComboBox1;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -46,33 +46,33 @@ import javax.swing.table.TableRowSorter;
  *
  * @author Jorge
  */
-public class Controlador_Admin implements ActionListener, FocusListener, KeyListener,  MouseListener{
+public class Controlador_Client implements ActionListener, FocusListener, KeyListener,  MouseListener{
 
     public static JTable tabla =null;
     public static int e = 0;
-    public static TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(new miniSimpleTableModel_Admin());
-    public static interfaz_Admin Table_Admin = new interfaz_Admin();
-    public static Create_Admin Create = new Create_Admin();
-    public static Change_Admin Change = new Change_Admin();
+    public static TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(new miniSimpleTableModel_Client());
+    public static interfaz_Client Table_Client = new interfaz_Client();
+    public static Create_Client Create_client = new Create_Client();
+    public static Change_Client Change = new Change_Client();
     public static AutocompleteJComboBox combo = null;
     
-    public Controlador_Admin (JFrame Start, int i) {
+    public Controlador_Client (JFrame Start, int i) {
         
         if (i==0){
             
-            Table_Admin = (interfaz_Admin) Start;
+            Table_Client = (interfaz_Client) Start;
             
         }
         
         if (i==1){
             
-            Create = (Create_Admin) Start;
+            Create_client = (Create_Client) Start;
                       
         }
         
         if (i==2){
             
-            Change = (Change_Admin) Start;           
+            Change = (Change_Client) Start;           
             
         }
         
@@ -80,7 +80,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
     
     public enum Action {
         
-        /////Table_admin////
+        /////Table_client////
         
         ANTERIOR,
         Adcreate,
@@ -96,7 +96,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
         ultimo,
         jComboBox1,
         
-        //////Create_Admin/////
+        //////Create_client/////
         
         Create_ADEmailtext,
         Create_AdActivitytext,
@@ -112,9 +112,11 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
         Create_AdUsernametext,
         Create_Addatebirthdaytext,
         Create_Adhiredatetext,
+        Create_Shopping,
+        Create_Client_type,
         
         
-        ////Change_Admin////
+        ////Change_client////
         
         Change_ADEmailtext,
         Change_AdActivitytext,
@@ -130,6 +132,8 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
         Change_AdUsernametext,
         Change_Addatebirthdaytext,
         Change_Adhiredatetext,
+        Change_Shopping,
+        Change_Client_type,
     }
     
         
@@ -137,32 +141,33 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
          
          if (i==0){
         
-        Table_Admin.setVisible(true);     
-        Table_Admin.setLocationRelativeTo(null);
-        Table_Admin.setTitle("Admin table");
-        Table_Admin.setResizable(false);
-        Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
-	Table_Admin.setIconImage(image);   
+        Create_client.dispose();
+        Table_Client.setVisible(true);     
+        Table_Client.setLocationRelativeTo(null);
+        Table_Client.setTitle("Gestión Actores");
+        Table_Client.setResizable(false);
+        Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Client/views/img/administrator.png");
+	Table_Client.setIconImage(image);   
         
                 
-        Table_Admin.TABLA.setModel(new miniSimpleTableModel_Admin() );
-        ((miniSimpleTableModel_Admin)TABLA.getModel()).cargar();
-        Table_Admin.TABLA.setFillsViewportHeight(true);
+        Table_Client.TABLA.setModel(new miniSimpleTableModel_Client() );
+        ((miniSimpleTableModel_Client)TABLA.getModel()).cargar();
+        Table_Client.TABLA.setFillsViewportHeight(true);
         
        
-        Table_Admin.TABLA.setRowSorter(sorter);
+        Table_Client.TABLA.setRowSorter(sorter);
         pagina.inicializa();
         pagina.initLinkBox();
         
-        Table_Admin.jLabel3.setText(String.valueOf(Singleton.ad.size()));
+        Table_Client.jLabel3.setText(String.valueOf(Singleton_cli.cli.size()));
         
         //Cerrar ventana
         
-        this.Table_Admin.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        this.Table_Admin.addWindowListener(new WindowAdapter() {
+        this.Table_Client.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        this.Table_Client.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                Table_Admin.dispose();
+                Table_Client.dispose();
                 
                 new Controler_main_menu(new Menu(), 1).Start(1);
             }
@@ -170,16 +175,16 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
           
           List<String> myWords = new ArrayList<String>();
           
-        for(int e = 0;i<=Singleton.ad.size()-1;i++) {
+        for(int e = 0;i<=Singleton_cli.cli.size()-1;i++) {
             
-            myWords.add(Singleton.ad.get(i).getNom());
+            myWords.add(Singleton_cli.cli.get(i).getNom());
         }
 
 	StringSearchable searchable = new StringSearchable(myWords);
 	combo = new AutocompleteJComboBox(searchable);
         //JPanel5 se utiliza solamente para que JPanel3 que contendrá combo, no se redimensione
-        Table_Admin.jPanel3.setLayout(new java.awt.BorderLayout());
-        Table_Admin.jPanel3.add(combo);
+        Table_Client.jPanel3.setLayout(new java.awt.BorderLayout());
+        Table_Client.jPanel3.add(combo);
         
          combo.addActionListener(new java.awt.event.ActionListener() {
             @Override
@@ -191,135 +196,143 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                 
          ///////////////////////
          
-          Table_Admin.ANTERIOR.setActionCommand("ANTERIOR");
-            Table_Admin.ANTERIOR.addActionListener(this);
+          Table_Client.ANTERIOR.setActionCommand("ANTERIOR");
+            Table_Client.ANTERIOR.addActionListener(this);
             
-          Table_Admin.Adcreate.setActionCommand("Adcreate");
-            Table_Admin.Adcreate.addActionListener(this);  
+          Table_Client.Adcreate.setActionCommand("Adcreate");
+            Table_Client.Adcreate.addActionListener(this);  
          
-          Table_Admin.Adedit.setActionCommand("Adedit");
-            Table_Admin.Adedit.addActionListener(this); 
+          Table_Client.Adedit.setActionCommand("Adedit");
+            Table_Client.Adedit.addActionListener(this); 
          
-         Table_Admin.Adreturnbtn.setActionCommand("Adreturnbtn");
-            Table_Admin.Adreturnbtn.addActionListener(this);           
+         Table_Client.Adreturnbtn.setActionCommand("Adreturnbtn");
+            Table_Client.Adreturnbtn.addActionListener(this);           
             
-          Table_Admin.Delete_btn.setActionCommand("Delete_btn");
-            Table_Admin.Delete_btn.addActionListener(this);   
+          Table_Client.Delete_btn.setActionCommand("Delete_btn");
+            Table_Client.Delete_btn.addActionListener(this);   
             
-           Table_Admin.Jsonbnt.setActionCommand("Jsonbnt");
-            Table_Admin.Jsonbnt.addActionListener(this);  
+           Table_Client.Jsonbnt.setActionCommand("Jsonbnt");
+            Table_Client.Jsonbnt.addActionListener(this);  
             
-             Table_Admin.SIGUIENTE.setActionCommand("SIGUIENTE");
-            Table_Admin.SIGUIENTE.addActionListener(this);
+             Table_Client.SIGUIENTE.setActionCommand("SIGUIENTE");
+            Table_Client.SIGUIENTE.addActionListener(this);
             
-            Table_Admin.Txtbtn.setActionCommand("Txtbtn");
-            Table_Admin.Txtbtn.addActionListener(this);
+            Table_Client.Txtbtn.setActionCommand("Txtbtn");
+            Table_Client.Txtbtn.addActionListener(this);
             
-            Table_Admin.Xmlbnt.setActionCommand("Xmlbnt");
-            Table_Admin.Xmlbnt.addActionListener(this);
+            Table_Client.Xmlbnt.setActionCommand("Xmlbnt");
+            Table_Client.Xmlbnt.addActionListener(this);
             
-            Table_Admin.primero.setActionCommand("primero");
-            Table_Admin.primero.addActionListener(this);
+            Table_Client.primero.setActionCommand("primero");
+            Table_Client.primero.addActionListener(this);
             
-            Table_Admin.ultimo.setActionCommand("ultimo");
-            Table_Admin.ultimo.addActionListener(this);
+            Table_Client.ultimo.setActionCommand("ultimo");
+            Table_Client.ultimo.addActionListener(this);
             
-            Table_Admin.jComboBox1.setActionCommand("jComboBox1");
-            Table_Admin.jComboBox1.addActionListener(this);
+            Table_Client.jComboBox1.setActionCommand("jComboBox1");
+            Table_Client.jComboBox1.addActionListener(this);
             
          
-        }//Fi del if Tabla_admin
+        }//Fi del if Tabla_client
          
          if (i == 1) {
              
-             Config.getinstance().getTheme();
-              Create.setVisible(true);        
-        Create.setTitle("Admin_Table");
-	Create.setSize(520,550);//ancho x alto
-        Create.setLocationRelativeTo(null);
-	Create.setResizable(false);
-	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
-	Create.setIconImage(image);   
-        Create.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
-        Create.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
+             //Config.getinstance().getTheme();
+        Create_client.setVisible(true);        
+        Create_client.setTitle("Client_Table");
+	Create_client.setSize(535,730);//ancho x alto
+        Create_client.setLocationRelativeTo(null);
+	Create_client.setResizable(false);
+	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Client/views/img/administrator.png");
+	Create_client.setIconImage(image);   
+        Create_client.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
+        Create_client.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
        // AdAvatar.setSize(90,90);
         ////Cerrar ventana
        
-         this.Create.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		Create.addWindowListener(new WindowAdapter() {
+         this.Create_client.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		Create_client.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                
-                Create.dispose();
+                Create_client.dispose();
                  //new interfaz_Admin().setVisible(true);  
-                 new Controlador_Admin(new interfaz_Admin(), 0).Start(0);                       
+                 new Controlador_Client(new interfaz_Client(), 0).Start(0);                       
             }
         });   
                                   
-            Create.ADEmailtext.setActionCommand("Create_ADEmailtext");
-            Create.ADEmailtext.setName("Create_ADEmailtext");
-            Create.ADEmailtext.addKeyListener(this);
-            Create.ADEmailtext.addActionListener(this);
+            Create_client.ADEmailtext.setActionCommand("Create_ADEmailtext");
+            Create_client.ADEmailtext.setName("Create_ADEmailtext");
+            Create_client.ADEmailtext.addKeyListener(this);
+            Create_client.ADEmailtext.addActionListener(this);
             
-            Create.AdActivitytext.setActionCommand("Create_AdActivitytext");
-            Create.AdActivitytext.setName("Create_AdActivitytext");
-            Create.AdActivitytext.addKeyListener(this);
-            Create.AdActivitytext.addActionListener(this);
+            Create_client.AdActivitytext.setActionCommand("Create_AdActivitytext");
+            Create_client.AdActivitytext.setName("Create_AdActivitytext");
+            Create_client.AdActivitytext.addKeyListener(this);
+            Create_client.AdActivitytext.addActionListener(this);
                 
-            Create.AdCancelbtn.setActionCommand("Create_AdCancelbtn");
-            Create.AdCancelbtn.setName("Create_AdCancelbtn");            
-            Create.AdCancelbtn.addActionListener(this);    
+            Create_client.AdCancelbtn.setActionCommand("Create_AdCancelbtn");
+            Create_client.AdCancelbtn.setName("Create_AdCancelbtn");            
+            Create_client.AdCancelbtn.addActionListener(this);    
                 
-            Create.AdCargarAvatar.setActionCommand("Create_AdCargarAvatar");
-            Create.AdCargarAvatar.setName("Create_AdCargarAvatar");
-            Create.AdCargarAvatar.addKeyListener(this);
-            Create.AdCargarAvatar.addActionListener(this);    
+            Create_client.AdCargarAvatar.setActionCommand("Create_AdCargarAvatar");
+            Create_client.AdCargarAvatar.setName("Create_AdCargarAvatar");
+            Create_client.AdCargarAvatar.addKeyListener(this);
+            Create_client.AdCargarAvatar.addActionListener(this);    
             
-            Create.AdIDtext.setActionCommand("Create_AdIDtext");
-            Create.AdIDtext.setName("Create_AdIDtext");
-            Create.AdIDtext.addKeyListener(this);
-            Create.AdIDtext.addActionListener(this);
+            Create_client.AdIDtext.setActionCommand("Create_AdIDtext");
+            Create_client.AdIDtext.setName("Create_AdIDtext");
+            Create_client.AdIDtext.addKeyListener(this);
+            Create_client.AdIDtext.addActionListener(this);
             
-            Create.AdMobiltext.setActionCommand("Create_AdMobiltext");
-            Create.AdMobiltext.setName("Create_AdMobiltext");
-            Create.AdMobiltext.addKeyListener(this);
-            Create.AdMobiltext.addActionListener(this);
+            Create_client.AdMobiltext.setActionCommand("Create_AdMobiltext");
+            Create_client.AdMobiltext.setName("Create_AdMobiltext");
+            Create_client.AdMobiltext.addKeyListener(this);
+            Create_client.AdMobiltext.addActionListener(this);
             
-            Create.AdNametext.setActionCommand("Create_AdNametext");
-            Create.AdNametext.setName("Create_AdNametext");
-            Create.AdNametext.addKeyListener(this);
-            Create.AdNametext.addActionListener(this);    
+            Create_client.AdNametext.setActionCommand("Create_AdNametext");
+            Create_client.AdNametext.setName("Create_AdNametext");
+            Create_client.AdNametext.addKeyListener(this);
+            Create_client.AdNametext.addActionListener(this);    
             
-            Create.AdPasstext.setActionCommand("Create_AdPasstext");
-            Create.AdPasstext.setName("Create_AdPasstext");
+            Create_client.AdPasstext.setActionCommand("Create_AdPasstext");
+            Create_client.AdPasstext.setName("Create_AdPasstext");
             
-            Create.AdPasstext.addKeyListener(this);
-            Create.AdPasstext.addActionListener(this); 
-            Create.AdPasstext.addFocusListener(this);
+            Create_client.AdPasstext.addKeyListener(this);
+            Create_client.AdPasstext.addActionListener(this); 
+            Create_client.AdPasstext.addFocusListener(this);
             
-            Create.AdReturnbtn.setActionCommand("Create_AdReturnbtn");
-            Create.AdReturnbtn.setName("Create_AdReturnbtn");            
-            Create.AdReturnbtn.addActionListener(this);
+            Create_client.AdReturnbtn.setActionCommand("Create_AdReturnbtn");
+            Create_client.AdReturnbtn.setName("Create_AdReturnbtn");            
+            Create_client.AdReturnbtn.addActionListener(this);
             
-            Create.AdSavebtn.setActionCommand("Create_AdSavebtn");
-            Create.AdSavebtn.setName("Create_AdSavebtn");            
-            Create.AdSavebtn.addActionListener(this);
+            Create_client.AdSavebtn.setActionCommand("Create_AdSavebtn");
+            Create_client.AdSavebtn.setName("Create_AdSavebtn");            
+            Create_client.AdSavebtn.addActionListener(this);
             
-            Create.AdSurnametext.setActionCommand("Create_AdSurnametext");
-            Create.AdSurnametext.setName("Create_AdSurnametext");
-            Create.AdSurnametext.addKeyListener(this);
-            Create.AdSurnametext.addActionListener(this); 
+            Create_client.AdSurnametext.setActionCommand("Create_AdSurnametext");
+            Create_client.AdSurnametext.setName("Create_AdSurnametext");
+            Create_client.AdSurnametext.addKeyListener(this);
+            Create_client.AdSurnametext.addActionListener(this); 
             
-            Create.AdUsernametext.setActionCommand("Create_AdUsernametext");
-            Create.AdUsernametext.setName("Create_AdUsernametext");
-            Create.AdUsernametext.addKeyListener(this);
-            Create.AdUsernametext.addActionListener(this);
+            Create_client.AdUsernametext.setActionCommand("Create_AdUsernametext");
+            Create_client.AdUsernametext.setName("Create_AdUsernametext");
+            Create_client.AdUsernametext.addKeyListener(this);
+            Create_client.AdUsernametext.addActionListener(this);
                        
-            Create.Addatebirthdaytext.setName("Create_Addatebirthdaytext");
-            Create.Addatebirthdaytext.addKeyListener(this);
+            Create_client.Addatebirthdaytext.setName("Create_Addatebirthdaytext");
+            Create_client.Addatebirthdaytext.addKeyListener(this);
            
-            Create.Adhiredatetext.setName("Change_Adhiredatetext");
-            Create.Adhiredatetext.addKeyListener(this);            
+            Create_client.Adhiredatetext.setName("Change_Adhiredatetext");
+            Create_client.Adhiredatetext.addKeyListener(this);     
+            
+            Create_client.Client_type_text.setName("Create_Client_type");
+            Create_client.Client_type_text.addKeyListener(this);
+            
+            
+            
+      //  
+            
             
          }//Fi del if Create_Admin
          
@@ -328,10 +341,10 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
               
         Change.setVisible(true);        
         Change.setTitle("Admin_Table");
-	Change.setSize(520,550);//ancho x alto
+	Change.setSize(535,690);//ancho x alto
         Change.setLocationRelativeTo(null);
 	Change.setResizable(false);
-	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
+	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Client/views/img/administrator.png");
 	Change.setIconImage(image);   
         Change.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
         Change.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
@@ -345,7 +358,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                
                 Change.dispose();
                  //new interfaz_Admin().setVisible(true);  
-                 new Controlador_Admin(new interfaz_Admin(), 0).Start(0);                       
+                 new Controlador_Client(new interfaz_Client(), 0).Start(0);                       
             }
         });   
                                   
@@ -384,7 +397,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
             Change.AdNametext.addActionListener(this);    
             
             Change.AdPasstext.setActionCommand("Change_AdPasstext");
-            Create.AdPasstext.setName("Change_AdPasstext");
+            Create_client.AdPasstext.setName("Change_AdPasstext");
             
             Change.AdPasstext.addKeyListener(this);
             Change.AdPasstext.addActionListener(this); 
@@ -412,7 +425,12 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
             Change.Addatebirthdaytext.addKeyListener(this);
            
             Change.Adhiredatetext.setName("Change_Adhiredatetext");
-            Change.Adhiredatetext.addKeyListener(this);           
+            Change.Adhiredatetext.addKeyListener(this);   
+            
+            Change.Client_type_text.setName("Change_Client_type");
+            Change.Client_type_text.addKeyListener(this);
+            
+            
               
           }//Fi del if Change_Admin
          
@@ -425,7 +443,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        switch (Controlador_Admin.Action.valueOf(e.getActionCommand())){
+        switch (Controlador_Client.Action.valueOf(e.getActionCommand())){
             
             case SIGUIENTE:
             
@@ -465,16 +483,16 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                 
             case  Adcreate:
                 
-                 Table_Admin.setVisible(false);
+                 Table_Client.setVisible(false);
 
         //new Create_Admin().setVisible(true);
-                 new Controlador_Admin(new Create_Admin(), 1).Start(1);
+                 new Controlador_Client(new Create_Client(), 1).Start(1);
                  
                  break;
                  
             case  Adreturnbtn:
                 
-                 Table_Admin.dispose();
+                 Table_Client.dispose();
 
                  new Controler_main_menu(new Menu(), 1).Start(1);
                  
@@ -484,34 +502,34 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                  
             case  Delete_btn:
                 
-              Admin_BLL.Delete_Admin();
+              Client_BLL.Delete_Admin();
               
             break;
               
             case  Jsonbnt:
                               
-               Admin_BLL.save_json();
+               Client_BLL.save_json();
          
                break;
                
                
             case  Xmlbnt:
                 
-                Admin_BLL.save_xml();
+                Client_BLL.save_xml();
                 
                break;
                 
             case   Txtbtn:
                 
-                Admin_BLL.save_txt();
+                Client_BLL.save_txt();
                 
                 break;
                 
             case  Adedit:
                 
-                if (Admin_BLL.Charge_Change_Admin()==true){
+                if (Client_BLL.Charge_Change_Client()==true){
         
-             Table_Admin.dispose();//estava set visible false      
+             Table_Client.dispose();//estava set visible false      
                                         
          }   
                 
@@ -519,34 +537,40 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                 
             case  Create_AdMobiltext:
                 
-                Admin_BLL.ask_mobil();
+                Client_BLL.ask_mobil();
                 
                break;     
                
                
              case  Create_AdSavebtn:
                 
-                if( Admin_BLL.save_admin()==true){
-             
+                if( Client_BLL.save_client()==true){                                 
+                    
+                    
            Timer timer =new Timer(3000,new ActionListener(){
                
                @Override
                public void actionPerformed(ActionEvent e){
-                   Create.dispose();
                    
-                  new Controlador_Admin(new interfaz_Admin(), 0).Start(0);                 
+                   
+                   Create_client.dispose();
+                   
+                    new Controlador_Client(new interfaz_Client(), 0).Start(0); 
+                   
+                    Create_client.dispose();
+                             
                }
            });                  
              
              timer.setRepeats(false);
              timer.start();
-             Create.AdSavebtn.setEnabled(false);
-             Create.AdCancelbtn.setEnabled(false);
-             Create.AdReturnbtn.setEnabled(false);
-             Create.AdCargarAvatar.setEnabled(false);
-             Create.jLabel1.setOpaque(true);
-             Create.jLabel1.setBackground(Color.green);
-             Create.jLabel1.setText("Admin creado correctamente");                      
+             Create_client.AdSavebtn.setEnabled(false);
+             Create_client.AdCancelbtn.setEnabled(false);
+             Create_client.AdReturnbtn.setEnabled(false);
+             Create_client.AdCargarAvatar.setEnabled(false);
+             Create_client.jLabel1.setOpaque(true);
+             Create_client.jLabel1.setBackground(Color.green);
+             Create_client.jLabel1.setText("Client creado correctamente");                      
            
        } 
                 
@@ -554,22 +578,22 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                
              case  Create_AdReturnbtn:
                  
-                 Create.dispose();
+                 Create_client.dispose();
         
-                 new Controlador_Admin(new interfaz_Admin(), 0).Start(0);
+                 new Controlador_Client(new interfaz_Client(), 0).Start(0);
                  
                  break;
                
              case  Create_AdCargarAvatar:
                  
-                 Admin_BLL.charge_avatar();
+                 Client_BLL.charge_avatar();
                  
                  
                  break;
                
              case Change_AdSavebtn:
                  
-               if( Admin_BLL.change_Admin()==true){
+               if( Client_BLL.change_client()==true){
                     
              Timer timer =new Timer(3000,new ActionListener(){
                
@@ -577,7 +601,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                public void actionPerformed(ActionEvent e){
                    Change.dispose();
                    
-                       new Controlador_Admin(new interfaz_Admin(), 0).Start(0);                
+                       new Controlador_Client(new interfaz_Client(), 0).Start(0);                
                                      
                }
            });
@@ -603,13 +627,13 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                  
                   Change.dispose();
         
-                  new Controlador_Admin(new interfaz_Admin(), 0).Start(0);                    
+                  new Controlador_Client(new interfaz_Client(), 0).Start(0);                    
                                 
                  break;
              
              case Change_AdChange_Avatar:
                  
-                  Admin_BLL.Change_Change_Avatar();
+                  Client_BLL.Change_Change_Avatar();
                  
                  break; 
                                   
@@ -627,13 +651,13 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
           
           case Create_AdPasstext:
               
-              Create.AdPasstext.setText("");
+              Create_client.AdPasstext.setText("");
               
               break;
               
           case Change_AdPasstext:
               
-               Create.AdPasstext.setText("");
+               Create_client.AdPasstext.setText("");
               
               break;
               
@@ -660,7 +684,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
             
             case Create_AdNametext:
             
-               Admin_BLL.requests_name(); 
+               Client_BLL.requests_name(); 
                 
             break;        
             
@@ -677,100 +701,113 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
             
             case Create_AdSurnametext:
             
-                Admin_BLL.requests_surname(); 
+                Client_BLL.requests_surname(); 
                 
             break;      
             
             
             case Create_AdMobiltext:
             
-               Admin_BLL.ask_mobil();
+               Client_BLL.ask_mobil();
                 
             break;  
             
              case Create_ADEmailtext:
             
-               Admin_BLL.ask_email();
+               Client_BLL.ask_email();
                 
             break; 
             
             case Create_AdUsernametext:
             
-              Admin_BLL.ask_username();
+              Client_BLL.ask_username();
                 
             break;
             
             case Create_AdPasstext:
             
-             Admin_BLL.ask_pass();
+             Client_BLL.ask_pass();
                 
             break;
             
              case  Create_AdActivitytext:
             
-             Admin_BLL.ask_Activity();
+             Client_BLL.ask_Sopping();
                 
             break;
             
             
              case  Create_AdIDtext:
             
-             Admin_BLL.ask_ID();
+             Client_BLL.ask_ID();
                 
             break;
             
             
             case  Create_AdNametext:
             
-             Admin_BLL.requests_name();
+             Client_BLL.requests_name();
                 
             break;
             
             case Change_AdNametext:
                 
-             Admin_BLL.Change_requests_name(); 
+             Client_BLL.Change_requests_name(); 
                 
                 break;
                 
             case Change_AdSurnametext:
                 
-               Admin_BLL.Change_requests_surname(); 
+               Client_BLL.Change_requests_surname(); 
                 
                 break;
                 
             case Change_AdMobiltext:
                 
-                Admin_BLL.Change_ask_mobil();
+                Client_BLL.Change_ask_mobil();
                 
                 break;
                 
             case Change_ADEmailtext:
                 
-                 Admin_BLL.Change_ask_email();
+                 Client_BLL.Change_ask_email();
                 
                 break;
                 
             case Change_AdUsernametext:
                 
-                Admin_BLL.Change_ask_username();
+                Client_BLL.Change_ask_username();
                 
                 break;
                 
                 
             case Change_AdPasstext:
                 
-                Admin_BLL.Change_ask_pass();
+                Client_BLL.Change_ask_pass();
                 
                 break;
                 
             case Change_AdActivitytext:
                 
-                Admin_BLL.Change_ask_Activity();
+                Client_BLL.Change_ask_sopping();
                 
                 break;
                 
                   
-            
+            case Create_Client_type:
+                
+                Client_BLL.ask_client_type();
+                
+                break;
+                
+                
+             case Change_Client_type:
+                
+                Client_BLL.Change_ask_client_type();
+                
+                break;    
+                
+                
            }
        
        
@@ -808,7 +845,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
                     
         System.out.println("word selected: " + ((JComboBox)combo).getSelectedItem());
         pagina.currentPageIndex = 1;
-        ((miniSimpleTableModel_Admin)TABLA.getModel()).filtrar();
+        ((miniSimpleTableModel_Client)TABLA.getModel()).filtrar();
       
 
 

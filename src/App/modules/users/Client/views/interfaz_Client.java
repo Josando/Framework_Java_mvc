@@ -1,9 +1,9 @@
-package App.modules.users.Admin.views;
+package App.modules.users.Client.views;
 import App.modules.main_menu.views.Menu;
 import App.modules.main_menu.model.Config;
 import App.modules.users.Admin.Model.Utils.autocomplete.AutocompleteJComboBox;
 import App.modules.users.Admin.Model.Utils.autocomplete.StringSearchable;
-import App.modules.users.Admin.Model.bll.Admin_BLL;
+import App.modules.users.Client.Model.bll.Client_BLL;
 import App.modules.users.Admin.Model.Classes.Admin;
 import App.modules.users.Admin.Model.Classes.Singleton;
 import App.modules.users.Admin.Model.Classes.miniSimpleTableModel_Admin;
@@ -31,13 +31,13 @@ import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
 
-public class interfaz_Admin extends javax.swing.JFrame {
+public class interfaz_Client extends javax.swing.JFrame {
     /*
     public static TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(new miniSimpleTableModel_Admin());
     public static AutocompleteJComboBox combo = null;
     
     */
-    public interfaz_Admin() {
+    public interfaz_Client() {
       //  try{
           //Config.getinstance().getTheme(); // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
       //  }catch(Exception e){}

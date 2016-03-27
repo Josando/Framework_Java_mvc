@@ -3,27 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package App.modules.users.Admin.Model.bll;
+package App.modules.users.Client.Model.bll;
 
 import App.modules.main_menu.model.Config;
-import App.modules.users.Admin.Model.Classes.Singleton;
-import App.modules.users.Admin.Model.Classes.Admin;
 import App.modules.users.Client.Model.Classes.Client;
-import App.modules.users.Admin.Model.Classes.Singleton;
-import App.modules.users.User_reg.Model.Classes.User_reg;
-import App.modules.users.Admin.Model.Classes.miniSimpleTableModel_Admin;
-import static App.modules.users.Admin.Model.Classes.miniSimpleTableModel_Admin.datosaux;
-import App.modules.users.Admin.Model.dao.Admin_DAO;
-import App.modules.users.Admin.Model.Files.File_utils.utils.json;
-import App.modules.users.Admin.Model.Utils.Pager.pagina;
-import App.modules.users.Admin.views.Change_Admin;
-import App.modules.users.Admin.views.Create_Admin;
-import static App.modules.users.Admin.views.interfaz_Admin.TABLA;
-import static App.modules.users.Admin.views.interfaz_Admin.jLabel3;
+import static App.modules.users.Client.views.interfaz_Client.TABLA;
+import static App.modules.users.Client.views.interfaz_Client.jLabel3;
 import App.modules.main_menu.model.Language.Language;
-import App.modules.users.Admin.Model.Files.File_utils.utils.txt;
-import App.modules.users.Admin.Model.Files.File_utils.utils.xml;
-import App.modules.users.Admin.controler.Controlador_Admin;
+import App.modules.users.Client.Model.Classes.Singleton_cli;
+import App.modules.users.Client.Model.Classes.miniSimpleTableModel_Client;
+import static App.modules.users.Client.Model.Classes.miniSimpleTableModel_Client.datosaux;
+import App.modules.users.Client.Model.Files.File_utils.utils.json_client;
+import App.modules.users.Client.Model.Files.File_utils.utils.txt_client;
+import App.modules.users.Client.Model.Files.File_utils.utils.xml_client;
+import App.modules.users.Client.Model.Utils.Pager.pagina;
+import App.modules.users.Client.Model.dao.Client_DAO;
+import App.modules.users.Client.controler.Controlador_Client;
+import App.modules.users.Client.views.Change_Client;
 import App.modules.users.User.User;
 import App.utils.Singleton_App;
 import App.utils.Validate;
@@ -46,28 +42,22 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Jorge
  */
-public class Admin_BLL {
+public class Client_BLL {
 
-    public static int search_ad(Admin a) {
+   
 
-        for (int i = 0; i < Singleton.ad.size(); i++) {
-
-            if ((Singleton.ad.get(i).getDni()).equals(a.getDni())) {
+    public static int search_Cli(Client c) {
+        
+        for (int i = 0; i < Singleton_cli.cli.size(); i++) {
+            
+            if ((Singleton_cli.cli.get(i).getDni()).equals(c.getDni())) {
+                
                 return i;
             }
         }
         return -1;
     }
 /*
-    public static int search_Cli(Client c) {
-        for (int i = 0; i <= (Singleton.cli.size() - 1); i++) {
-            if ((Singleton.cli.get(i)).equals(c)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
     public static int search_Us(User_reg u) {
         for (int i = 0; i <= (Singleton.us.size() - 1); i++) {
             if ((Singleton.us.get(i)).equals(u)) {
@@ -91,87 +81,96 @@ public class Admin_BLL {
 
     public static void requests_name() {
 
-        Admin_DAO.Create_requests_name();
+        Client_DAO.Create_requests_name();
 
     }
 
     public static void requests_surname() {
 
-        Admin_DAO.Create_requests_surname();
+        Client_DAO.Create_requests_surname();
 
     }
+    
+     public static void ask_client_type() {
+
+        Client_DAO.Create_requests_client_type();
+
+    }
+    
 
     public static void ask_mobil() {
 
-        Admin_DAO.create_ask_mobil();
+        Client_DAO.create_ask_mobil();
 
     }
 
     public static void ask_email() {
 
-        Admin_DAO.create_ask_email();
+        Client_DAO.create_ask_email();
 
     }
 
     public static void ask_username() {
 
-        Admin_DAO.create_ask_username();
+        Client_DAO.create_ask_username();
 
     }
 
     public static void ask_pass() {
 
-        Admin_DAO.create_ask_pass();
+        Client_DAO.create_ask_pass();
 
     }
 
-    public static void ask_Activity() {
+    public static void ask_Sopping() {
 
-        Admin_DAO.create_ask_Activity();
+        Client_DAO.create_ask_shopping();
 
     }
 
     public static void ask_ID() {
 
-        Admin_DAO.create_ask_ID();
+        Client_DAO.create_ask_ID();
 
     }
 
     public static void control_ID() {
 
-        Admin_DAO.create_control_ID();
+        Client_DAO.create_control_ID();
 
     }
 
     public static void valitate_date_birthday() {
 
-        Admin_DAO.create_validate_date_birthday();
+        Client_DAO.create_validate_date_birthday();
 
     }
 
     public static void valitate_hire_date() {
 
-        Admin_DAO.create_validate_hire_date();
+        Client_DAO.create_validate_hire_date();
 
     }
 
     public static void charge_avatar() {
 
-        Admin_DAO.Create_Charge_Avatar();
+        Client_DAO.Create_Charge_Avatar();
 
     }
 
-    public static boolean save_admin() {
+    public static boolean save_client() {
 
         boolean b = false;
 
-        Admin a = Admin_DAO.Create_Check_and_save();
+        Client c = Client_DAO.Create_Check_and_save();
 
-        if (a != null) {
+        if (c != null) {
 
-            Singleton.ad.add(a);
+            Singleton_cli.cli.add(c);
 
-            json.auto_save_Admin_json();
+            JOptionPane.showMessageDialog(null, c.toString());
+            
+            json_client.auto_save_Client_json();
 
             b = true;
 
@@ -180,11 +179,11 @@ public class Admin_BLL {
         return b;
     }
 
-    public static boolean Charge_Change_Admin() {
+    public static boolean Charge_Change_Client() {
 
         boolean b = false;
         int filaseleccionada;
-        Admin a = null;
+        Client c = null;
         int inicio, selection1, pos = 0;
 
         SimpleDateFormat format = new java.text.SimpleDateFormat(Config.getinstance().getDate_format());
@@ -203,32 +202,34 @@ public class Admin_BLL {
 
             } else {
 
-                 new Controlador_Admin(new Change_Admin(), 2).Start(2);
+                 new Controlador_Client(new Change_Client(), 2).Start(2);
                 
                // new Change_Admin().setVisible(true);
 
                 //DefaultTableModel modelotabla = (DefaultTableModel) TABLA.getModel();
                 String Id = (String) TABLA.getValueAt(filaseleccionada, 0);
 
-                a = ((miniSimpleTableModel_Admin) TABLA.getModel()).buscar(Id);
+                c = ((miniSimpleTableModel_Client) TABLA.getModel()).buscar(Id);
 
                 // a = new Admin(Id);
-                pos = Admin_BLL.search_ad(a);
+                pos = Client_BLL.search_Cli(c);
 
                 if ((pos) != -1) {
 
-                    a = Singleton.ad.get(pos);
+                    c = Singleton_cli.cli.get(pos);
 
-                    Change_Admin.AdIDtext.setText(a.getDni());
-                    Change_Admin.AdNametext.setText(a.getNom());
-                    Change_Admin.AdSurnametext.setText(a.getCognom());
-                    Change_Admin.AdMobiltext.setText(a.getMobil());
-                    Change_Admin.ADEmailtext.setText(a.getEmail());
-                    Change_Admin.AdUsernametext.setText(a.getUser());
-                    Change_Admin.AdPasstext.setText(a.getPass());
-                    Change_Admin.AdActivitytext.setText(Integer.toString(a.getActividad()));
-                    //////////////////////////
-                    Singleton_App.ruta_imagen = a.getAvatar();
+                    Change_Client.AdIDtext.setText(c.getDni());
+                    Change_Client.AdNametext.setText(c.getNom());
+                    Change_Client.AdSurnametext.setText(c.getCognom());
+                    Change_Client.AdMobiltext.setText(c.getMobil());
+                    Change_Client.ADEmailtext.setText(c.getEmail());
+                    Change_Client.AdUsernametext.setText(c.getUser());
+                    Change_Client.AdPasstext.setText(c.getPass());
+                    Change_Client.AdActivitytext.setText(Float.toString(c.getCompra$()));
+                    Change_Client.Client_type_text.setText(c.getClient_type());
+
+                     //////////////////////////
+                    Singleton_App.ruta_imagen = c.getAvatar();
                     //Se crea el imagen desde la string del admin
                     ImageIcon icon = new ImageIcon(Singleton_App.ruta_imagen);
                     //se extrae la imagen del icono
@@ -238,20 +239,21 @@ public class Admin_BLL {
                     //se genera la imagen con la nueva imagen
                     ImageIcon newIcon = new ImageIcon(newimg);
 
-                    Change_Admin.AdAvartaimg.setIcon(newIcon);
-                    Change_Admin.AdAvartaimg.setText("");
-                    Change_Admin.AdAvartaimg.setSize(97, 97);
-
+                    Change_Client.AdAvartaimg.setIcon(newIcon);
+                    Change_Client.AdAvartaimg.setText("");
+                    Change_Client.AdAvartaimg.setSize(97, 97);
+                    
+                    
                     try {
 
-                        Date date_birthday = format.parse(a.getDate_birthday().toString());
-                        Change_Admin.Addatebirthdaytext.setDate(date_birthday);
-                        Date hire_date = format.parse(a.getFecha_cont().toString());
-                        Change_Admin.Adhiredatetext.setDate(hire_date);
+                        Date date_birthday = format.parse(c.getDate_birthday().toString());
+                        Change_Client.Addatebirthdaytext.setDate(date_birthday);
+                        Date discarge_date = format.parse(c.getF_alta().toString());
+                        Change_Client.Adhiredatetext.setDate(discarge_date);
 
                     } catch (ParseException ex) {
 
-                        Logger.getLogger(Admin_DAO.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Client_DAO.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
                 } else {
@@ -274,25 +276,22 @@ public class Admin_BLL {
         return b;
     }
 
-    public static boolean change_Admin() {
+    public static boolean change_client() {
 
-        Admin a = null;
+        Client c = null;
         int pos = 0;
         boolean b = false;
 
-        a = Admin_DAO.Change_Check_and_save();
+        c = Client_DAO.Change_Check_and_save();
 
-        
-        
-       // pos = Admin_BLL.search_ad(a);
 
-        if (a != null) {
+        if (c != null) {
 
-            pos = Admin_BLL.search_ad(a);
+              pos = Client_BLL.search_Cli(c);
             
-            Singleton.ad.set(pos, a);
+            Singleton_cli.cli.set(pos, c);
             
-            json.auto_save_Admin_json();
+            json_client.auto_save_Client_json();
 
             b = true;
 
@@ -304,79 +303,86 @@ public class Admin_BLL {
     /////////////Validate para change
     public static void Change_requests_name() {
 
-        Admin_DAO.Change_requests_name();
+        Client_DAO.Change_requests_name();
 
     }
+    
+     public static void Change_ask_client_type() {
+
+        Client_DAO.Change_requests_client_type();
+
+    }
+    
 
     public static void Change_requests_surname() {
 
-        Admin_DAO.Change_requests_surname();
+        Client_DAO.Change_requests_surname();
 
     }
 
     public static void Change_ask_mobil() {
 
-        Admin_DAO.Change_ask_mobil();
+        Client_DAO.Change_ask_mobil();
 
     }
 
     public static void Change_ask_email() {
 
-        Admin_DAO.change_ask_email();
+        Client_DAO.change_ask_email();
 
     }
 
     public static void Change_ask_username() {
 
-        Admin_DAO.change_ask_username();
+        Client_DAO.change_ask_username();
 
     }
 
     public static void Change_ask_pass() {
 
-        Admin_DAO.change_ask_pass();
+        Client_DAO.change_ask_pass();
 
     }
 
-    public static void Change_ask_Activity() {
+    public static void Change_ask_sopping() {
 
-        Admin_DAO.change_ask_Activity();
+        Client_DAO.change_ask_shopping();
 
     }
 
     public static void Change_ask_ID() {
 
-        Admin_DAO.change_ask_ID();
+        Client_DAO.change_ask_ID();
 
     }
 
     public static void Change_control_ID() {
 
-        Admin_DAO.change_control_ID();
+        Client_DAO.change_control_ID();
 
     }
 
     public static void Change_valitate_date_birthday() {
 
-        Admin_DAO.change_validate_date_birthday();
+        Client_DAO.change_validate_date_birthday();
 
     }
 
     public static void Change_valitate_hire_date() {
 
-        Admin_DAO.change_validate_hire_date();
+        Client_DAO.change_validate_hire_date();
 
     }
 
     public static void Change_Change_Avatar() {
 
-        Admin_DAO.Change_Charge_Avatar();
+        Client_DAO.Change_Charge_Avatar();
 
     }
 
     public static void Delete_Admin() {
 
-        Admin a = null;
+        Client c = null;
         int inicio, selection, selection1;
         int filaseleccionada;
 
@@ -396,30 +402,30 @@ public class Admin_BLL {
                 //DefaultTableModel modelotabla = (DefaultTableModel) TABLA.getModel();
                 String Id = (String) TABLA.getValueAt(filaseleccionada, 0);
 
-                a = ((miniSimpleTableModel_Admin) TABLA.getModel()).buscar(Id);
+                c = ((miniSimpleTableModel_Client) TABLA.getModel()).buscar(Id);
 
                  int opc = JOptionPane.showConfirmDialog(null, "Estas seguro que quieres borrar el Dni: " + Id,
                         "Info", JOptionPane.WARNING_MESSAGE);
 
                 if (opc == 0) {
                 
-                int pos = ((miniSimpleTableModel_Admin) TABLA.getModel()).buscaUsuario(a);
+                int pos = ((miniSimpleTableModel_Client) TABLA.getModel()).buscaUsuario(c);
 
-                ((miniSimpleTableModel_Admin) TABLA.getModel()).removeRow(pos);
-                ((miniSimpleTableModel_Admin) TABLA.getModel()).cargar();
+                ((miniSimpleTableModel_Client) TABLA.getModel()).removeRow(pos);
+                ((miniSimpleTableModel_Client) TABLA.getModel()).cargar();
                 // pagina.inicializa();
                 // pagina.initLinkBox();
 
-                Singleton.ad.remove(pos);
-                datosaux.remove(a);
-                jLabel3.setText(String.valueOf(Singleton.ad.size()));
-                ((miniSimpleTableModel_Admin) TABLA.getModel()).cargar();
+                Singleton_cli.cli.remove(pos);
+                datosaux.remove(c);
+                jLabel3.setText(String.valueOf(Singleton_cli.cli.size()));
+                ((miniSimpleTableModel_Client) TABLA.getModel()).cargar();
                 pagina.inicializa();
                 pagina.initLinkBox();
                 
-                json.auto_save_Admin_json();
+                json_client.auto_save_Client_json();
                 
-                if (Singleton.ad.size() < 6) {
+                if (Singleton_cli.cli.size() < 6) {
 
                     pagina.currentPageIndex = 1;
                     pagina.initLinkBox();
@@ -434,24 +440,28 @@ public class Admin_BLL {
     }
 
     public static void save_json() {
-        if (!Singleton.ad.isEmpty()) {
-            json.save_admin_json();
+        if (!Singleton_cli.cli.isEmpty()) {
+            
+            json_client.save_client_json();
+            
         } else {
             JOptionPane.showMessageDialog(null, "No hay datos que guardar");
         }
     }
 
     public static void save_txt() {
-        if (!Singleton.ad.isEmpty()) {
-            txt.save_admin_txt();
+        if (!Singleton_cli.cli.isEmpty()) {
+            txt_client.save_client_txt();
         } else {
             JOptionPane.showMessageDialog(null, "No hay datos que guardar");
         }
     }
 
     public static void save_xml() {
-        if (!Singleton.ad.isEmpty()) {
-            xml.save_admin_xml();
+        if (!Singleton_cli.cli.isEmpty()) {
+            
+            xml_client.save_client_xml();
+            
         } else {
             JOptionPane.showMessageDialog(null, "No hay datos que guardar");
         }
