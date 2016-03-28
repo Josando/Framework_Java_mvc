@@ -170,9 +170,9 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
           
           List<String> myWords = new ArrayList<String>();
           
-        for(int e = 0;i<=Singleton.ad.size()-1;i++) {
+        for(int e = 0;e<=Singleton.ad.size()-1;e++) {
             
-            myWords.add(Singleton.ad.get(i).getNom());
+            myWords.add(Singleton.ad.get(e).getNom());
         }
 
 	StringSearchable searchable = new StringSearchable(myWords);
@@ -232,7 +232,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
          
          if (i == 1) {
              
-             Config.getinstance().getTheme();
+             //Config.getinstance().getTheme();
               Create.setVisible(true);        
         Create.setTitle("Admin_Table");
 	Create.setSize(520,550);//ancho x alto

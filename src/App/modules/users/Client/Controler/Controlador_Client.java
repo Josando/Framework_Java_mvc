@@ -141,7 +141,7 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
          
          if (i==0){
         
-        Create_client.dispose();
+        
         Table_Client.setVisible(true);     
         Table_Client.setLocationRelativeTo(null);
         Table_Client.setTitle("Gestión Actores");
@@ -175,9 +175,9 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
           
           List<String> myWords = new ArrayList<String>();
           
-        for(int e = 0;i<=Singleton_cli.cli.size()-1;i++) {
+        for(int e = 0;e<=Singleton_cli.cli.size()-1;e++) {
             
-            myWords.add(Singleton_cli.cli.get(i).getNom());
+            myWords.add(Singleton_cli.cli.get(e).getNom());
         }
 
 	StringSearchable searchable = new StringSearchable(myWords);
@@ -483,7 +483,7 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
                 
             case  Adcreate:
                 
-                 Table_Client.setVisible(false);
+                 Table_Client.dispose();
 
         //new Create_Admin().setVisible(true);
                  new Controlador_Client(new Create_Client(), 1).Start(1);

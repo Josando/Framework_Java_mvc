@@ -902,7 +902,7 @@ public class Client_DAO {
 				compra$, premium, client_type);
 
 
-            JOptionPane.showMessageDialog(null, c.toString());
+            //JOptionPane.showMessageDialog(null, c.toString());
            
         } else {
 
