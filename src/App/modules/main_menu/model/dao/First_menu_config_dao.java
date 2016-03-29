@@ -5,7 +5,9 @@
  */
 package App.modules.main_menu.model.dao;
 
+import static App.modules.main_menu.Controler.Controler_main_menu.First;
 import App.modules.main_menu.model.Config;
+import App.modules.main_menu.model.Language.Language;
 import App.modules.main_menu.views.First_menu;
 import static App.modules.main_menu.views.First_menu.Dolar;
 import static App.modules.main_menu.views.First_menu.English;
@@ -113,7 +115,9 @@ public class First_menu_config_dao {
 
         json.save_config_json();
 
-        First_menu.Dialog_config.setVisible(false);
+        First.Dialog_config.dispose();
+        
+        Language.getinstance().Set_Language();
 
     }
 

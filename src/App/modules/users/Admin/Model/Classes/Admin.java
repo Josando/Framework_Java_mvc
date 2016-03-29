@@ -17,7 +17,7 @@ import App.modules.main_menu.model.Language.Language;
 public class Admin extends User implements Serializable {
 	@XStreamAlias("actividad")
 	private int actividad;
-	@XStreamAlias("antigguedad")
+	@XStreamAlias("antiguedad")
 	private int antiguedad;
 	@XStreamAlias("sueldo")
 	private float sueldo;

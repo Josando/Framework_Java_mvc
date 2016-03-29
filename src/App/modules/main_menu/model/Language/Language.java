@@ -46,7 +46,7 @@ public class Language extends Properties {
 		case "Valencian":
 			getProperties("Valencia.properties");
 			break;			
-		case "Espa�ol":			
+		case "Español":			
 			getProperties("Spanish.properties");			
 			break;			
 		case "Ingles":
@@ -58,7 +58,7 @@ public class Language extends Properties {
 		case "Espanyol":			
 			getProperties("Spanish.properties");			
 			break;			
-		case "Valenci�":			
+		case "Valencia":			
 			getProperties("Valencia.properties");
 			break;
 		default:
@@ -83,7 +83,7 @@ public class Language extends Properties {
 		case "Valencian":
 			getProperties("Valencia.properties");
 			break;			
-		case "Espa�ol":			
+		case "Español":			
 			getProperties("Spanish.properties");			
 			break;			
 		case "Ingles":
@@ -95,7 +95,7 @@ public class Language extends Properties {
 		case "Espanyol":			
 			getProperties("Spanish.properties");			
 			break;			
-		case "Valenci�":			
+		case "Valencia":			
 			getProperties("Valencia.properties");
 			break;
 		default:

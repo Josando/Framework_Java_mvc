@@ -3,79 +3,55 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package App.modules.users.Admin.Model.bll;
+package App.modules.users.User_reg.Model.bll;
 
 import App.modules.main_menu.model.Config;
-import App.modules.users.Admin.Model.Classes.Singleton;
-import App.modules.users.Admin.Model.Classes.Admin;
-import App.modules.users.Client.Model.Classes.Client;
-import App.modules.users.Admin.Model.Classes.Singleton;
-import App.modules.users.User_reg.Model.Classes.User_reg;
-import App.modules.users.Admin.Model.Classes.miniSimpleTableModel_Admin;
-import static App.modules.users.Admin.Model.Classes.miniSimpleTableModel_Admin.datosaux;
-import App.modules.users.Admin.Model.Files.File_utils.utils.json;
-import App.modules.users.Admin.Model.Utils.Pager.pagina;
-import App.modules.users.Admin.views.Change_Admin;
 import App.modules.main_menu.model.Language.Language;
-import App.modules.users.Admin.Model.Files.File_utils.utils.txt;
-import App.modules.users.Admin.Model.Files.File_utils.utils.xml;
-import App.modules.users.Admin.Model.dao.Admin_DAO;
-import App.modules.users.Admin.controler.Controlador_Admin;
-import static App.modules.users.Admin.views.interfaz_Admin.TABLA;
-import static App.modules.users.Admin.views.interfaz_Admin.jLabel3;
 import App.modules.users.User.User;
+import App.modules.users.User_reg.Controler.Controlador_User_reg;
+import App.modules.users.User_reg.Model.Classes.Singleton_user_reg;
+import App.modules.users.User_reg.Model.Classes.User_reg;
+import App.modules.users.User_reg.Model.Classes.miniSimpleTableModel_User_reg;
+import static App.modules.users.User_reg.Model.Classes.miniSimpleTableModel_User_reg.datosaux;
+import App.modules.users.User_reg.Model.Files.File_utils.utils.json_user_reg;
+import App.modules.users.User_reg.Model.Files.File_utils.utils.txt_user_reg;
+import App.modules.users.User_reg.Model.Files.File_utils.utils.xml_user_reg;
+import App.modules.users.User_reg.Model.Utils.Pager.pagina;
+import App.modules.users.User_reg.Model.dao.User_reg_DAO;
+import App.modules.users.User_reg.Views.Change_User_reg;
+import static App.modules.users.User_reg.Views.interfaz_User_reg.TABLA;
+import static App.modules.users.User_reg.Views.interfaz_User_reg.jLabel3;
 import App.utils.Singleton_App;
-import App.utils.Validate;
-import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.Image;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Jorge
  */
-public class Admin_BLL {
-
-    public static int search_ad(Admin a) {
-
-        for (int i = 0; i < Singleton.ad.size(); i++) {
-
-            if ((Singleton.ad.get(i).getDni()).equals(a.getDni())) {
+public class User_reg_BLL {
+    
+     public static int search_Us(User_reg u) {
+        for (int i = 0; i <= Singleton_user_reg.us.size(); i++) {
+            
+            if ((Singleton_user_reg.us.get(i).getDni()).equals(u.getDni())) {
+                
                 return i;
             }
         }
         return -1;
     }
-/*
-    public static int search_Cli(Client c) {
-        for (int i = 0; i <= (Singleton.cli.size() - 1); i++) {
-            if ((Singleton.cli.get(i)).equals(c)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    public static int search_Us(User_reg u) {
-        for (int i = 0; i <= (Singleton.us.size() - 1); i++) {
-            if ((Singleton.us.get(i)).equals(u)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-*/
+    
+    
     public static void imprime(ArrayList<? extends User> l)// Imprimir cada uno de los empleados del array
     {
 
@@ -90,87 +66,87 @@ public class Admin_BLL {
 
     public static void requests_name() {
 
-        Admin_DAO.Create_requests_name();
+        User_reg_DAO.Create_requests_name();
 
     }
 
     public static void requests_surname() {
 
-        Admin_DAO.Create_requests_surname();
+        User_reg_DAO.Create_requests_surname();
 
     }
 
     public static void ask_mobil() {
 
-        Admin_DAO.create_ask_mobil();
+        User_reg_DAO.create_ask_mobil();
 
     }
 
     public static void ask_email() {
 
-        Admin_DAO.create_ask_email();
+        User_reg_DAO.create_ask_email();
 
     }
 
     public static void ask_username() {
 
-        Admin_DAO.create_ask_username();
+        User_reg_DAO.create_ask_username();
 
     }
 
     public static void ask_pass() {
 
-        Admin_DAO.create_ask_pass();
+        User_reg_DAO.create_ask_pass();
 
     }
 
     public static void ask_Activity() {
 
-        Admin_DAO.create_ask_Activity();
+        User_reg_DAO.create_ask_Activity();
 
     }
 
     public static void ask_ID() {
 
-        Admin_DAO.create_ask_ID();
+        User_reg_DAO.create_ask_ID();
 
     }
 
     public static void control_ID() {
 
-        Admin_DAO.create_control_ID();
+        User_reg_DAO.create_control_ID();
 
     }
 
     public static void valitate_date_birthday() {
 
-        Admin_DAO.create_validate_date_birthday();
+        User_reg_DAO.create_validate_date_birthday();
 
     }
-
+/*
     public static void valitate_hire_date() {
 
-        Admin_DAO.create_validate_hire_date();
+        User_reg_DAO.create_validate_hire_date();
 
     }
-
+*/
     public static void charge_avatar() {
 
-        Admin_DAO.Create_Charge_Avatar();
+        User_reg_DAO.Create_Charge_Avatar();
 
     }
 
-    public static boolean save_admin() {
+    public static boolean save_user_reg() {
 
         boolean b = false;
 
-        Admin a = Admin_DAO.Create_Check_and_save();
+        User_reg u = User_reg_DAO.Create_Check_and_save();
 
-        if (a != null) {
+        if (u != null) {
 
-            Singleton.ad.add(a);
+            Singleton_user_reg.us.add(u);
 
-            json.auto_save_Admin_json();
+            json_user_reg.auto_save_user_reg_json();
 
             b = true;
 
@@ -179,11 +155,11 @@ public class Admin_BLL {
         return b;
     }
 
-    public static boolean Charge_Change_Admin() {
+    public static boolean Charge_Change_User_reg() {
 
         boolean b = false;
         int filaseleccionada;
-        Admin a = null;
+        User_reg u = null;
         int inicio, selection1, pos = 0;
 
         SimpleDateFormat format = new java.text.SimpleDateFormat(Config.getinstance().getDate_format());
@@ -202,32 +178,32 @@ public class Admin_BLL {
 
             } else {
 
-                 new Controlador_Admin(new Change_Admin(), 2).Start(2);
+                 new Controlador_User_reg(new Change_User_reg(), 2).Start(2);
                 
                // new Change_Admin().setVisible(true);
 
                 //DefaultTableModel modelotabla = (DefaultTableModel) TABLA.getModel();
                 String Id = (String) TABLA.getValueAt(filaseleccionada, 0);
 
-                a = ((miniSimpleTableModel_Admin) TABLA.getModel()).buscar(Id);
+                u = ((miniSimpleTableModel_User_reg) TABLA.getModel()).buscar(Id);
 
                 // a = new Admin(Id);
-                pos = Admin_BLL.search_ad(a);
+                pos = User_reg_BLL.search_Us(u);
 
                 if ((pos) != -1) {
 
-                    a = Singleton.ad.get(pos);
+                    u = Singleton_user_reg.us.get(pos);
 
-                    Change_Admin.AdIDtext.setText(a.getDni());
-                    Change_Admin.AdNametext.setText(a.getNom());
-                    Change_Admin.AdSurnametext.setText(a.getCognom());
-                    Change_Admin.AdMobiltext.setText(a.getMobil());
-                    Change_Admin.ADEmailtext.setText(a.getEmail());
-                    Change_Admin.AdUsernametext.setText(a.getUser());
-                    Change_Admin.AdPasstext.setText(a.getPass());
-                    Change_Admin.AdActivitytext.setText(Integer.toString(a.getActividad()));
+                    Change_User_reg.AdIDtext.setText(u.getDni());
+                    Change_User_reg.AdNametext.setText(u.getNom());
+                    Change_User_reg.AdSurnametext.setText(u.getCognom());
+                    Change_User_reg.AdMobiltext.setText(u.getMobil());
+                    Change_User_reg.ADEmailtext.setText(u.getEmail());
+                    Change_User_reg.AdUsernametext.setText(u.getUser());
+                    Change_User_reg.AdPasstext.setText(u.getPass());
+                    Change_User_reg.AdActivitytext.setText(Integer.toString(u.getActividad()));
                     //////////////////////////
-                    Singleton_App.ruta_imagen = a.getAvatar();
+                    Singleton_App.ruta_imagen = u.getAvatar();
                     //Se crea el imagen desde la string del admin
                     ImageIcon icon = new ImageIcon(Singleton_App.ruta_imagen);
                     //se extrae la imagen del icono
@@ -237,20 +213,20 @@ public class Admin_BLL {
                     //se genera la imagen con la nueva imagen
                     ImageIcon newIcon = new ImageIcon(newimg);
 
-                    Change_Admin.AdAvartaimg.setIcon(newIcon);
-                    Change_Admin.AdAvartaimg.setText("");
-                    Change_Admin.AdAvartaimg.setSize(97, 97);
+                    Change_User_reg.AdAvartaimg.setIcon(newIcon);
+                    Change_User_reg.AdAvartaimg.setText("");
+                    Change_User_reg.AdAvartaimg.setSize(97, 97);
 
                     try {
 
-                        Date date_birthday = format.parse(a.getDate_birthday().toString());
-                        Change_Admin.Addatebirthdaytext.setDate(date_birthday);
-                        Date hire_date = format.parse(a.getFecha_cont().toString());
-                        Change_Admin.Adhiredatetext.setDate(hire_date);
+                        Date date_birthday = format.parse(u.getDate_birthday().toString());
+                        Change_User_reg.Addatebirthdaytext.setDate(date_birthday);
+                       // Date hire_date = format.parse(u.getFecha_cont().toString());
+                       // Change_User_reg.Adhiredatetext.setDate(hire_date);
 
                     } catch (ParseException ex) {
 
-                        Logger.getLogger(Admin_DAO.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(User_reg_DAO.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
                 } else {
@@ -273,25 +249,25 @@ public class Admin_BLL {
         return b;
     }
 
-    public static boolean change_Admin() {
+    public static boolean change_user_reg() {
 
-        Admin a = null;
+        User_reg u = null;
         int pos = 0;
         boolean b = false;
 
-        a = Admin_DAO.Change_Check_and_save();
+        u = User_reg_DAO.Change_Check_and_save();
 
         
         
        // pos = Admin_BLL.search_ad(a);
 
-        if (a != null) {
+        if (u != null) {
 
-            pos = Admin_BLL.search_ad(a);
+            pos = User_reg_BLL.search_Us(u);
             
-            Singleton.ad.set(pos, a);
+            Singleton_user_reg.us.set(pos, u);
             
-            json.auto_save_Admin_json();
+            json_user_reg.auto_save_user_reg_json();
 
             b = true;
 
@@ -303,79 +279,80 @@ public class Admin_BLL {
     /////////////Validate para change
     public static void Change_requests_name() {
 
-        Admin_DAO.Change_requests_name();
+        User_reg_DAO.Change_requests_name();
 
     }
 
     public static void Change_requests_surname() {
 
-        Admin_DAO.Change_requests_surname();
+        User_reg_DAO.Change_requests_surname();
 
     }
 
     public static void Change_ask_mobil() {
 
-        Admin_DAO.Change_ask_mobil();
+        User_reg_DAO.Change_ask_mobil();
 
     }
 
     public static void Change_ask_email() {
 
-        Admin_DAO.change_ask_email();
+        User_reg_DAO.change_ask_email();
 
     }
 
     public static void Change_ask_username() {
 
-        Admin_DAO.change_ask_username();
+        User_reg_DAO.change_ask_username();
 
     }
 
     public static void Change_ask_pass() {
 
-        Admin_DAO.change_ask_pass();
+        User_reg_DAO.change_ask_pass();
 
     }
 
     public static void Change_ask_Activity() {
 
-        Admin_DAO.change_ask_Activity();
+        User_reg_DAO.change_ask_Activity();
 
     }
 
     public static void Change_ask_ID() {
 
-        Admin_DAO.change_ask_ID();
+        User_reg_DAO.change_ask_ID();
 
     }
 
     public static void Change_control_ID() {
 
-        Admin_DAO.change_control_ID();
+        User_reg_DAO.change_control_ID();
 
     }
 
     public static void Change_valitate_date_birthday() {
 
-        Admin_DAO.change_validate_date_birthday();
+        User_reg_DAO.change_validate_date_birthday();
 
     }
 
+    /*
     public static void Change_valitate_hire_date() {
 
-        Admin_DAO.change_validate_hire_date();
+        User_reg_DAO.change_validate_hire_date();
 
     }
-
+*/
     public static void Change_Change_Avatar() {
 
-        Admin_DAO.Change_Charge_Avatar();
+        User_reg_DAO.Change_Charge_Avatar();
 
     }
 
-    public static void Delete_Admin() {
+    public static void Delete_user_reg() {
 
-        Admin a = null;
+        User_reg u = null;
         int inicio, selection, selection1;
         int filaseleccionada;
 
@@ -395,30 +372,30 @@ public class Admin_BLL {
                 //DefaultTableModel modelotabla = (DefaultTableModel) TABLA.getModel();
                 String Id = (String) TABLA.getValueAt(filaseleccionada, 0);
 
-                a = ((miniSimpleTableModel_Admin) TABLA.getModel()).buscar(Id);
+                u = ((miniSimpleTableModel_User_reg) TABLA.getModel()).buscar(Id);
 
                  int opc = JOptionPane.showConfirmDialog(null, Language.getinstance().getProperty("deleted") + Id,
                         "Info", JOptionPane.WARNING_MESSAGE);
 
                 if (opc == 0) {
                 
-                int pos = ((miniSimpleTableModel_Admin) TABLA.getModel()).buscaUsuario(a);
+                int pos = ((miniSimpleTableModel_User_reg) TABLA.getModel()).buscaUsuario(u);
 
-                ((miniSimpleTableModel_Admin) TABLA.getModel()).removeRow(pos);
-                ((miniSimpleTableModel_Admin) TABLA.getModel()).cargar();
+                ((miniSimpleTableModel_User_reg) TABLA.getModel()).removeRow(pos);
+                ((miniSimpleTableModel_User_reg) TABLA.getModel()).cargar();
                 // pagina.inicializa();
                 // pagina.initLinkBox();
 
-                Singleton.ad.remove(pos);
-                datosaux.remove(a);
-                jLabel3.setText(String.valueOf(Singleton.ad.size()));
-                ((miniSimpleTableModel_Admin) TABLA.getModel()).cargar();
+                Singleton_user_reg.us.remove(pos);
+                datosaux.remove(u);
+                jLabel3.setText(String.valueOf(Singleton_user_reg.us.size()));
+                ((miniSimpleTableModel_User_reg) TABLA.getModel()).cargar();
                 pagina.inicializa();
                 pagina.initLinkBox();
                 
-                json.auto_save_Admin_json();
+                json_user_reg.auto_save_user_reg_json();
                 
-                if (Singleton.ad.size() < 6) {
+                if (Singleton_user_reg.us.size() < 6) {
 
                     pagina.currentPageIndex = 1;
                     pagina.initLinkBox();
@@ -433,24 +410,24 @@ public class Admin_BLL {
     }
 
     public static void save_json() {
-        if (!Singleton.ad.isEmpty()) {
-            json.save_admin_json();
+        if (!Singleton_user_reg.us.isEmpty()) {
+            json_user_reg.save_user_reg_json();
         } else {
             JOptionPane.showMessageDialog(null, "No hay datos que guardar");
         }
     }
 
     public static void save_txt() {
-        if (!Singleton.ad.isEmpty()) {
-            txt.save_admin_txt();
+        if (!Singleton_user_reg.us.isEmpty()) {
+            txt_user_reg.save_user_reg_txt();
         } else {
             JOptionPane.showMessageDialog(null, "No hay datos que guardar");
         }
     }
 
     public static void save_xml() {
-        if (!Singleton.ad.isEmpty()) {
-            xml.save_admin_xml();
+        if (!Singleton_user_reg.us.isEmpty()) {
+            xml_user_reg.save_user_reg_xml();
         } else {
             JOptionPane.showMessageDialog(null, "No hay datos que guardar");
         }
