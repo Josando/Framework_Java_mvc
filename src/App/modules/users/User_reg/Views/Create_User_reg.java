@@ -112,7 +112,6 @@ public class Create_User_reg extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         AdReturnbtn = new javax.swing.JButton();
         AdSavebtn = new javax.swing.JButton();
-        AdCancelbtn = new javax.swing.JButton();
         AdAvartaimg = new javax.swing.JLabel();
         AdCargarAvatar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -379,7 +378,7 @@ public class Create_User_reg extends javax.swing.JFrame {
                         .addComponent(AdPass)
                         .addComponent(AdPasstext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel9)))
-                .addGap(64, 64, 64)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AdActivity)
                     .addComponent(AdActivitytext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -401,13 +400,6 @@ public class Create_User_reg extends javax.swing.JFrame {
         AdSavebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AdSavebtnActionPerformed(evt);
-            }
-        });
-
-        AdCancelbtn.setText("Cancel");
-        AdCancelbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdCancelbtnActionPerformed(evt);
             }
         });
 
@@ -443,9 +435,8 @@ public class Create_User_reg extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(AdCancelbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(AdSavebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AdReturnbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(AdReturnbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE))))
                 .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
@@ -462,11 +453,9 @@ public class Create_User_reg extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(AdSavebtn)
                         .addGap(18, 18, 18)
-                        .addComponent(AdCancelbtn)
-                        .addGap(18, 18, 18)
                         .addComponent(AdReturnbtn)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -628,22 +617,6 @@ public class Create_User_reg extends javax.swing.JFrame {
         
     }//GEN-LAST:event_AdSavebtnActionPerformed
 
-    private void AdCancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdCancelbtnActionPerformed
-        // TODO add your handling code here:
-        /**
-        try {
-            
-             Fnes_alist.print_admin();
-             
-        } catch (Exception e) {
-            
-            JOptionPane.showMessageDialog(null, "el contenido no se puede mostrar");
-        }
-      */
-      
-        
-    }//GEN-LAST:event_AdCancelbtnActionPerformed
-
     private void AdReturnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdReturnbtnActionPerformed
         // TODO add your handling code here:
         /*
@@ -675,7 +648,6 @@ public class Create_User_reg extends javax.swing.JFrame {
     public static javax.swing.JTextField AdActivitytext;
     public static javax.swing.JLabel AdAvartaimg;
     public static javax.swing.JLabel AdAvatar;
-    public static javax.swing.JButton AdCancelbtn;
     public static javax.swing.JButton AdCargarAvatar;
     public static javax.swing.JLabel AdDate_birthday;
     public static javax.swing.JLabel AdEmail;

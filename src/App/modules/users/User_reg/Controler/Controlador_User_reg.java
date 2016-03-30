@@ -141,7 +141,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
         Table_User_reg.setLocationRelativeTo(null);
         Table_User_reg.setTitle("User_reg table");
         Table_User_reg.setResizable(false);
-        Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/User_reg/views/img/administrator.png");
+        Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/User_reg/views/img/1459292287_user_anonymous.png");
 	Table_User_reg.setIconImage(image);   
         
                 
@@ -234,11 +234,11 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
              
              //Config.getinstance().getTheme();
               Create.setVisible(true);        
-        Create.setTitle("Admin_Table");
+        Create.setTitle("Create user Table");
 	Create.setSize(520,550);//ancho x alto
         Create.setLocationRelativeTo(null);
 	Create.setResizable(false);
-	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/User_reg/views/img/administrator.png");
+	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/User_reg/views/img/1459292287_user_anonymous.png");
 	Create.setIconImage(image);   
         Create.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
        // Create.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
@@ -265,10 +265,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
             Create.AdActivitytext.setName("Create_AdActivitytext");
             Create.AdActivitytext.addKeyListener(this);
             Create.AdActivitytext.addActionListener(this);
-                
-            Create.AdCancelbtn.setActionCommand("Create_AdCancelbtn");
-            Create.AdCancelbtn.setName("Create_AdCancelbtn");            
-            Create.AdCancelbtn.addActionListener(this);    
+               
                 
             Create.AdCargarAvatar.setActionCommand("Create_AdCargarAvatar");
             Create.AdCargarAvatar.setName("Create_AdCargarAvatar");
@@ -357,11 +354,8 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
             Change.AdActivitytext.setActionCommand("Change_AdActivitytext");
             Change.AdActivitytext.setName("Change_AdActivitytext");
             Change.AdActivitytext.addKeyListener(this);
-            Change.AdActivitytext.addActionListener(this);
-                
-            Change.AdCancelbtn.setActionCommand("Change_AdCancelbtn");
-            Change.AdCancelbtn.setName("Change_AdCancelbtn");            
-            Change.AdCancelbtn.addActionListener(this);    
+            Change.AdActivitytext.addActionListener(this);                
+               
                 
             Change.AdChange_Avatar.setActionCommand("Change_AdChange_Avatar");
             Change.AdChange_Avatar.setName("Change_AdChange_Avatar");
@@ -540,8 +534,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
              
              timer.setRepeats(false);
              timer.start();
-             Create.AdSavebtn.setEnabled(false);
-             Create.AdCancelbtn.setEnabled(false);
+             Create.AdSavebtn.setEnabled(false);            
              Create.AdReturnbtn.setEnabled(false);
              Create.AdCargarAvatar.setEnabled(false);
              Create.jLabel1.setOpaque(true);
@@ -587,8 +580,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
              timer.setRepeats(false);
              timer.start();
              
-             Change.AdSavebtn.setEnabled(false);
-             Change.AdCancelbtn.setEnabled(false);
+             Change.AdSavebtn.setEnabled(false);             
              Change.AdReturnbtn.setEnabled(false);
              Change.AdChange_Avatar.setEnabled(false);
              Change.jLabel1.setOpaque(true);

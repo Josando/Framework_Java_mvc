@@ -31,7 +31,6 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="AdCancelbtn" max="32767" attributes="0"/>
                   <Component id="AdSavebtn" alignment="0" max="32767" attributes="0"/>
                   <Component id="AdReturnbtn" alignment="0" max="32767" attributes="0"/>
                   <Component id="AdAvartaimg" alignment="0" pref="98" max="32767" attributes="0"/>
@@ -56,8 +55,6 @@
                       <Component id="AdChange_Avatar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="AdSavebtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="AdCancelbtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="AdReturnbtn" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -473,11 +470,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdSavebtnActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="AdCancelbtn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cancel"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="AdAvartaimg">
       <Properties>

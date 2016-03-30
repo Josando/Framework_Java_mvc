@@ -69,7 +69,7 @@ public class Validate {
         
           public static boolean isValidshopping (String Shopping){
             
-            String nickPattern = "[0-9]+[\\.|\\,]*[0-9]*";
+            String nickPattern = "^-?[0-9]+([\\.][0-9]*)?$";
 
 		return Shopping.matches(nickPattern);
             

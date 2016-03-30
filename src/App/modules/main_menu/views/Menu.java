@@ -89,7 +89,8 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel2.setOpaque(false);
 
-        btnreturn.setText("Return");
+        btnreturn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/main_menu/views/img/1455586597_arrow_return_up_left.png"))); // NOI18N
+        btnreturn.setFocusPainted(false);
         btnreturn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnreturnActionPerformed(evt);
@@ -101,20 +102,30 @@ public class Menu extends javax.swing.JFrame {
         btnrAdministrator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/main_menu/views/img/administrator.png"))); // NOI18N
         btnrAdministrator.setText("Administrator");
         btnrAdministrator.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnrAdministrator.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnrAdministrator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnrAdministratorActionPerformed(evt);
             }
         });
 
-        bntclient.setText("Client");
+        bntclient.setBackground(new java.awt.Color(255, 255, 255));
+        bntclient.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bntclient.setForeground(new java.awt.Color(255, 255, 255));
+        bntclient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/main_menu/views/img/1459292729_bag1.png"))); // NOI18N
+        bntclient.setText(" Client");
+        bntclient.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         bntclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntclientActionPerformed(evt);
             }
         });
 
+        btnuser_reg.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnuser_reg.setForeground(new java.awt.Color(255, 255, 255));
+        btnuser_reg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/main_menu/views/img/1459292287_user_anonymous.png"))); // NOI18N
         btnuser_reg.setText("User_reg");
+        btnuser_reg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -127,19 +138,22 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnreturn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnrAdministrator, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bntclient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnuser_reg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 571, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bntclient)
+                            .addComponent(btnuser_reg))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(btnrAdministrator)
+                .addContainerGap(559, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnreturn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
                 .addComponent(btnrAdministrator)
                 .addGap(18, 18, 18)
                 .addComponent(bntclient)

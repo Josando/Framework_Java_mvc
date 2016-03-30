@@ -36,6 +36,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -168,8 +169,7 @@ public class Client_BLL {
 
             Singleton_cli.cli.add(c);
 
-            JOptionPane.showMessageDialog(null, c.toString());
-            
+                       
             json_client.auto_save_Client_json();
 
             b = true;

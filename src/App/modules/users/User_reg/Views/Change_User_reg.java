@@ -101,7 +101,6 @@ public class Change_User_reg extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         AdReturnbtn = new javax.swing.JButton();
         AdSavebtn = new javax.swing.JButton();
-        AdCancelbtn = new javax.swing.JButton();
         AdAvartaimg = new javax.swing.JLabel();
         AdChange_Avatar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -349,8 +348,6 @@ public class Change_User_reg extends javax.swing.JFrame {
             }
         });
 
-        AdCancelbtn.setText("Cancel");
-
         AdAvartaimg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AdAvartaimg.setText("Avatar");
         AdAvartaimg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -376,7 +373,6 @@ public class Change_User_reg extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AdCancelbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AdSavebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AdReturnbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AdAvartaimg, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
@@ -397,8 +393,6 @@ public class Change_User_reg extends javax.swing.JFrame {
                         .addComponent(AdChange_Avatar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(AdSavebtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(AdCancelbtn)
                         .addGap(18, 18, 18)
                         .addComponent(AdReturnbtn)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -548,7 +542,6 @@ public class Change_User_reg extends javax.swing.JFrame {
     public static javax.swing.JTextField AdActivitytext;
     public static javax.swing.JLabel AdAvartaimg;
     public static javax.swing.JLabel AdAvatar;
-    public static javax.swing.JButton AdCancelbtn;
     public static javax.swing.JButton AdChange_Avatar;
     public static javax.swing.JLabel AdDate_birthday;
     public static javax.swing.JLabel AdEmail;

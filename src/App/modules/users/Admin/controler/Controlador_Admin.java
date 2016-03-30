@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,6 +7,7 @@ package App.modules.users.Admin.controler;
 
 import App.modules.main_menu.Controler.Controler_main_menu;
 import App.modules.main_menu.model.Config;
+import App.modules.main_menu.model.Language.Language;
 import App.modules.main_menu.views.Menu;
 import App.modules.users.Admin.Model.Classes.Singleton;
 import App.modules.users.Admin.Model.Classes.miniSimpleTableModel_Admin;
@@ -143,7 +144,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
         Table_Admin.setResizable(false);
         Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
 	Table_Admin.setIconImage(image);   
-        
+        Table_Admin.jLabel4.setText(Language.getinstance().getProperty("save_as"));
                 
         Table_Admin.TABLA.setModel(new miniSimpleTableModel_Admin() );
         ((miniSimpleTableModel_Admin)TABLA.getModel()).cargar();
@@ -240,6 +241,20 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
 	Create.setResizable(false);
 	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
 	Create.setIconImage(image);   
+        
+        Create.AdId.setText(Language.getinstance().getProperty("id"));
+        Create.AdName.setText(Language.getinstance().getProperty("name"));
+        Create.AdSurname.setText(Language.getinstance().getProperty("surname"));
+        Create.AdDate_birthday.setText(Language.getinstance().getProperty("date_birthday"));
+        Create.Admobil.setText(Language.getinstance().getProperty("mobil"));
+        Create.AdEmail.setText(Language.getinstance().getProperty("email"));
+        Create.AdAvatar.setText(Language.getinstance().getProperty("avatar"));
+        Create.AdUsname.setText(Language.getinstance().getProperty("user"));
+        Create.AdPass.setText(Language.getinstance().getProperty("pass"));
+        Create.AdHiredate.setText(Language.getinstance().getProperty("hire_date"));
+        Create.AdActivity.setText(Language.getinstance().getProperty("activity"));
+        
+        
         Create.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
         Create.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
        // AdAvatar.setSize(90,90);
@@ -266,9 +281,6 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
             Create.AdActivitytext.addKeyListener(this);
             Create.AdActivitytext.addActionListener(this);
                 
-            Create.AdCancelbtn.setActionCommand("Create_AdCancelbtn");
-            Create.AdCancelbtn.setName("Create_AdCancelbtn");            
-            Create.AdCancelbtn.addActionListener(this);    
                 
             Create.AdCargarAvatar.setActionCommand("Create_AdCargarAvatar");
             Create.AdCargarAvatar.setName("Create_AdCargarAvatar");
@@ -300,10 +312,12 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
             Create.AdReturnbtn.setActionCommand("Create_AdReturnbtn");
             Create.AdReturnbtn.setName("Create_AdReturnbtn");            
             Create.AdReturnbtn.addActionListener(this);
+            Create.AdReturnbtn.setText(Language.getinstance().getProperty("return"));
             
             Create.AdSavebtn.setActionCommand("Create_AdSavebtn");
             Create.AdSavebtn.setName("Create_AdSavebtn");            
             Create.AdSavebtn.addActionListener(this);
+            Create.AdSavebtn.setText(Language.getinstance().getProperty("save"));
             
             Create.AdSurnametext.setActionCommand("Create_AdSurnametext");
             Create.AdSurnametext.setName("Create_AdSurnametext");
@@ -337,6 +351,19 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
         Change.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
        // AdAvatar.setSize(90,90);
         ////Cerrar ventana
+        
+        Change.AdId.setText(Language.getinstance().getProperty("id"));
+        Change.AdName.setText(Language.getinstance().getProperty("name"));
+        Change.AdSurname.setText(Language.getinstance().getProperty("surname"));
+        Change.AdDate_birthday.setText(Language.getinstance().getProperty("date_birthday"));
+        Change.Admobil.setText(Language.getinstance().getProperty("mobil"));
+        Change.AdEmail.setText(Language.getinstance().getProperty("email"));
+        Change.AdAvatar.setText(Language.getinstance().getProperty("avatar"));
+        Change.AdUsname.setText(Language.getinstance().getProperty("user"));
+        Change.AdPass.setText(Language.getinstance().getProperty("pass"));
+        Change.AdHiredate.setText(Language.getinstance().getProperty("hire_date"));
+        Change.AdActivity.setText(Language.getinstance().getProperty("activity"));
+       
        
          this.Change.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		Change.addWindowListener(new WindowAdapter() {
@@ -357,11 +384,8 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
             Change.AdActivitytext.setActionCommand("Change_AdActivitytext");
             Change.AdActivitytext.setName("Change_AdActivitytext");
             Change.AdActivitytext.addKeyListener(this);
-            Change.AdActivitytext.addActionListener(this);
-                
-            Change.AdCancelbtn.setActionCommand("Change_AdCancelbtn");
-            Change.AdCancelbtn.setName("Change_AdCancelbtn");            
-            Change.AdCancelbtn.addActionListener(this);    
+            Change.AdActivitytext.addActionListener(this);                
+               
                 
             Change.AdChange_Avatar.setActionCommand("Change_AdChange_Avatar");
             Change.AdChange_Avatar.setName("Change_AdChange_Avatar");
@@ -393,10 +417,12 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
             Change.AdReturnbtn.setActionCommand("Change_AdReturnbtn");
             Change.AdReturnbtn.setName("Change_AdReturnbtn");            
             Change.AdReturnbtn.addActionListener(this);
+            Change.AdReturnbtn.setText(Language.getinstance().getProperty("return"));
             
             Change.AdSavebtn.setActionCommand("Change_AdSavebtn");
             Change.AdSavebtn.setName("Change_AdSavebtn");            
             Change.AdSavebtn.addActionListener(this);
+            Change.AdSavebtn.setText(Language.getinstance().getProperty("save"));
             
             Change.AdSurnametext.setActionCommand("Change_AdSurnametext");
             Change.AdSurnametext.setName("Change_AdSurnametext");
@@ -540,8 +566,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
              
              timer.setRepeats(false);
              timer.start();
-             Create.AdSavebtn.setEnabled(false);
-             Create.AdCancelbtn.setEnabled(false);
+             Create.AdSavebtn.setEnabled(false);           
              Create.AdReturnbtn.setEnabled(false);
              Create.AdCargarAvatar.setEnabled(false);
              Create.jLabel1.setOpaque(true);
@@ -587,8 +612,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
              timer.setRepeats(false);
              timer.start();
              
-             Change.AdSavebtn.setEnabled(false);
-             Change.AdCancelbtn.setEnabled(false);
+             Change.AdSavebtn.setEnabled(false);             
              Change.AdReturnbtn.setEnabled(false);
              Change.AdChange_Avatar.setEnabled(false);
              Change.jLabel1.setOpaque(true);

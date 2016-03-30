@@ -144,9 +144,9 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
         
         Table_Client.setVisible(true);     
         Table_Client.setLocationRelativeTo(null);
-        Table_Client.setTitle("Gestión Actores");
+        Table_Client.setTitle("Client Table");
         Table_Client.setResizable(false);
-        Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Client/views/img/administrator.png");
+        Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Client/views/img/1459292729_bag1.png");
 	Table_Client.setIconImage(image);   
         
                 
@@ -239,11 +239,11 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
              
              //Config.getinstance().getTheme();
         Create_client.setVisible(true);        
-        Create_client.setTitle("Client_Table");
-	Create_client.setSize(535,730);//ancho x alto
+        Create_client.setTitle("Client Table");
+	Create_client.setSize(535,700);//ancho x alto
         Create_client.setLocationRelativeTo(null);
 	Create_client.setResizable(false);
-	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Client/views/img/administrator.png");
+	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Client/views/img/1459292729_bag1.png");
 	Create_client.setIconImage(image);   
         Create_client.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
         Create_client.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
@@ -269,11 +269,8 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
             Create_client.AdActivitytext.setActionCommand("Create_AdActivitytext");
             Create_client.AdActivitytext.setName("Create_AdActivitytext");
             Create_client.AdActivitytext.addKeyListener(this);
-            Create_client.AdActivitytext.addActionListener(this);
-                
-            Create_client.AdCancelbtn.setActionCommand("Create_AdCancelbtn");
-            Create_client.AdCancelbtn.setName("Create_AdCancelbtn");            
-            Create_client.AdCancelbtn.addActionListener(this);    
+            Create_client.AdActivitytext.addActionListener(this);              
+              
                 
             Create_client.AdCargarAvatar.setActionCommand("Create_AdCargarAvatar");
             Create_client.AdCargarAvatar.setName("Create_AdCargarAvatar");
@@ -340,11 +337,11 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
           if (i == 2) {
               
         Change.setVisible(true);        
-        Change.setTitle("Admin_Table");
+        Change.setTitle("Client Table");
 	Change.setSize(535,690);//ancho x alto
         Change.setLocationRelativeTo(null);
 	Change.setResizable(false);
-	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Client/views/img/administrator.png");
+	Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Client/views/img/1459292729_bag1.png");
 	Change.setIconImage(image);   
         Change.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
         Change.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
@@ -371,10 +368,7 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
             Change.AdActivitytext.setName("Change_AdActivitytext");
             Change.AdActivitytext.addKeyListener(this);
             Change.AdActivitytext.addActionListener(this);
-                
-            Change.AdCancelbtn.setActionCommand("Change_AdCancelbtn");
-            Change.AdCancelbtn.setName("Change_AdCancelbtn");            
-            Change.AdCancelbtn.addActionListener(this);    
+            
                 
             Change.AdChange_Avatar.setActionCommand("Change_AdChange_Avatar");
             Change.AdChange_Avatar.setName("Change_AdChange_Avatar");
@@ -565,7 +559,6 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
              timer.setRepeats(false);
              timer.start();
              Create_client.AdSavebtn.setEnabled(false);
-             Create_client.AdCancelbtn.setEnabled(false);
              Create_client.AdReturnbtn.setEnabled(false);
              Create_client.AdCargarAvatar.setEnabled(false);
              Create_client.jLabel1.setOpaque(true);
@@ -612,7 +605,6 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
              timer.start();
              
              Change.AdSavebtn.setEnabled(false);
-             Change.AdCancelbtn.setEnabled(false);
              Change.AdReturnbtn.setEnabled(false);
              Change.AdChange_Avatar.setEnabled(false);
              Change.jLabel1.setOpaque(true);
