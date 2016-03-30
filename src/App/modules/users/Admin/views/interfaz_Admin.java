@@ -165,6 +165,8 @@ public class interfaz_Admin extends javax.swing.JFrame {
 
             }
         ));
+        TABLA.setShowHorizontalLines(true);
+        TABLA.setShowVerticalLines(true);
         jScrollPane1.setViewportView(TABLA);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -38,8 +38,10 @@ import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -137,7 +139,8 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
      public void Start (int i){
          
          if (i==0){
-        
+             
+             
         Table_Admin.setVisible(true);     
         Table_Admin.setLocationRelativeTo(null);
         Table_Admin.setTitle("Admin table");
@@ -145,7 +148,9 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
         Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
 	Table_Admin.setIconImage(image);   
         Table_Admin.jLabel4.setText(Language.getinstance().getProperty("save_as"));
-                
+         
+     
+        
         Table_Admin.TABLA.setModel(new miniSimpleTableModel_Admin() );
         ((miniSimpleTableModel_Admin)TABLA.getModel()).cargar();
         Table_Admin.TABLA.setFillsViewportHeight(true);
