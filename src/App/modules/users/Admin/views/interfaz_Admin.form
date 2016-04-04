@@ -191,9 +191,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ANTERIORActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
@@ -208,7 +205,6 @@
             <Property name="text" type="java.lang.String" value="&gt;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SIGUIENTEActionPerformed"/>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SIGUIENTEKeyReleased"/>
           </Events>
           <AuxValues>
@@ -241,9 +237,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="|&lt;"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="primeroActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
@@ -257,9 +250,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&gt;|"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ultimoActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
@@ -405,9 +395,6 @@
               <Image iconType="3" name="/App/modules/users/Admin/views/img/1455586706_Create.png"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdcreateActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Adreturnbtn">
           <Properties>
@@ -415,9 +402,6 @@
               <Image iconType="3" name="/App/modules/users/Admin/views/img/1455586597_arrow_return_up_left.png"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdreturnbtnActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Delete_btn">
           <Properties>
@@ -425,9 +409,6 @@
               <Image iconType="3" name="/App/modules/users/Admin/views/img/1458016442_trash.png"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Delete_btnActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Adedit">
           <Properties>
@@ -435,9 +416,6 @@
               <Image iconType="3" name="/App/modules/users/Admin/views/img/1455586881_pencil_16.png"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdeditActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -447,9 +425,6 @@
           <Image iconType="3" name="/App/modules/users/Admin/views/img/1458016717_json.png"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JsonbntActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Xmlbnt">
       <Properties>
@@ -457,9 +432,6 @@
           <Image iconType="3" name="/App/modules/users/Admin/views/img/1458016813_file-xml.png"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="XmlbntActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Txtbtn">
       <Properties>
@@ -467,9 +439,6 @@
           <Image iconType="3" name="/App/modules/users/Admin/views/img/1458016749_file_extension_txt.png"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtbtnActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>

@@ -576,7 +576,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
              Create.AdCargarAvatar.setEnabled(false);
              Create.jLabel1.setOpaque(true);
              Create.jLabel1.setBackground(Color.green);
-             Create.jLabel1.setText("Admin creado correctamente");                      
+             Create.jLabel1.setText(Language.getinstance().getProperty("created"));                      
            
        } 
                 

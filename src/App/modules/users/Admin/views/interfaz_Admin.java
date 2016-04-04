@@ -32,83 +32,17 @@ import javax.swing.table.TableRowSorter;
 
 
 public class interfaz_Admin extends javax.swing.JFrame {
-    /*
-    public static TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(new miniSimpleTableModel_Admin());
-    public static AutocompleteJComboBox combo = null;
-    
-    */
+   
     public interfaz_Admin() {
-      //  try{
-          //Config.getinstance().getTheme(); // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-      //  }catch(Exception e){}
+      
         
         initComponents();    
         
-        /*
-        this.setLocationRelativeTo(null);
-        this.setTitle("Gestión Actores");
-        this.setResizable(false);
-        Image image =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
-	this.setIconImage(image);   
         
-        //ppal.singleton_vtna="interfaz_actor";
-        
-        TABLA.setModel(new miniSimpleTableModel_Admin() );
-        ((miniSimpleTableModel_Admin)TABLA.getModel()).cargar();
-        TABLA.setFillsViewportHeight(true);
-        
-       // JTableHeader header = TABLA.getTableHeader();
-        TABLA.setRowSorter(sorter);
-        pagina.inicializa();
-        pagina.initLinkBox();
-        
-        jLabel3.setText(String.valueOf(Singleton.ad.size()));
-        
-        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                dispose();
-                new Menu().setVisible(true);
-            }
-        });
-          
-          List<String> myWords = new ArrayList<String>();
-        for(int i=0;i<=Singleton.ad.size()-1;i++) {
-            myWords.add(Singleton.ad.get(i).getNom());
-        }
 
-	StringSearchable searchable = new StringSearchable(myWords);
-	combo = new AutocompleteJComboBox(searchable);
-        //JPanel5 se utiliza solamente para que JPanel3 que contendrá combo, no se redimensione
-        jPanel3.setLayout(new java.awt.BorderLayout());
-        jPanel3.add(combo);
-        
-         combo.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboActionPerformed(evt);
-                
-            }
-        });
-         
-        */ 
     }
     
-    /*
-    public static void comboActionPerformed(java.awt.event.ActionEvent evt) {                                            
-                    
-        System.out.println("word selected: " + ((JComboBox)combo).getSelectedItem());
-        pagina.currentPageIndex = 1;
-        ((miniSimpleTableModel_Admin)TABLA.getModel()).filtrar();
-      
-
-
-    combo.requestFocus();
-    } 
-        
-       */ 
-        
+   
         
         
        
@@ -190,19 +124,9 @@ public class interfaz_Admin extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ANTERIOR.setText("<");
-        ANTERIOR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ANTERIORActionPerformed(evt);
-            }
-        });
         jPanel2.add(ANTERIOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
         SIGUIENTE.setText(">");
-        SIGUIENTE.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SIGUIENTEActionPerformed(evt);
-            }
-        });
         SIGUIENTE.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 SIGUIENTEKeyReleased(evt);
@@ -216,19 +140,9 @@ public class interfaz_Admin extends javax.swing.JFrame {
         jPanel2.add(CAJA, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 80, 30));
 
         primero.setText("|<");
-        primero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                primeroActionPerformed(evt);
-            }
-        });
         jPanel2.add(primero, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
         ultimo.setText(">|");
-        ultimo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ultimoActionPerformed(evt);
-            }
-        });
         jPanel2.add(ultimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -278,32 +192,12 @@ public class interfaz_Admin extends javax.swing.JFrame {
         );
 
         Adcreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/users/Admin/views/img/1455586706_Create.png"))); // NOI18N
-        Adcreate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdcreateActionPerformed(evt);
-            }
-        });
 
         Adreturnbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/users/Admin/views/img/1455586597_arrow_return_up_left.png"))); // NOI18N
-        Adreturnbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdreturnbtnActionPerformed(evt);
-            }
-        });
 
         Delete_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/users/Admin/views/img/1458016442_trash.png"))); // NOI18N
-        Delete_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Delete_btnActionPerformed(evt);
-            }
-        });
 
         Adedit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/users/Admin/views/img/1455586881_pencil_16.png"))); // NOI18N
-        Adedit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdeditActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -335,25 +229,10 @@ public class interfaz_Admin extends javax.swing.JFrame {
         );
 
         Jsonbnt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/users/Admin/views/img/1458016717_json.png"))); // NOI18N
-        Jsonbnt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JsonbntActionPerformed(evt);
-            }
-        });
 
         Xmlbnt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/users/Admin/views/img/1458016813_file-xml.png"))); // NOI18N
-        Xmlbnt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                XmlbntActionPerformed(evt);
-            }
-        });
 
         Txtbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/users/Admin/views/img/1458016749_file_extension_txt.png"))); // NOI18N
-        Txtbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtbtnActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel4.setText("Guardar como:");
@@ -440,106 +319,14 @@ public class interfaz_Admin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    private void SIGUIENTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIGUIENTEActionPerformed
-     /*
-        pagina.currentPageIndex += 1;
-        pagina.initLinkBox();
-        */
-    }//GEN-LAST:event_SIGUIENTEActionPerformed
-
-    private void ANTERIORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ANTERIORActionPerformed
-      /*
-        pagina.currentPageIndex -= 1;
-        pagina.initLinkBox();
-        */
-    }//GEN-LAST:event_ANTERIORActionPerformed
-
-    private void primeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_primeroActionPerformed
-       /*
-        pagina.currentPageIndex = 1;
-        pagina.initLinkBox();
-*/
-    }//GEN-LAST:event_primeroActionPerformed
-
-    private void ultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultimoActionPerformed
-       /*
-        pagina.currentPageIndex = pagina.maxPageIndex;
-        pagina.initLinkBox();
-*/
-    }//GEN-LAST:event_ultimoActionPerformed
-    
+        
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
        
-        /*
-        pagina.itemsPerPage=Integer.parseInt(jComboBox1.getSelectedItem().toString());
-        pagina.currentPageIndex = 1;
-        pagina.initLinkBox();
-*/
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void SIGUIENTEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SIGUIENTEKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_SIGUIENTEKeyReleased
-
-    private void AdeditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdeditActionPerformed
-        // TODO add your handling code here:
-        
-        /*
-         if (Admin_BLL.Charge_Change_Admin()==true){
-        
-           this.setVisible(false);
-      
-            //new Change_Admin().setVisible(true);
-            
-           
-         }  
-        */
-        
-    }//GEN-LAST:event_AdeditActionPerformed
-
-    private void AdcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdcreateActionPerformed
-        // TODO add your handling code here:
-/*
-        this.setVisible(false);
-
-        new Create_Admin().setVisible(true);
-*/
-    }//GEN-LAST:event_AdcreateActionPerformed
-
-    private void AdreturnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdreturnbtnActionPerformed
-        // TODO add your handling code here:
-        
-        /*
-        this.dispose();
-
-        new Menu().setVisible(true);
-*/
-    }//GEN-LAST:event_AdreturnbtnActionPerformed
-
-    private void Delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_btnActionPerformed
-        // TODO add your handling code here:
-       
-       //Admin_BLL.Delete_Admin();
-       
-        
-    }//GEN-LAST:event_Delete_btnActionPerformed
-
-    private void JsonbntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JsonbntActionPerformed
-        // TODO add your handling code here:
-       // Admin_BLL.save_json();
-        
-    }//GEN-LAST:event_JsonbntActionPerformed
-
-    private void XmlbntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XmlbntActionPerformed
-        // TODO add your handling code here:
-       // Admin_BLL.save_xml();
-    }//GEN-LAST:event_XmlbntActionPerformed
-
-    private void TxtbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtbtnActionPerformed
-        // TODO add your handling code here:
-        //Admin_BLL.save_txt();
-    }//GEN-LAST:event_TxtbtnActionPerformed
 
     
     
