@@ -185,6 +185,52 @@ public class date_class implements Serializable {
 		
 		
 	}
+        
+        public String toStrinng(){
+		
+		String dateformat = "";
+		
+		
+		 switch (Config.getinstance().getDate_format()) {
+	        
+         case "dd/MM/yyyy":
+         	
+        	 dateformat = String.format("%02d", this.day) + "/" + String.format("%02d", this.month) + "/" + this.year;
+             
+        
+     		break;
+     		
+         case "dd-MM-yyyy":
+         	
+        	 dateformat = day + "/" + month + "/" + year;
+     		
+        	 
+        	 
+             break;
+             
+         case "yyyy/MM/dd":
+         	
+        	 dateformat = day + "/" + month + "/" + year;
+             
+        	 
+        	 
+             break;
+             
+         case "yyyy-MM-dd":
+         	
+        	 dateformat = day + "/" + month + "/" + year;
+        	 
+        	 
+             
+             break;
+     }
+		
+		return dateformat;
+		
+		
+		
+	}
+        
 	
 	
 	public String date_format() {

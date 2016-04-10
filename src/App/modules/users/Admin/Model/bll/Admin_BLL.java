@@ -169,8 +169,9 @@ public class Admin_BLL {
         if (a != null) {
 
             Singleton.ad.add(a);
+            Admin_BLL_BD.New_Admin_BD(a);
 
-            json.auto_save_Admin_json();
+            //json.auto_save_Admin_json();
 
             b = true;
 
@@ -291,7 +292,9 @@ public class Admin_BLL {
             
             Singleton.ad.set(pos, a);
             
-            json.auto_save_Admin_json();
+            Admin_BLL_BD.Change_Admin_BLL(a);
+            
+            //json.auto_save_Admin_json();
 
             b = true;
 

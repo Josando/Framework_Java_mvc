@@ -19,6 +19,7 @@ import App.modules.users.Admin.Model.Files.File_utils.utils.Dummies;
 import App.modules.users.Admin.Model.Files.File_utils.utils.json;
 import App.modules.users.Admin.Model.Files.File_utils.utils.txt;
 import App.modules.users.Admin.Model.Files.File_utils.utils.xml;
+import App.modules.users.Admin.Model.bll.Admin_BLL_BD;
 import App.modules.users.Client.Model.Files.File_utils.utils.Dummies_client;
 import App.modules.users.Client.Model.Files.File_utils.utils.json_client;
 import App.modules.users.User_reg.Model.Files.File_utils.utils.json_user_reg;
@@ -61,12 +62,14 @@ public class Config implements Serializable{
 			Singleton.ad = new ArrayList <Admin>();	
 			
 			themes.Choicethemes();
+                        
+                        //Admin_BLL_BD.Charge_admin_BD();
 			//Dummies.Load_Dummies();
 			//Dummies_client.Load_Dummies();
-                      //  Dummies_user_reg.Load_Dummies();
-			json_client.auto_open_client_json();
-                       json.auto_open_admin_json();
-                        json_user_reg.auto_open_user_reg_json();
+                        //Dummies_user_reg.Load_Dummies();
+			//json_client.auto_open_client_json();
+                       //json.auto_open_admin_json();
+                        //json_user_reg.auto_open_user_reg_json();
 		}
 		
 		return instance;

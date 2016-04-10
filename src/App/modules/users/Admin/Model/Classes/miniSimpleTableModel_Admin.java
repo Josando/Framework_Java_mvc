@@ -5,6 +5,7 @@ import App.modules.main_menu.model.Language.Language;
 import App.modules.users.Admin.Model.Classes.Admin;
 import App.modules.users.Admin.Model.Classes.Singleton;
 import App.modules.users.Admin.Model.Utils.Pager.pagina;
+import App.modules.users.Admin.Model.bll.Admin_BLL_BD;
 import static App.modules.users.Admin.controler.Controlador_Admin.combo;
 import App.modules.users.Admin.views.interfaz_Admin;
 import java.sql.Timestamp;
@@ -135,7 +136,7 @@ public class miniSimpleTableModel_Admin extends AbstractTableModel {
     public void cargar() {
         datos.clear();
         datosaux.clear();
-        
+        Admin_BLL_BD.Charge_admin_BD();
        
         java.util.Date date= new java.util.Date();
         for(int i=0;i<Singleton.ad.size();i++) {
