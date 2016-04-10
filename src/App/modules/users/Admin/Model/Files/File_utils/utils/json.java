@@ -260,7 +260,7 @@ public class json {
 		   
            PATH = new java.io.File(".").getCanonicalPath()
            		
-                   + "/src/App/Modules/main_menu/model/files/config_files/config.json";
+                   + "/src/App/modules/main_menu/model/files/config_files/config.json";
            
        } catch (IOException e) {
        	
@@ -315,7 +315,7 @@ public class json {
 			  
 			  
 			  PATH = new java.io.File(".").getCanonicalPath()
-	                   + "/src/App/Modules/main_menu/model/files/config_files/config.json";
+	                   + "/src/App/modules/main_menu/model/files/config_files/config.json";
 	    	   
 			
 	              
