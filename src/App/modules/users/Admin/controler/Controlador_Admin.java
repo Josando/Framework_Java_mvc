@@ -413,7 +413,7 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
             Change.AdNametext.addActionListener(this);    
             
             Change.AdPasstext.setActionCommand("Change_AdPasstext");
-            Create.AdPasstext.setName("Change_AdPasstext");
+            Change.AdPasstext.setName("Change_AdPasstext");
             
             Change.AdPasstext.addKeyListener(this);
             Change.AdPasstext.addActionListener(this); 
@@ -660,11 +660,11 @@ public class Controlador_Admin implements ActionListener, FocusListener, KeyList
               
               break;
               
-          case Change_AdPasstext:
+        //  case Change_AdPasstext:
               
-               Create.AdPasstext.setText("");
+               //Create.AdPasstext.setText(" ");
               
-              break;
+            //  break;
               
           
           

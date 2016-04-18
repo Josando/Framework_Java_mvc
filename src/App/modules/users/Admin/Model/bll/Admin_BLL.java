@@ -166,10 +166,10 @@ public class Admin_BLL {
 
         Admin a = Admin_DAO.Create_Check_and_save();
 
-        if (a != null) {
+        if (a != null && Admin_BLL_BD.New_Admin_BD(a)==1 ) {
 
             Singleton.ad.add(a);
-            Admin_BLL_BD.New_Admin_BD(a);
+           // Admin_BLL_BD.New_Admin_BD(a);
 
             //json.auto_save_Admin_json();
 
@@ -286,13 +286,13 @@ public class Admin_BLL {
         
        // pos = Admin_BLL.search_ad(a);
 
-        if (a != null) {
+        if (a != null && Admin_BLL_BD.Change_Admin_BLL(a)==1 ) {
 
             pos = Admin_BLL.search_ad(a);
             
             Singleton.ad.set(pos, a);
             
-            Admin_BLL_BD.Change_Admin_BLL(a);
+            //Admin_BLL_BD.Change_Admin_BLL(a);
             
             //json.auto_save_Admin_json();
 
@@ -413,13 +413,17 @@ public class Admin_BLL {
                 // pagina.initLinkBox();
 
                 Singleton.ad.remove(pos);
-                datosaux.remove(a);
-                jLabel3.setText(String.valueOf(Singleton.ad.size()));
+                datosaux.remove(a);   
+                
+               if (Admin_BLL_BD.delete_Admin_BLL(Id)==1){
+                 
                 ((miniSimpleTableModel_Admin) TABLA.getModel()).cargar();
+                jLabel3.setText(String.valueOf(Singleton.ad.size()));
                 pagina.inicializa();
                 pagina.initLinkBox();
                 
-                json.auto_save_Admin_json();
+               }
+               // json.auto_save_Admin_json();
                 
                 if (Singleton.ad.size() < 6) {
 

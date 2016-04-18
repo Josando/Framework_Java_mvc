@@ -27,7 +27,7 @@ public class Admin_DAO_BD {
         int correcto = 0;
         try {
            
-             stmt = _con.prepareStatement("INSERT INTO admin"
+             stmt = _con.prepareStatement("INSERT INTO db_admin.admin"
                     + "(dni,nom,cognom,date_birthday,mobil,edad"
                     + ",email,avatar,usuario,password,status,incentivo,actividad,antiguedad,sueldo,Hire_date) "
                     + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -54,6 +54,7 @@ public class Admin_DAO_BD {
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Ha habido un problema al insertar un nuevo usuario!");
+            ex.printStackTrace();
         } finally {
             if (stmt != null) {
                 try {
@@ -132,8 +133,9 @@ public class Admin_DAO_BD {
         }
     }
         
-        public void Change_Admin_DAO(Connection con, Admin a) {
+        public int Change_Admin_DAO(Connection con, Admin a) {
         PreparedStatement stmt = null;
+       int correcto = 0;
        
         try {
                       
@@ -161,9 +163,10 @@ public class Admin_DAO_BD {
             stmt.setString(16, a.getFecha_cont().toStrinng());
 
             stmt.setString(17, a.getDni());
-            stmt.executeUpdate();
+            correcto=stmt.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "El usuario ha sido modificado correctamente!");
+            
         } catch (SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Ha habido un problema al actualizar el usuario!");
@@ -176,9 +179,32 @@ public class Admin_DAO_BD {
                 }
             }
         }
-
+    return correcto;
     }
         
         
+    public int Delete_Admin_DAO(Connection con, String Id) {
+
+        PreparedStatement stmt = null;
+        int correcto = 0;
+
+        try {
+            stmt = con.prepareStatement("DELETE FROM db_admin.admin WHERE DNI=?");
+            stmt.setString(1, Id);
+        correcto = stmt.executeUpdate();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Ha habido un error al eliminar el usuario!");
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Error en el Logger!");
+                }
+            }
+        }
+        return correcto;
+    }
     
 }

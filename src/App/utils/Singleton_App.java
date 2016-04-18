@@ -5,7 +5,10 @@
  */
 package App.utils;
 
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import org.apache.commons.dbcp.BasicDataSource;
+
 
 /**
  *
@@ -16,7 +19,7 @@ public class Singleton_App {
     public static ImageIcon ok = new ImageIcon("src/App/utils/img_app/img/Ok.png");
     public static ImageIcon cancel = new ImageIcon("src/App/utils/img_app/img/Cancel.png");
     public static String ruta_imagen;
-    
-    
+    public static BasicDataSource dataSource;
+    public static final Logger log = Logger.getLogger("BD_Connection");
     
 }

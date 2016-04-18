@@ -9,7 +9,6 @@ import java.util.GregorianCalendar;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 
-
 @XStreamAlias("date_class")
 public class date_class implements Serializable {
 

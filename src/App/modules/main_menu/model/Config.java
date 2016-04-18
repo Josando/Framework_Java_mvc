@@ -1,5 +1,6 @@
 package App.modules.main_menu.model;
 
+import App.classes.BD_Connection;
 import App.modules.main_menu.model.bll.First_menu_config_bll;
 import App.modules.main_menu.views.First_menu;
 
@@ -63,6 +64,8 @@ public class Config implements Serializable{
 			
 			themes.Choicethemes();
                         
+                        BD_Connection.initialize_BasicDataSourceFactory();
+                        BD_Connection.logStatistics();
                         //Admin_BLL_BD.Charge_admin_BD();
 			//Dummies.Load_Dummies();
 			//Dummies_client.Load_Dummies();
