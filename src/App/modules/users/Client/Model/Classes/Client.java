@@ -8,6 +8,8 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import App.modules.main_menu.model.Config;
 import App.classes.date_class;
 import App.utils.*;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 
 @XStreamAlias("Client")
 public class Client extends User implements Serializable {
@@ -26,7 +28,7 @@ public class Client extends User implements Serializable {
 	//constructor para inicializa un objeto a un estado determinado
 
 	public Client(String dni, String nom, String cognom, date_class date_birthday, String mobil,  String email,
-			String avatar, String user, String pass, String status, date_class f_alta, float dtos$,
+			String avatar, String user, String pass, String status, date_class f_alta,
 			float compra$, boolean premium, String client_type) {
 		
 		super(dni, nom, cognom, date_birthday, mobil, email, avatar, user, pass, status);
@@ -99,7 +101,57 @@ public class Client extends User implements Serializable {
 	
 		
 }
+        
+         public Client Client_to_DB(DBObject dBObjectClient) {
+             
+        this.antiguedad = (int)  dBObjectClient.get("antiguedad");
+        this.client_type = (String)  dBObjectClient.get("client_type");
+        this.compra$ = Float.parseFloat(dBObjectClient.get("compra$").toString());
+        this.f_alta = (new date_class (dBObjectClient.get("f_alta").toString(),""));
+        this.premium = (boolean)dBObjectClient.get("premium"); 
+        this.setDni((String)  dBObjectClient.get("dni"));
+        this.setNom((String)  dBObjectClient.get("nom"));
+        this.setCognom((String)  dBObjectClient.get("cognom"));
+        this.setDate_birthday(new date_class  (dBObjectClient.get("date_birthday").toString(),""));
+        this.setMobil((String)  dBObjectClient.get("mobil"));
+        this.setEmail((String)  dBObjectClient.get("email"));
+        this.setAvatar((String)  dBObjectClient.get("avatar"));
+        this.setUser((String)  dBObjectClient.get("user"));        
+        this.setPass((String)  dBObjectClient.get("pass"));
+        this.setstatus((String)  dBObjectClient.get("status"));
+                                
+        
+	return new Client(this.getDni(),this.getNom(), this.getCognom(), this.getDate_birthday(), this.getMobil(), this.getEmail(), 
+                this.getAvatar(),this.getUser(),this.getPass(),this.getstatus(),this.f_alta,this.compra$,this.premium,this.client_type);
+    }
+                         
 
+    public BasicDBObject to_DB_Client() {
+	BasicDBObject dBObjectClient = new BasicDBObject();
+        
+        
+	dBObjectClient.append("dni", this.getDni());
+	dBObjectClient.append("nom", this.getNom());
+	dBObjectClient.append("cognom", this.getCognom());
+        dBObjectClient.append("date_birthday", this.getDate_birthday().toStrinng());
+	dBObjectClient.append("mobil", this.getMobil());
+	dBObjectClient.append("email", this.getEmail());
+        dBObjectClient.append("avatar", this.getAvatar());
+	dBObjectClient.append("user", this.getUser());
+	dBObjectClient.append("pass", this.getPass());
+        dBObjectClient.append("status", this.getstatus());
+	dBObjectClient.append("f_alta", this.getF_alta().toStrinng());
+	dBObjectClient.append("compra$", this.getCompra$());
+        dBObjectClient.append("premium", this.isPremium());
+	dBObjectClient.append("client_type", this.getClient_type());   
+        dBObjectClient.append("benefits", this.getbenefits());
+        dBObjectClient.append("age", this.getAge());
+        dBObjectClient.append("antiguedad", this.getAntiguedad());
+                
+	return dBObjectClient;
+    }
+		
+        
 
 public date_class getF_alta() {
 		return f_alta;

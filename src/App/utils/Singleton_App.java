@@ -5,6 +5,10 @@
  */
 package App.utils;
 
+import App.classes.Mongo_BD_conection;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.Mongo;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import org.apache.commons.dbcp.BasicDataSource;
@@ -21,5 +25,12 @@ public class Singleton_App {
     public static String ruta_imagen;
     public static BasicDataSource dataSource;
     public static final Logger log = Logger.getLogger("BD_Connection");
+    public static Mongo_BD_conection mongo;
+    public static Mongo client;
+    public static String nom_bd;
+    public static DB db;
+    public static String nom_table;
+    public static DBCollection collection;
+    
     
 }

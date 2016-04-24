@@ -2,6 +2,8 @@ package  App.modules.users.Client.Model.Classes;
 import App.classes.date_class;
 import App.modules.main_menu.model.Config;
 import App.modules.users.Client.Model.Utils.Pager.pagina;
+import App.modules.users.Client.Model.bll.Client_DB_BLL;
+import App.modules.users.Client.Model.dao.Client_DB_DAO;
 import static App.modules.users.Client.controler.Controlador_Client.combo;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
@@ -118,8 +120,8 @@ public class miniSimpleTableModel_Client extends AbstractTableModel {
     public void cargar() {
         datos.clear();
         datosaux.clear();
-        
-       
+        //Client_DB_DAO.print_table();
+        Client_DB_BLL.print_table();
         java.util.Date date= new java.util.Date();
         for(int i=0;i<Singleton_cli.cli.size();i++) {
       

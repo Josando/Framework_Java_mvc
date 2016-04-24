@@ -833,7 +833,7 @@ public class Client_DAO {
             
             
             c = new Client(Singleton_cli.DNI, nom, cognom, date_birthday, mobil, email,
-				avatar, user, pass, status, f_alta, dtos$,
+				avatar, user, pass, status, f_alta,
 				compra$, premium, client_type);
 
            
@@ -898,7 +898,7 @@ public class Client_DAO {
             
             
             c = new Client(dni, nom, cognom, date_birthday, mobil, email,
-				avatar, user, pass, status, f_alta, dtos$,
+				avatar, user, pass, status, f_alta,
 				compra$, premium, client_type);
 
 

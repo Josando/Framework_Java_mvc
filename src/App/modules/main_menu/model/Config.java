@@ -1,6 +1,7 @@
 package App.modules.main_menu.model;
 
 import App.classes.BD_Connection;
+import App.classes.Mongo_BD_conection;
 import App.modules.main_menu.model.bll.First_menu_config_bll;
 import App.modules.main_menu.views.First_menu;
 
@@ -29,6 +30,7 @@ import App.modules.users.User_reg.Model.Files.File_utils.utils.Dummies_user_reg;
 import App.utils.Format;
 import App.utils.Funciones;
 import App.utils.Menus;
+import App.utils.Singleton_App;
 import App.utils.themes;
 
 @XStreamAlias("Config")
@@ -73,12 +75,20 @@ public class Config implements Serializable{
 			//json_client.auto_open_client_json();
                        //json.auto_open_admin_json();
                         //json_user_reg.auto_open_user_reg_json();
+                        
+                        Singleton_App.mongo = new Mongo_BD_conection();
+                        Singleton_App.nom_bd = Singleton_App.mongo.getNom_bd();
+                        Singleton_App.nom_table = Singleton_App.mongo.getNom_table();
+        
+                        Singleton_App.client = Mongo_BD_conection.connect();
+                       
+                        
 		}
 		
 		return instance;
 	}
 		
-	
+        
 	
 	public Config() {
 		

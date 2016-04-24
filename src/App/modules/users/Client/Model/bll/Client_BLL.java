@@ -18,6 +18,7 @@ import App.modules.users.Client.Model.Files.File_utils.utils.txt_client;
 import App.modules.users.Client.Model.Files.File_utils.utils.xml_client;
 import App.modules.users.Client.Model.Utils.Pager.pagina;
 import App.modules.users.Client.Model.dao.Client_DAO;
+import App.modules.users.Client.Model.dao.Client_DB_DAO;
 import App.modules.users.Client.controler.Controlador_Client;
 import App.modules.users.Client.views.Change_Client;
 import App.modules.users.User.User;
@@ -168,8 +169,8 @@ public class Client_BLL {
         if (c != null) {
 
             Singleton_cli.cli.add(c);
-
-                       
+           // Client_DB_DAO.insert_Client(c);
+            Client_DB_BLL.insert_Client(c);
             json_client.auto_save_Client_json();
 
             b = true;
@@ -286,12 +287,16 @@ public class Client_BLL {
 
 
         if (c != null) {
-
-              pos = Client_BLL.search_Cli(c);
+            
+            
+            
+            pos = Client_BLL.search_Cli(c);
             
             Singleton_cli.cli.set(pos, c);
+             Client_DB_BLL.update_client(c);
+           
             
-            json_client.auto_save_Client_json();
+            //json_client.auto_save_Client_json();
 
             b = true;
 
@@ -418,12 +423,15 @@ public class Client_BLL {
 
                 Singleton_cli.cli.remove(pos);
                 datosaux.remove(c);
+                
+                Client_DB_BLL.delete_client_by_dni(Id);
+                
                 jLabel3.setText(String.valueOf(Singleton_cli.cli.size()));
                 ((miniSimpleTableModel_Client) TABLA.getModel()).cargar();
                 pagina.inicializa();
                 pagina.initLinkBox();
                 
-                json_client.auto_save_Client_json();
+               // json_client.auto_save_Client_json();
                 
                 if (Singleton_cli.cli.size() < 6) {
 

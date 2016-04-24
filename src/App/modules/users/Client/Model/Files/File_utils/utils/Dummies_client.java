@@ -31,7 +31,7 @@ public class Dummies_client {
 	private static  String[] status = {"Online", "Outline", "Outline", "Online", "Online"};
 	private static date_class[] f_alta = { new date_class("03/04/2000", ""), new date_class("18/11/2003",""), new date_class("12/3/2014",""),
 			new date_class("23/9/2009","4"), new date_class("25/4/2014","5")};
-	private static int[] dtos$= {0, 5, 15, 25, 50};
+	//private static int[] dtos$= {0, 5, 15, 25, 50};
 	private static  float[] compras$ = {100, 25, 45, 32, 567};
         private static  boolean[] premium = {true, true, false, true, false};
         private static  String[] client_type = {"a", "s", "f", "f", "s"};
@@ -58,7 +58,7 @@ public class Dummies_client {
 		
 		for (int i = 0; i < LONGDUMMIES; i++) { //
 
-			c = new Client(dni[i], nom[i], cognom[i], date_birthday[i], mobil[i], email[i], avatar[i], user[i], pass[i], status[i], f_alta[i],  dtos$[i], compras$[i], premium[i], client_type[i]);
+			c = new Client(dni[i], nom[i], cognom[i], date_birthday[i], mobil[i], email[i], avatar[i], user[i], pass[i], status[i], f_alta[i], compras$[i], premium[i], client_type[i]);
 			
 			Singleton_cli.cli.add(c);
 			
