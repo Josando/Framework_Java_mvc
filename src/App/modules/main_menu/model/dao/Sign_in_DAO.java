@@ -35,7 +35,7 @@ public class Sign_in_DAO {
         try {
             stmt = con.prepareStatement("SELECT dni FROM db_admin.admin WHERE usuario=? and password=? ");
             stmt.setString(1, Sign_in.User_txt.getText());
-            stmt.setString(2, Sign_in.Pass_text.getText());                 
+            stmt.setString(2, Sign_in.Pass_txt.getText());                 
           
             rs = stmt.executeQuery();
             
@@ -76,7 +76,7 @@ public class Sign_in_DAO {
            
             BasicDBObject query = new BasicDBObject();
             query.put("user", Sign_in.User_txt.getText());
-            query.put("pass", Sign_in.Pass_text.getText());
+            query.put("pass", Sign_in.Pass_txt.getText());
             
            // BasicDBObject searchById = new BasicDBObject();
            // searchById.append("dni", 1).append("_id",0);
@@ -125,7 +125,7 @@ public class Sign_in_DAO {
          
         for (int i = 0; i < Singleton_user_reg.us.size(); i++) {
             
-           if ((Singleton_user_reg.us.get(i).getPass()).equals(Sign_in.Pass_text.getText()) && (Singleton_user_reg.us.get(i).getUser()).equals(Sign_in.User_txt.getText()))  {
+           if ((Singleton_user_reg.us.get(i).getPass()).equals(Sign_in.Pass_txt.getText()) && (Singleton_user_reg.us.get(i).getUser()).equals(Sign_in.User_txt.getText()))  {
                 
                
                Singleton_App.u = Singleton_user_reg.us.get(i);

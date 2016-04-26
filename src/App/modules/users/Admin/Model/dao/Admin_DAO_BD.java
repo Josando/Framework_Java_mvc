@@ -50,7 +50,7 @@ public class Admin_DAO_BD {
             stmt.setString(16, a.getFecha_cont().toStrinng());
 
             correcto = stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "El usuario ha sido dado de alta correctamente!");
+          //  JOptionPane.showMessageDialog(null, "El usuario ha sido dado de alta correctamente!");
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Ha habido un problema al insertar un nuevo usuario!");
@@ -166,7 +166,7 @@ public class Admin_DAO_BD {
             stmt.setString(17, a.getDni());
             correcto=stmt.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "El usuario ha sido modificado correctamente!");
+            //JOptionPane.showMessageDialog(null, "El usuario ha sido modificado correctamente!");
             
         } catch (SQLException ex) {
             ex.printStackTrace();

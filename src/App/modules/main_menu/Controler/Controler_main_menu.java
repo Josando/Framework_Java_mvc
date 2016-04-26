@@ -6,8 +6,12 @@
 package App.modules.main_menu.Controler;
 
 //import App.modules.main_menu.model.Config;
+import App.classes.BD_Connection;
+import App.classes.Mongo_BD_conection;
 import App.modules.main_menu.model.Language.Language;
 import App.modules.main_menu.model.bll.First_menu_config_bll;
+import App.modules.main_menu.model.bll.Sign_in_BLL;
+import App.modules.main_menu.model.dao.Sign_in_DAO;
 import App.modules.main_menu.views.First_menu;
 import static App.modules.main_menu.views.First_menu.Dialog_config;
 import static App.modules.main_menu.views.First_menu.jPanel14;
@@ -15,19 +19,29 @@ import static App.modules.main_menu.views.First_menu.jPanel2;
 import static App.modules.main_menu.views.First_menu.jPanel3;
 import static App.modules.main_menu.views.First_menu.jPanel5;
 import App.modules.main_menu.views.Menu;
+import App.modules.main_menu.views.Sign_in;
+import static App.modules.main_menu.views.Sign_in.Error_label;
 import App.modules.users.Admin.Model.Files.File_utils.utils.json;
 import App.modules.users.Admin.controler.Controlador_Admin;
 import App.modules.users.Admin.views.interfaz_Admin;
+import App.modules.users.Client.Model.bll.Client_BLL;
 import App.modules.users.Client.controler.Controlador_Client;
 import App.modules.users.Client.views.interfaz_Client;
 import App.modules.users.User_reg.Controler.Controlador_User_reg;
+import App.modules.users.User_reg.Model.Classes.Singleton_user_reg;
+import App.modules.users.User_reg.Model.Classes.User_reg;
+import App.modules.users.User_reg.Model.Files.File_utils.utils.json_user_reg;
+import App.modules.users.User_reg.Model.bll.User_reg_BLL;
 import App.modules.users.User_reg.Views.interfaz_User_reg;
+import App.utils.Singleton_App;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
@@ -35,12 +49,14 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 /**
  *
  * @author Jorge
+ * @version 1.2.7
+ * 
  */
 public class Controler_main_menu implements ActionListener {
 
-    public static First_menu First;// = new First_menu();
-    public static Menu Menu_users;// = new Menu(); 
-    
+    public static First_menu First;
+    public static Menu Menu_users;
+    public static Sign_in sign_in;
     
     
     public Controler_main_menu(JFrame Start, int i){
@@ -55,6 +71,12 @@ public class Controler_main_menu implements ActionListener {
             Menu_users = (Menu) Start;
         }
         
+         if (i==2){
+             
+             sign_in = (Sign_in) Start;
+             
+         }
+         
        }
 
     
@@ -74,8 +96,11 @@ public class Controler_main_menu implements ActionListener {
         bntclient,
         btnrAdministrator,
         btnreturn,
-        btnuser_reg
+        btnuser_reg,
         
+        ///Sign in///
+        
+        Sign_in_btn
         
     }
     
@@ -117,7 +142,6 @@ public class Controler_main_menu implements ActionListener {
             @Override
             public void windowClosing(WindowEvent e) {
 
-//                EFBLLgrafico.Guardar(0);
                 JOptionPane.showMessageDialog(null,
                         Language.getinstance().getProperty("leave1"), Language.getinstance().getProperty("leave2"),
                         JOptionPane.INFORMATION_MESSAGE);
@@ -183,6 +207,47 @@ public class Controler_main_menu implements ActionListener {
             
         }
         
+   
+   if(i==2){
+       
+       
+        json.open_config_json();
+        Singleton_user_reg.us = new ArrayList<User_reg>();
+        json_user_reg.auto_open_user_reg_json();
+        Singleton_App.mongo = new Mongo_BD_conection();
+        Singleton_App.nom_bd = Singleton_App.mongo.getNom_bd();
+        Singleton_App.nom_table = Singleton_App.mongo.getNom_table();
+        Singleton_App.client = Mongo_BD_conection.connect();
+        BD_Connection.initialize_BasicDataSourceFactory();
+        BD_Connection.logStatistics();
+
+        sign_in.setTitle("SIGN IN");
+        sign_in.setLocationRelativeTo(null);
+        sign_in.setSize(300, 300);//ancho x alto
+        sign_in.setResizable(false);
+        sign_in.setVisible(true);
+        Image image = Toolkit.getDefaultToolkit().getImage("src/App/modules/main_menu/views/img/sign_in.png");
+        sign_in.setIconImage(image);
+        //////////////////////////////////////////////////////////////////////////////
+        
+         sign_in.Sign_in_btn.setActionCommand("Sign_in_btn");
+             sign_in.Sign_in_btn.addActionListener(this);
+               
+        
+
+         this.sign_in.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+                JOptionPane.showMessageDialog(null,
+                        Language.getinstance().getProperty("leave1"), Language.getinstance().getProperty("leave2"),
+                        JOptionPane.INFORMATION_MESSAGE);
+                System.exit(0);
+            }
+        });
+       
+       
+   }
         
         
 }   
@@ -269,7 +334,35 @@ public class Controler_main_menu implements ActionListener {
                 
                 break;
            
-               
+            case Sign_in_btn:
+                
+                
+                
+        if (Sign_in_BLL.Select_Admin_dni() == 1) {
+
+            // JOptionPane.showMessageDialog(null, Singleton_App.DB_dni);
+            new Controler_main_menu(new First_menu(), 0).Start(0);
+
+        } else if (Sign_in_BLL.Select_Admin_dni_mongo() == 1) {
+
+            Client_BLL.modify_from_client();
+            //  new Controlador_Client(new Change_Client(), 2).Start(2);
+
+        } else if (Sign_in_DAO.search_Us_dni_array() == 1) {
+
+            User_reg_BLL.modify_from_user();
+
+        } else {
+
+            sign_in.Error_label.setOpaque(true);
+            sign_in.Error_label.setForeground(Color.red);
+            sign_in.Error_label.setText("ERROR, USUARIO NO ENCONTRADO!!!");
+
+        }
+                
+                
+                break;                               
+                
         }
         
         

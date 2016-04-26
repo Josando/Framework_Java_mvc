@@ -9,6 +9,7 @@ import App.modules.main_menu.model.Config;
 import App.classes.BD_Connection;
 import App.classes.date_class;
 import App.modules.main_menu.Controler.Controler_main_menu;
+import static App.modules.main_menu.Controler.Controler_main_menu.sign_in;
 import App.modules.main_menu.views.First_menu;
 import App.modules.main_menu.views.Sign_in;
 import App.modules.users.Admin.Model.Classes.Admin;
@@ -36,8 +37,9 @@ public class Main_menu {
     public static void main(String args[]) {
        
         
-        Sign_in log = new Sign_in();
-        log.setVisible(true);
+        new Controler_main_menu(new Sign_in(), 2).Start(2);
+       // Sign_in log = new Sign_in();
+        
         
         
          //First_menu first = new First_menu();

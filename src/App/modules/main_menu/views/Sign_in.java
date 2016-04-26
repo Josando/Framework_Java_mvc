@@ -50,6 +50,7 @@ public class Sign_in extends javax.swing.JFrame {
     public Sign_in() {
         initComponents();
 
+        /*
         json.open_config_json();
         Singleton_user_reg.us = new ArrayList<User_reg>();
         json_user_reg.auto_open_user_reg_json();
@@ -62,7 +63,7 @@ public class Sign_in extends javax.swing.JFrame {
 
         this.setTitle("SIGN IN");
         this.setLocationRelativeTo(null);
-        this.setSize(400, 400);//ancho x alto
+        this.setSize(300, 300);//ancho x alto
         this.setResizable(false);
         //Image image = Toolkit.getDefaultToolkit().getImage("src/App/modules/main_menu/views/img/IMG_0279.JPG");
         //this.setIconImage(image);
@@ -77,9 +78,10 @@ public class Sign_in extends javax.swing.JFrame {
 
             }
         });
-
+*/
     }
 
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -91,70 +93,53 @@ public class Sign_in extends javax.swing.JFrame {
 
         Error_label = new javax.swing.JLabel();
         User_txt = new javax.swing.JTextField();
-        Pass_text = new javax.swing.JTextField();
         User_label = new javax.swing.JLabel();
         Pass_label = new javax.swing.JLabel();
         Sign_in_btn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        Pass_txt = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 102, 204));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(Error_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 229, 20));
+        getContentPane().add(User_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 220, -1));
 
+        User_label.setForeground(new java.awt.Color(0, 0, 0));
         User_label.setText("Nombre de usuario:");
+        getContentPane().add(User_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
+        Pass_label.setForeground(new java.awt.Color(0, 0, 0));
         Pass_label.setText("Password:");
+        getContentPane().add(Pass_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
+        Sign_in_btn.setBackground(new java.awt.Color(51, 102, 255));
+        Sign_in_btn.setForeground(new java.awt.Color(255, 255, 255));
         Sign_in_btn.setText("Sign in");
         Sign_in_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Sign_in_btnActionPerformed(evt);
             }
         });
+        getContentPane().add(Sign_in_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Sign_in_btn)
-                .addGap(54, 54, 54))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Error_label, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(User_label)
-                            .addComponent(Pass_label))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Pass_text, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                            .addComponent(User_txt))))
-                .addContainerGap(108, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(User_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(User_label))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Pass_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Pass_label))
-                .addGap(18, 18, 18)
-                .addComponent(Sign_in_btn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(Error_label, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
-        );
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Sign in");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 90, -1));
+        getContentPane().add(Pass_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 220, -1));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setOpaque(true);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void Sign_in_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sign_in_btnActionPerformed
         // TODO add your handling code here:
-
+/**
         if (Sign_in_BLL.Select_Admin_dni() == 1) {
 
             // JOptionPane.showMessageDialog(null, Singleton_App.DB_dni);
@@ -177,16 +162,18 @@ public class Sign_in extends javax.swing.JFrame {
 
         }
 
-
+*/
     }//GEN-LAST:event_Sign_in_btnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel Error_label;
     public static javax.swing.JLabel Pass_label;
-    public static javax.swing.JTextField Pass_text;
+    public static javax.swing.JPasswordField Pass_txt;
     public static javax.swing.JButton Sign_in_btn;
     public static javax.swing.JLabel User_label;
     public static javax.swing.JTextField User_txt;
+    public static javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
