@@ -433,4 +433,52 @@ public class User_reg_BLL {
         }
     }
 
+      public static void modify_from_user() {
+          
+          
+                    SimpleDateFormat format = new java.text.SimpleDateFormat(Config.getinstance().getDate_format());
+                   
+                    new Controlador_User_reg(new Change_User_reg(), 2).Start(2);
+                    
+                    Change_User_reg.AdIDtext.setText(Singleton_App.u.getDni());
+                    Change_User_reg.AdNametext.setText(Singleton_App.u.getNom());
+                    Change_User_reg.AdSurnametext.setText(Singleton_App.u.getCognom());
+                    Change_User_reg.AdMobiltext.setText(Singleton_App.u.getMobil());
+                    Change_User_reg.ADEmailtext.setText(Singleton_App.u.getEmail());
+                    Change_User_reg.AdUsernametext.setText(Singleton_App.u.getUser());
+                    Change_User_reg.AdPasstext.setText(Singleton_App.u.getPass());
+                    Change_User_reg.AdActivitytext.setText(Integer.toString(Singleton_App.u.getActividad()));
+                    //////////////////////////
+                    Singleton_App.ruta_imagen = Singleton_App.u.getAvatar();
+                    //Se crea el imagen desde la string del admin
+                    ImageIcon icon = new ImageIcon(Singleton_App.ruta_imagen);
+                    //se extrae la imagen del icono
+                    Image img = icon.getImage();
+                    //cambiamos el tamaño
+                    Image newimg = img.getScaledInstance(97, 97, java.awt.Image.SCALE_SMOOTH);
+                    //se genera la imagen con la nueva imagen
+                    ImageIcon newIcon = new ImageIcon(newimg);
+
+                    Change_User_reg.AdAvartaimg.setIcon(newIcon);
+                    Change_User_reg.AdAvartaimg.setText("");
+                    Change_User_reg.AdAvartaimg.setSize(97, 97);
+
+                    try {
+
+                        Date date_birthday = format.parse(Singleton_App.u.getDate_birthday().toString());
+                        Change_User_reg.Addatebirthdaytext.setDate(date_birthday);
+                       // Date hire_date = format.parse(u.getFecha_cont().toString());
+                       // Change_User_reg.Adhiredatetext.setDate(hire_date);
+
+                    } catch (ParseException ex) {
+
+                        Logger.getLogger(User_reg_DAO.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    
+          
+      }
+    
+    
+    
 }

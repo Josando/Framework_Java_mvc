@@ -137,7 +137,7 @@ public class Client extends User implements Serializable {
 	dBObjectClient.append("mobil", this.getMobil());
 	dBObjectClient.append("email", this.getEmail());
         dBObjectClient.append("avatar", this.getAvatar());
-	dBObjectClient.append("user", this.getUser());
+	dBObjectClient.append("user", this.getUser());           //.append("unique", true);
 	dBObjectClient.append("pass", this.getPass());
         dBObjectClient.append("status", this.getstatus());
 	dBObjectClient.append("f_alta", this.getF_alta().toStrinng());
@@ -147,7 +147,8 @@ public class Client extends User implements Serializable {
         dBObjectClient.append("benefits", this.getbenefits());
         dBObjectClient.append("age", this.getAge());
         dBObjectClient.append("antiguedad", this.getAntiguedad());
-                
+        
+        
 	return dBObjectClient;
     }
 		

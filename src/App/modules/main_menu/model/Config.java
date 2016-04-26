@@ -58,23 +58,24 @@ public class Config implements Serializable{
 			
 			instance= new Config();	
 			
-			json.open_config_json();	
-			First_menu_config_bll.Charge_config();
+			//json.open_config_json();	
+                        //First_menu_config_bll.Charge_config(); Esto en el primer menu
 			Singleton_cli.cli = new ArrayList <Client>();
 			Singleton_user_reg.us = new ArrayList <User_reg>();
 			Singleton.ad = new ArrayList <Admin>();	
 			
 			themes.Choicethemes();
                         
-                        BD_Connection.initialize_BasicDataSourceFactory();
-                        BD_Connection.logStatistics();
+                       // BD_Connection.initialize_BasicDataSourceFactory();
+                       // BD_Connection.logStatistics();
                         //Admin_BLL_BD.Charge_admin_BD();
 			//Dummies.Load_Dummies();
 			//Dummies_client.Load_Dummies();
                         //Dummies_user_reg.Load_Dummies();
-			//json_client.auto_open_client_json();
+                        //json_client.auto_open_client_json();
                        //json.auto_open_admin_json();
-                        //json_user_reg.auto_open_user_reg_json();
+                        json_user_reg.auto_open_user_reg_json();
+                        
                         
                         Singleton_App.mongo = new Mongo_BD_conection();
                         Singleton_App.nom_bd = Singleton_App.mongo.getNom_bd();

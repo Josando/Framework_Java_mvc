@@ -55,6 +55,7 @@ public class Admin_DAO_BD {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Ha habido un problema al insertar un nuevo usuario!");
             ex.printStackTrace();
+            
         } finally {
             if (stmt != null) {
                 try {

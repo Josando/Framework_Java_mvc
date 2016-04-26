@@ -5,7 +5,7 @@
  */
 package App.modules.main_menu.Controler;
 
-import App.modules.main_menu.model.Config;
+//import App.modules.main_menu.model.Config;
 import App.modules.main_menu.model.Language.Language;
 import App.modules.main_menu.model.bll.First_menu_config_bll;
 import App.modules.main_menu.views.First_menu;
@@ -83,7 +83,8 @@ public class Controler_main_menu implements ActionListener {
         
         if(i==0){
                   
-                     
+        First_menu_config_bll.Charge_config();
+        
         First.setTitle("Main menu");
         First.setLocationRelativeTo(null);
         First.setSize(720, 500);//ancho x alto
@@ -130,7 +131,7 @@ public class Controler_main_menu implements ActionListener {
        
        
         Menu_users.setVisible(true);
-        Config.getinstance().getTheme();
+       // Config.getinstance().getTheme();
         Menu_users.setTitle("Menu");
 	Menu_users.setSize(720,500);//ancho x alto
         Menu_users.setLocationRelativeTo(null);

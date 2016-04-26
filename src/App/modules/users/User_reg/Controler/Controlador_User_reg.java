@@ -378,7 +378,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
             Change.AdNametext.addActionListener(this);    
             
             Change.AdPasstext.setActionCommand("Change_AdPasstext");
-            Create.AdPasstext.setName("Change_AdPasstext");
+            Change.AdPasstext.setName("Change_AdPasstext");
             
             Change.AdPasstext.addKeyListener(this);
             Change.AdPasstext.addActionListener(this); 

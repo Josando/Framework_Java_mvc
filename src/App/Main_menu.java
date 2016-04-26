@@ -5,14 +5,21 @@
  */
 package App;
 
+import App.modules.main_menu.model.Config;
 import App.classes.BD_Connection;
 import App.classes.date_class;
 import App.modules.main_menu.Controler.Controler_main_menu;
 import App.modules.main_menu.views.First_menu;
+import App.modules.main_menu.views.Sign_in;
 import App.modules.users.Admin.Model.Classes.Admin;
+import App.modules.users.Admin.Model.Files.File_utils.utils.json;
+import App.modules.users.User_reg.Model.Classes.Singleton_user_reg;
+import App.modules.users.User_reg.Model.Classes.User_reg;
+import App.modules.users.User_reg.Model.Files.File_utils.utils.json_user_reg;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,11 +35,16 @@ public class Main_menu {
      //lo
     
     public static void main(String args[]) {
+       
+        
+        Sign_in log = new Sign_in();
+        log.setVisible(true);
+        
         
          //First_menu first = new First_menu();
-            new Controler_main_menu(new First_menu(), 0).Start(0);
+        //new Controler_main_menu(new First_menu(), 0).Start(0);
         // first.setLocationRelativeTo(null);
-        // first.setVisible(true);
+        // 
          
         /**
          Connection _con = null;

@@ -6,6 +6,8 @@
 package App.utils;
 
 import App.classes.Mongo_BD_conection;
+import App.modules.users.Client.Model.Classes.Client;
+import App.modules.users.User_reg.Model.Classes.User_reg;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
@@ -31,6 +33,7 @@ public class Singleton_App {
     public static DB db;
     public static String nom_table;
     public static DBCollection collection;
-    
+    public static Client c;
+    public static User_reg u;
     
 }

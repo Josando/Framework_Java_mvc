@@ -43,23 +43,23 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Jorge
+ * @version 1.2.7
  */
 public class Client_BLL {
 
-   
-
     public static int search_Cli(Client c) {
-        
+
         for (int i = 0; i < Singleton_cli.cli.size(); i++) {
-            
+
             if ((Singleton_cli.cli.get(i).getDni()).equals(c.getDni())) {
-                
+
                 return i;
             }
         }
         return -1;
     }
-/*
+
+    /*
     public static int search_Us(User_reg u) {
         for (int i = 0; i <= (Singleton.us.size() - 1); i++) {
             if ((Singleton.us.get(i)).equals(u)) {
@@ -68,7 +68,7 @@ public class Client_BLL {
         }
         return -1;
     }
-*/
+     */
     public static void imprime(ArrayList<? extends User> l)// Imprimir cada uno de los empleados del array
     {
 
@@ -92,13 +92,12 @@ public class Client_BLL {
         Client_DAO.Create_requests_surname();
 
     }
-    
-     public static void ask_client_type() {
+
+    public static void ask_client_type() {
 
         Client_DAO.Create_requests_client_type();
 
     }
-    
 
     public static void ask_mobil() {
 
@@ -169,7 +168,7 @@ public class Client_BLL {
         if (c != null) {
 
             Singleton_cli.cli.add(c);
-           // Client_DB_DAO.insert_Client(c);
+            // Client_DB_DAO.insert_Client(c);
             Client_DB_BLL.insert_Client(c);
             json_client.auto_save_Client_json();
 
@@ -203,10 +202,9 @@ public class Client_BLL {
 
             } else {
 
-                 new Controlador_Client(new Change_Client(), 2).Start(2);
-                
-               // new Change_Admin().setVisible(true);
+                new Controlador_Client(new Change_Client(), 2).Start(2);
 
+                // new Change_Admin().setVisible(true);
                 //DefaultTableModel modelotabla = (DefaultTableModel) TABLA.getModel();
                 String Id = (String) TABLA.getValueAt(filaseleccionada, 0);
 
@@ -229,7 +227,7 @@ public class Client_BLL {
                     Change_Client.AdActivitytext.setText(Float.toString(c.getCompra$()));
                     Change_Client.Client_type_text.setText(c.getClient_type());
 
-                     //////////////////////////
+                    //////////////////////////
                     Singleton_App.ruta_imagen = c.getAvatar();
                     //Se crea el imagen desde la string del admin
                     ImageIcon icon = new ImageIcon(Singleton_App.ruta_imagen);
@@ -243,8 +241,7 @@ public class Client_BLL {
                     Change_Client.AdAvartaimg.setIcon(newIcon);
                     Change_Client.AdAvartaimg.setText("");
                     Change_Client.AdAvartaimg.setSize(97, 97);
-                    
-                    
+
                     try {
 
                         Date date_birthday = format.parse(c.getDate_birthday().toString());
@@ -285,19 +282,14 @@ public class Client_BLL {
 
         c = Client_DAO.Change_Check_and_save();
 
-
         if (c != null) {
-            
-            
-            
-            pos = Client_BLL.search_Cli(c);
-            
-            Singleton_cli.cli.set(pos, c);
-             Client_DB_BLL.update_client(c);
-           
-            
-            //json_client.auto_save_Client_json();
 
+            pos = Client_BLL.search_Cli(c);
+
+            Singleton_cli.cli.set(pos, c);
+            Client_DB_BLL.update_client(c);
+
+            //json_client.auto_save_Client_json();
             b = true;
 
         }
@@ -311,13 +303,12 @@ public class Client_BLL {
         Client_DAO.Change_requests_name();
 
     }
-    
-     public static void Change_ask_client_type() {
+
+    public static void Change_ask_client_type() {
 
         Client_DAO.Change_requests_client_type();
 
     }
-    
 
     public static void Change_requests_surname() {
 
@@ -409,35 +400,34 @@ public class Client_BLL {
 
                 c = ((miniSimpleTableModel_Client) TABLA.getModel()).buscar(Id);
 
-                 int opc = JOptionPane.showConfirmDialog(null, "Estas seguro que quieres borrar el Dni: " + Id,
+                int opc = JOptionPane.showConfirmDialog(null, "Estas seguro que quieres borrar el Dni: " + Id,
                         "Info", JOptionPane.WARNING_MESSAGE);
 
                 if (opc == 0) {
-                
-                int pos = ((miniSimpleTableModel_Client) TABLA.getModel()).buscaUsuario(c);
 
-                ((miniSimpleTableModel_Client) TABLA.getModel()).removeRow(pos);
-                ((miniSimpleTableModel_Client) TABLA.getModel()).cargar();
-                // pagina.inicializa();
-                // pagina.initLinkBox();
+                    int pos = ((miniSimpleTableModel_Client) TABLA.getModel()).buscaUsuario(c);
 
-                Singleton_cli.cli.remove(pos);
-                datosaux.remove(c);
-                
-                Client_DB_BLL.delete_client_by_dni(Id);
-                
-                jLabel3.setText(String.valueOf(Singleton_cli.cli.size()));
-                ((miniSimpleTableModel_Client) TABLA.getModel()).cargar();
-                pagina.inicializa();
-                pagina.initLinkBox();
-                
-               // json_client.auto_save_Client_json();
-                
-                if (Singleton_cli.cli.size() < 6) {
+                    ((miniSimpleTableModel_Client) TABLA.getModel()).removeRow(pos);
+                    ((miniSimpleTableModel_Client) TABLA.getModel()).cargar();
+                    // pagina.inicializa();
+                    // pagina.initLinkBox();
 
-                    pagina.currentPageIndex = 1;
+                    Singleton_cli.cli.remove(pos);
+                    datosaux.remove(c);
+
+                    Client_DB_BLL.delete_client_by_dni(Id);
+
+                    jLabel3.setText(String.valueOf(Singleton_cli.cli.size()));
+                    ((miniSimpleTableModel_Client) TABLA.getModel()).cargar();
+                    pagina.inicializa();
                     pagina.initLinkBox();
-                }
+
+                    // json_client.auto_save_Client_json();
+                    if (Singleton_cli.cli.size() < 6) {
+
+                        pagina.currentPageIndex = 1;
+                        pagina.initLinkBox();
+                    }
                 }
             }
 
@@ -449,9 +439,9 @@ public class Client_BLL {
 
     public static void save_json() {
         if (!Singleton_cli.cli.isEmpty()) {
-            
+
             json_client.save_client_json();
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "No hay datos que guardar");
         }
@@ -467,12 +457,57 @@ public class Client_BLL {
 
     public static void save_xml() {
         if (!Singleton_cli.cli.isEmpty()) {
-            
+
             xml_client.save_client_xml();
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "No hay datos que guardar");
         }
+    }
+
+    public static void modify_from_client() {
+
+        SimpleDateFormat format = new java.text.SimpleDateFormat(Config.getinstance().getDate_format());
+
+        new Controlador_Client(new Change_Client(), 2).Start(2);
+
+        Change_Client.AdIDtext.setText(Singleton_App.c.getDni());
+        Change_Client.AdNametext.setText(Singleton_App.c.getNom());
+        Change_Client.AdSurnametext.setText(Singleton_App.c.getCognom());
+        Change_Client.AdMobiltext.setText(Singleton_App.c.getMobil());
+        Change_Client.ADEmailtext.setText(Singleton_App.c.getEmail());
+        Change_Client.AdUsernametext.setText(Singleton_App.c.getUser());
+        Change_Client.AdPasstext.setText(Singleton_App.c.getPass());
+        Change_Client.AdActivitytext.setText(Float.toString(Singleton_App.c.getCompra$()));
+        Change_Client.Client_type_text.setText(Singleton_App.c.getClient_type());
+
+        //////////////////////////
+        Singleton_App.ruta_imagen = Singleton_App.c.getAvatar();
+        //Se crea el imagen desde la string del admin
+        ImageIcon icon = new ImageIcon(Singleton_App.ruta_imagen);
+        //se extrae la imagen del icono
+        Image img = icon.getImage();
+        //cambiamos el tamaño
+        Image newimg = img.getScaledInstance(97, 97, java.awt.Image.SCALE_SMOOTH);
+        //se genera la imagen con la nueva imagen
+        ImageIcon newIcon = new ImageIcon(newimg);
+
+        Change_Client.AdAvartaimg.setIcon(newIcon);
+        Change_Client.AdAvartaimg.setText("");
+        Change_Client.AdAvartaimg.setSize(97, 97);
+
+        try {
+
+            Date date_birthday = format.parse(Singleton_App.c.getDate_birthday().toString());
+            Change_Client.Addatebirthdaytext.setDate(date_birthday);
+            Date discarge_date = format.parse(Singleton_App.c.getF_alta().toString());
+            Change_Client.Adhiredatetext.setDate(discarge_date);
+
+        } catch (ParseException ex) {
+
+            Logger.getLogger(Client_DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }
