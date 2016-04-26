@@ -27,12 +27,11 @@ import java.util.logging.Logger;
 /**
  *
  * @author Jorge
+ * @version 1.2.7
  */
 public class Main_menu {
     
-     //objeto singleton que contendrá la ventana activa
-    
-     //lo
+            
     
     public static void main(String args[]) {
        
