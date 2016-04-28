@@ -225,7 +225,8 @@ switch(i){
                         Language.getinstance().getProperty("leave1"), Language.getinstance().getProperty("leave2"),
                         JOptionPane.INFORMATION_MESSAGE);
                 
-                        new Controler_main_menu(new Sign_in(), 2).Start(2);
+                        System.exit(0);
+                        //new Controler_main_menu(new Sign_in(), 2).Start(2);
 
                 
                // System.exit(0);
@@ -345,7 +346,7 @@ switch(i){
 	Change.setIconImage(image3);   
         Change.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
         Change.Adhiredatetext.setDateFormatString(Config.getinstance().getDate_format());
-        Change.AdReturnbtn.setText("Sign out");
+        //Change.AdReturnbtn.setText("Sign out");
         Change.Adhiredatetext.setEnabled(false);
         Change.jComboBox2.setEnabled(false);
         Change.AdActivitytext.setEnabled(false);
@@ -357,8 +358,9 @@ switch(i){
             @Override
             public void windowClosing(WindowEvent e) {
                
-                Change.dispose();
-                 new Controler_main_menu(new Sign_in(), 2).Start(2);
+                System.exit(0);
+                //Change.dispose();
+                 //new Controler_main_menu(new Sign_in(), 2).Start(2);
                 
                  //new interfaz_Admin().setVisible(true);  
                 // new Controlador_Client(new interfaz_Client(), 0).Start(0);                       
@@ -446,7 +448,7 @@ switch(i){
 	Image image4 =Toolkit.getDefaultToolkit().getImage("src/App/modules/users/Admin/views/img/administrator.png");
 	Change_user.setIconImage(image4);   
         Change_user.Addatebirthdaytext.setDateFormatString(Config.getinstance().getDate_format());
-        Change_user.AdReturnbtn.setText("Sign out");
+       // Change_user.AdReturnbtn.setText("Sign out");
         //Change.Adhiredatetext.setEnabled(false);
        // Change_user.jComboBox2.setEnabled(false);
         Change_user.AdActivitytext.setEnabled(false);
@@ -457,11 +459,12 @@ switch(i){
             @Override
             public void windowClosing(WindowEvent e) {
                
-                Change_user.dispose();
+                //Change_user.dispose();
                  //new interfaz_Admin().setVisible(true);  
                  //new Controlador_User_reg(new interfaz_User_reg(), 0).Start(0);                   
-                 new Controler_main_menu(new Sign_in(), 2).Start(2);
-            
+                 //new Controler_main_menu(new Sign_in(), 2).Start(2);
+            System.exit(0);
+                 
             }
         });   
                                   
@@ -571,13 +574,35 @@ switch(i){
                                                 
                 break;
             case btn_employees:
-                
-                
+                                
             First.dispose();
 
-            //new Menu().setVisible(true);
+            switch(Singleton_App.model_type){
                 
-            new Controler_main_menu(new Menu(), 1).Start(1);
+                case "Admin":
+                    
+                     new Controler_main_menu(new Menu(), 1).Start(1);
+                    
+                    break;
+                
+                case "Client":
+                        
+                     Client_BLL.modify_from_client();   
+                        
+                    break;
+                            
+                            
+                case "User_reg":
+                        
+                    User_reg_BLL.modify_from_user();
+                        
+                        
+                    break;
+                
+                
+            }
+                
+           
                 
                 
                 break;
@@ -625,22 +650,35 @@ switch(i){
             // JOptionPane.showMessageDialog(null, Singleton_App.DB_dni);
             sign_in.dispose();
             
+            Singleton_App.model_type="Admin";
+            
             new Controler_main_menu(new First_menu(), 0).Start(0);
 
         } else if (Sign_in_BLL.Select_client_mongo() == 1) {
 
             sign_in.dispose();
             
-            Client_BLL.modify_from_client();
+           
+            Singleton_App.model_type="Client";
+            
+             new Controler_main_menu(new First_menu(), 0).Start(0);
+            
+           // Client_BLL.modify_from_client();
             //  new Controlador_Client(new Change_Client(), 2).Start(2);
 
         } else if (Sign_in_DAO.search_Us_array() == 1) {
             
              sign_in.dispose();
-
-            User_reg_BLL.modify_from_user();
+             
+             Singleton_App.model_type="User_reg";
+             
+              new Controler_main_menu(new First_menu(), 0).Start(0);
+             
+             
+            //User_reg_BLL.modify_from_user();
 
         } else {
+            
 
             sign_in.Error_label.setOpaque(true);
             sign_in.Error_label.setForeground(Color.red);
@@ -670,24 +708,20 @@ switch(i){
                
                @Override
                public void actionPerformed(ActionEvent e){
-                   //Change.dispose();
-                   
-                     //  new Controlador_Client(new interfaz_Client(), 0).Start(0);     
-                    
-                       Change.jLabel1.setOpaque(false);
-                        
-                        Change.jLabel1.setText(""); 
-                       
+                  
+                   Change.dispose();
+                  
+                  new Controler_main_menu(new First_menu(), 0).Start(0);    
                }
            });
              
-             //jLabel1.setText("Admin creado con gracia");
+            
              
              timer.setRepeats(false);
              timer.start();
              
              Change.AdSavebtn.setEnabled(false);
-            // Change.AdReturnbtn.setEnabled(false);
+             Change.AdReturnbtn.setEnabled(false);
              Change.AdChange_Avatar.setEnabled(false);
              Change.jLabel1.setOpaque(true);
              Change.jLabel1.setBackground(Color.green);
@@ -701,8 +735,10 @@ switch(i){
                  
                   Change.dispose();
         
-                  new Controler_main_menu(new Sign_in(), 2).Start(2);                    
-                                
+                 // new Controler_main_menu(new Sign_in(), 2).Start(2);                    
+                   
+                  new Controler_main_menu(new First_menu(), 0).Start(0);
+                  
                  break;
              
              case Change_AdChange_Avatar:
@@ -720,25 +756,22 @@ switch(i){
                
                @Override
                public void actionPerformed(ActionEvent e){
-                   //Change_user.dispose();
+                                     
+                   Change_user.dispose();
                    
-                       //new Controlador_User_reg(new interfaz_User_reg(), 0).Start(0);                
-                       Change_user.jLabel1.setOpaque(false);
-                        
-                        Change_user.jLabel1.setText(""); 
-                         
+                    new Controler_main_menu(new First_menu(), 0).Start(0);
+                                                
                        
                }
            });
              
-             //jLabel1.setText("Admin creado con gracia");
-             
+                         
              timer.setRepeats(false);
              timer.start();
              
              Change_user.AdSavebtn.setEnabled(false);             
              Change_user.AdReturnbtn.setEnabled(false);
-             //Change_user.AdChange_Avatar.setEnabled(false);
+             Change_user.AdChange_Avatar.setEnabled(false);
              Change_user.jLabel1.setOpaque(true);
              Change_user.jLabel1.setBackground(Color.green);
              Change_user.jLabel1.setText("User modificado correctamente");                         
@@ -752,8 +785,8 @@ switch(i){
                   Change_user.dispose();
         
                   //new Controlador_User_reg(new interfaz_User_reg(), 0).Start(0);   
-                  new Controler_main_menu(new Sign_in(), 2).Start(2);
-                  
+                  //new Controler_main_menu(new Sign_in(), 2).Start(2);
+                  new Controler_main_menu(new First_menu(), 0).Start(0);
                   
                  break;
              

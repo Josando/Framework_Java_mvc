@@ -35,5 +35,7 @@ public class Singleton_App {
     public static DBCollection collection;
     public static Client c;
     public static User_reg u;
+    public static String model_type;
+    
     
 }

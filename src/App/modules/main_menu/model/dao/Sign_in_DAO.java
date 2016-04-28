@@ -122,10 +122,15 @@ public class Sign_in_DAO {
          
           int ok = 0;
           Singleton_App.u = null;
+          
+          
          
         for (int i = 0; i < Singleton_user_reg.us.size(); i++) {
             
-           if ((Singleton_user_reg.us.get(i).getPass()).equals(Sign_in.Pass_txt.getText()) && (Singleton_user_reg.us.get(i).getUser()).equals(Sign_in.User_txt.getText()))  {
+                        
+            
+           if ((Singleton_user_reg.us.get(i).getPass()).equals(Sign_in.Pass_txt.getText()) 
+                   && (Singleton_user_reg.us.get(i).getUser()).equals(Sign_in.User_txt.getText()))  {
                 
                
                Singleton_App.u = Singleton_user_reg.us.get(i);
@@ -135,13 +140,7 @@ public class Sign_in_DAO {
               
               // JOptionPane.showMessageDialog(null, "Cliente encontrado "+ Singleton_App.u+ ok);
                
-           }else{
-               
-               //  JOptionPane.showMessageDialog(null, "Cliente no encontrado ");
-               
-                 ok=0;
            }
-          
           
           
         }
