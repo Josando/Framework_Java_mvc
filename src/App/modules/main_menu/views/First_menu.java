@@ -122,6 +122,7 @@ public class First_menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btn_employees = new javax.swing.JButton();
         btn_Config = new javax.swing.JButton();
+        btn_sign_out = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         Dialog_config.setModal(true);
@@ -563,16 +564,20 @@ public class First_menu extends javax.swing.JFrame {
             }
         });
 
+        btn_sign_out.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/main_menu/views/img/sign_out.png"))); // NOI18N
+        btn_sign_out.setToolTipText("Sign out");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btn_Config, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btn_employees, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(btn_employees, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_sign_out, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,10 +586,12 @@ public class First_menu extends javax.swing.JFrame {
                 .addComponent(btn_employees)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_Config)
-                .addGap(117, 117, 117))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_sign_out, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 80, 140));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 80, 180));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App/modules/main_menu/views/img/IMG_0279.JPG"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 470));
@@ -671,6 +678,7 @@ public class First_menu extends javax.swing.JFrame {
     public static javax.swing.JButton btnSalir;
     public static javax.swing.JButton btn_Config;
     public static javax.swing.JButton btn_employees;
+    public static javax.swing.JButton btn_sign_out;
     public static javax.swing.ButtonGroup buttonGroup2decimal;
     public static javax.swing.ButtonGroup buttonGroup3lenguaje;
     public static javax.swing.ButtonGroup buttonGroup4themes;

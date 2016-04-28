@@ -1,6 +1,7 @@
 package  App.modules.users.User_reg.Model.Classes;
 import App.classes.date_class;
 import static App.modules.users.User_reg.Controler.Controlador_User_reg.combo;
+import App.modules.users.User_reg.Model.Files.File_utils.utils.json_user_reg;
 import App.modules.users.User_reg.Model.Utils.Pager.pagina;
 import App.modules.users.User_reg.Views.interfaz_User_reg;
 import java.util.ArrayList;
@@ -115,7 +116,9 @@ public class miniSimpleTableModel_User_reg extends AbstractTableModel {
     public void cargar() {
         datos.clear();
         datosaux.clear();
+        Singleton_user_reg.us.clear();
         
+        json_user_reg.auto_open_user_reg_json();
        
         java.util.Date date= new java.util.Date();
         

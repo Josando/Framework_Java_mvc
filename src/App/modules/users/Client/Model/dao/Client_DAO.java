@@ -852,12 +852,15 @@ public class Client_DAO {
 
       Client c = null;
         String dni = " ", nom = " ", cognom = " ", mobil = " ", email = " ", avatar = Singleton_App.ruta_imagen,
-                user = " ", pass = " ", status = (String) Create_Client.Status_combo.getSelectedItem(), client_type = " ";
+                user = " ", pass = " ", 
+                status = (String) Change_Client.Status_combo.getSelectedItem(), client_type = " ";
         date_class f_alta = null;
         date_class date_birthday = null;
         String birthday = "", hire = "";
         float dtos$ = 0.0f, compra$ = 0.0f;
         boolean premium = true;
+        
+      //  JOptionPane.showMessageDialog(null, "hola");
         
         boolean //Id = create_control_ID(),
                 name = Change_requests_name(),

@@ -5,6 +5,7 @@
  */
 package App.modules.users.Client.Model.bll;
 
+import App.modules.main_menu.Controler.Controler_main_menu;
 import App.modules.main_menu.model.Config;
 import App.modules.users.Client.Model.Classes.Client;
 import static App.modules.users.Client.views.interfaz_Client.TABLA;
@@ -284,9 +285,9 @@ public class Client_BLL {
 
         if (c != null) {
 
-            pos = Client_BLL.search_Cli(c);
+           // pos = Client_BLL.search_Cli(c);
 
-            Singleton_cli.cli.set(pos, c);
+           // Singleton_cli.cli.set(pos, c);
             Client_DB_BLL.update_client(c);
 
             //json_client.auto_save_Client_json();
@@ -469,7 +470,9 @@ public class Client_BLL {
 
         SimpleDateFormat format = new java.text.SimpleDateFormat(Config.getinstance().getDate_format());
 
-        new Controlador_Client(new Change_Client(), 2).Start(2);
+       // new Controlador_Client(new Change_Client(), 2).Start(2);
+        
+         new Controler_main_menu(new Change_Client(), 3).Start(3);
 
         Change_Client.AdIDtext.setText(Singleton_App.c.getDni());
         Change_Client.AdNametext.setText(Singleton_App.c.getNom());

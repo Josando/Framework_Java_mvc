@@ -16,7 +16,7 @@ import java.sql.Connection;
  */
 public class Sign_in_BLL {
     
-     public static int Select_Admin_dni() {
+     public static int Select_Admin_Sql() {
         
         int ok=0;
         Connection _con = null;
@@ -36,7 +36,7 @@ public class Sign_in_BLL {
         return ok;
     }
     
-    public static int Select_Admin_dni_mongo(){
+    public static int Select_client_mongo(){
         
         int ok=0;
         
@@ -50,7 +50,7 @@ public class Sign_in_BLL {
     public static int search_Us_dni_array() {
         int ok=0;
         
-          ok=Sign_in_DAO.search_Us_dni_array();
+          ok=Sign_in_DAO.search_Us_array();
         
        
     return ok;

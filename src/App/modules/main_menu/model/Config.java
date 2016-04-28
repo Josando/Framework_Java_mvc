@@ -66,8 +66,8 @@ public class Config implements Serializable{
 			
 			themes.Choicethemes();
                         
-                       // BD_Connection.initialize_BasicDataSourceFactory();
-                       // BD_Connection.logStatistics();
+                        BD_Connection.initialize_BasicDataSourceFactory();
+                        BD_Connection.logStatistics();
                         //Admin_BLL_BD.Charge_admin_BD();
 			//Dummies.Load_Dummies();
 			//Dummies_client.Load_Dummies();

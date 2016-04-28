@@ -237,7 +237,7 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
          
          if (i == 1) {
              
-             //Config.getinstance().getTheme();
+            
         Create_client.setVisible(true);        
         Create_client.setTitle("Client Table");
 	Create_client.setSize(535,700);//ancho x alto
@@ -391,7 +391,7 @@ public class Controlador_Client implements ActionListener, FocusListener, KeyLis
             Change.AdNametext.addActionListener(this);    
             
             Change.AdPasstext.setActionCommand("Change_AdPasstext");
-            Create_client.AdPasstext.setName("Change_AdPasstext");
+            Change.AdPasstext.setName("Change_AdPasstext");
             
             Change.AdPasstext.addKeyListener(this);
             Change.AdPasstext.addActionListener(this); 

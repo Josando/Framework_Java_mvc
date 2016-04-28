@@ -800,7 +800,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="620" y="10" width="80" height="140"/>
+          <AbsoluteConstraints x="620" y="10" width="80" height="180"/>
         </Constraint>
       </Constraints>
 
@@ -808,12 +808,13 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="btn_Config" pref="0" max="32767" attributes="0"/>
                       <Component id="btn_employees" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="btn_sign_out" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -824,7 +825,9 @@
                   <Component id="btn_employees" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btn_Config" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="btn_sign_out" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -850,6 +853,14 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ConfigActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_sign_out">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/App/modules/main_menu/views/img/sign_out.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Sign out"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

@@ -33,7 +33,7 @@ public class Sign_in_DAO {
        
 
         try {
-            stmt = con.prepareStatement("SELECT dni FROM db_admin.admin WHERE usuario=? and password=? ");
+            stmt = con.prepareStatement("SELECT dni FROM db_admin.admin WHERE BINARY usuario=? and BINARY password =? ");
             stmt.setString(1, Sign_in.User_txt.getText());
             stmt.setString(2, Sign_in.Pass_txt.getText());                 
           
@@ -118,7 +118,7 @@ public class Sign_in_DAO {
         
     }
     
-     public static int search_Us_dni_array() {
+     public static int search_Us_array() {
          
           int ok = 0;
           Singleton_App.u = null;

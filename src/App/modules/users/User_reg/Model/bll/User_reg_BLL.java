@@ -5,8 +5,10 @@
  */
 package App.modules.users.User_reg.Model.bll;
 
+import App.modules.main_menu.Controler.Controler_main_menu;
 import App.modules.main_menu.model.Config;
 import App.modules.main_menu.model.Language.Language;
+import App.modules.users.Client.views.Change_Client;
 import App.modules.users.User.User;
 import App.modules.users.User_reg.Controler.Controlador_User_reg;
 import App.modules.users.User_reg.Model.Classes.Singleton_user_reg;
@@ -438,7 +440,8 @@ public class User_reg_BLL {
           
                     SimpleDateFormat format = new java.text.SimpleDateFormat(Config.getinstance().getDate_format());
                    
-                    new Controlador_User_reg(new Change_User_reg(), 2).Start(2);
+                   // new Controlador_User_reg(new Change_User_reg(), 2).Start(2);
+                    new Controler_main_menu(new Change_User_reg(), 4).Start(4);
                     
                     Change_User_reg.AdIDtext.setText(Singleton_App.u.getDni());
                     Change_User_reg.AdNametext.setText(Singleton_App.u.getNom());

@@ -80,7 +80,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
     
     public enum Action {
         
-        /////Table_admin////
+        /////Table_user////
         
         ANTERIOR,
         Adcreate,
@@ -96,7 +96,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
         ultimo,
         jComboBox1,
         
-        //////Create_Admin/////
+        //////Create_user/////
         
         Create_ADEmailtext,
         Create_AdActivitytext,
@@ -114,7 +114,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
         //Create_Adhiredatetext,
         
         
-        ////Change_Admin////
+        ////Change_user////
         
         Change_ADEmailtext,
         Change_AdActivitytext,
@@ -324,7 +324,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
           if (i == 2) {
               
         Change.setVisible(true);        
-        Change.setTitle("Admin_Table");
+        Change.setTitle("Change User reg");
 	Change.setSize(520,550);//ancho x alto
         Change.setLocationRelativeTo(null);
 	Change.setResizable(false);
@@ -585,7 +585,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
              Change.AdChange_Avatar.setEnabled(false);
              Change.jLabel1.setOpaque(true);
              Change.jLabel1.setBackground(Color.green);
-             Change.jLabel1.setText("Admin modificado correctamente");                         
+             Change.jLabel1.setText("User modificado correctamente");                         
        
          }  
               
@@ -625,7 +625,7 @@ public class Controlador_User_reg implements ActionListener, FocusListener, KeyL
               
           case Change_AdPasstext:
               
-               Create.AdPasstext.setText("");
+              // Create.AdPasstext.setText("");
               
               break;
               

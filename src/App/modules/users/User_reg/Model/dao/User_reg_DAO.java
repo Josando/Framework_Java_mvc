@@ -275,11 +275,14 @@ public class User_reg_DAO {
                         } else {
 
                             age = date.subtractdates();
+                            
+                     
 
-                            if ((age < 16) || (age > 65)) {
+                            if ((age < 16)) {
 
-                                JOptionPane.showMessageDialog(null, "You are not allowed to continue,\n you haven't age work", "Error",
+                                JOptionPane.showMessageDialog(null, "You are not allowed to continue,\n you haven't 16 years", "Error",
                                         JOptionPane.WARNING_MESSAGE, null);
+                                 Create_User_reg.date_label.setIcon(Singleton_App.cancel);
 
                             } else {
 
